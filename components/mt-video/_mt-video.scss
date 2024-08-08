@@ -1,0 +1,93 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-video {
+  padding: 4em 20px 5.5em;
+  background: url('../images/m1/video_bg.jpg') center no-repeat;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  @include screen('notebook') {
+    padding: 3.5em 20px 4em;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    inset: 0;
+    background: linear-gradient(150deg, #23437f 33.12%, rgba(35, 67, 127, 0.9) 57.09%, rgba(35, 67, 127, 0.74) 89.62%, rgba(35, 67, 127, 0.49) 99.54%);
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px !important;
+    margin: 0 auto;
+  }
+  .title {
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 90px;
+    margin: 0 0 30px;
+    position: relative;
+    line-height: 1;
+    text-align: center;
+    @include screen('notebook') {
+      font-size: 80px;
+    }
+    @include screen('mobile') {
+      font-size: 50px;
+    }
+    @include screen('xs_mobile') {
+      font-size: 44px;
+    }
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+  ul {
+    display: flex;
+    gap: 30px;
+    @include screen('mobile') {
+      flex-direction: column;
+    }
+    li {
+      flex: 1 1 calc((100% - 30px * 2) / 3);
+      aspect-ratio: 49/31;
+      position: relative;
+      @include screen('mobile') {
+        text-align: center;
+        width: 100%;
+      }
+      a {
+        display: block;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          top: 50%;
+          left: 50%;
+          width: 55px;
+          height: 39px;
+          z-index: 9;
+          display: block;
+          background: url('../images/m1/play.svg') center no-repeat;
+          background-size: contain;
+          transform: translate(-50%, -50%);
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .pic {
+      line-height: 0;
+    }
+  }
+}

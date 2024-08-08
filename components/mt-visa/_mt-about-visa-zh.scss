@@ -1,0 +1,45 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.certpage-tw .mt-about-visa {
+  padding: 85px 20px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: #061a33;
+
+  @include screen('tablet') {
+    padding: 40px 20px;
+  }
+
+  .outBox {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .col {
+    @include screen('mobile') {
+      width: 100%;
+    }
+  }
+
+  .description {
+    color: #fff;
+    font-family: 'Josefin Sans', 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 1px;
+
+    @include screen('tablet') {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    span {
+      color: #73c4ff;
+    }
+  }
+}

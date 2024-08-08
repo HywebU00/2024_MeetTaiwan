@@ -1,0 +1,50 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-about-city {
+  background: #242424;
+  padding: 60px 0;
+
+  @media screen and (max-width: 500px) {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      height: 1px;
+      display: block;
+      background: #fff;
+      flex-grow: 1;
+      margin: 0 20px 8px 0;
+    }
+
+    &::after {
+      margin: 0 0 8px 20px;
+    }
+  }
+
+  .description {
+    color: #fff;
+    line-height: 1.8;
+    font-family: 'Noto Sans TC', sans-serif;
+    // text-align: justify;
+  }
+}

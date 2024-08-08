@@ -1,0 +1,264 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-search2 {
+  margin: 0 0 3%;
+  position: relative;
+  z-index: 10;
+
+  .outBox {
+    max-width: 1200px;
+    border-radius: 10px;
+    background: #efefef;
+    padding: 28px 60px;
+
+    @include screen('tablet') {
+      padding: 20px 40px;
+    }
+
+    @include screen('mobile') {
+      padding: 0;
+      margin: 0 0 30px;
+      background: none;
+    }
+  }
+
+  .searchForm {
+    display: flex;
+    gap: 20px;
+
+    @include screen('tablet') {
+      gap: 10px;
+    }
+
+    @include screen('mobile') {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      color: rgba(0, 0, 0, 0.76);
+      font-family: 'Inter';
+      font-size: 40px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+
+      @media screen and (max-width: 1400px) {
+        font-size: 34px;
+      }
+
+      @media screen and (max-width: 1200px) {
+        font-size: 30px;
+      }
+
+      @include screen('mobile') {
+        width: 100%;
+        color: #fff;
+        justify-content: center;
+      }
+    }
+
+    .inputBox {
+      flex-grow: 1;
+      position: relative;
+
+      @include screen('mobile') {
+        width: 100%;
+        max-width: 290px;
+      }
+
+      .input {
+        height: 100%;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 20px;
+          width: 6px;
+          height: 6px;
+          top: 50%;
+          border: 2px solid #000;
+          transform: translateY(-50%) rotate(45deg);
+          border-width: 0 3px 3px 0;
+
+          @include screen('mobile') {
+            border-color: #fff;
+          }
+        }
+      }
+
+      input {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border-width: 0 0 1px;
+        background: none;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 0;
+
+        &:focus {
+          border-color: #c9c9c9;
+          box-shadow: none;
+          // box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .list {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 100%;
+        background: #efefef;
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 10px 0;
+        box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+        scrollbar-color: #041c5a rgba(0, 0, 0, 0.2);
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 100px;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+          background: #041c5a;
+        }
+
+        &::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+          border-radius: 0;
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        & > ul {
+          & > li {
+            color: #23437f;
+            font-family: 'Lato';
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+
+            span {
+              display: block;
+              padding: 5px 20px;
+            }
+          }
+
+          ul {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: 'Lato';
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1.4px;
+
+            li {
+              padding: 5px 0 5px 30px;
+              cursor: pointer;
+              transition: all 0.3s linear;
+
+              &:hover {
+                background: rgba(35, 67, 127, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      color: #fff;
+      font-family: 'Lato';
+      font-size: 24px;
+      font-weight: 500;
+      display: flex;
+      width: 140px;
+      height: 60px;
+      padding: 16px 30px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 50px;
+      background: #0b2443;
+      margin: 0;
+      transition: all 0.3s linear;
+
+      @include screen('tablet') {
+        padding: 6px 20px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      @include screen('mobile') {
+        background: #2d8bff;
+        width: auto;
+        flex-grow: 1;
+      }
+
+      &:hover {
+        background: #166eb1;
+
+        @include screen('mobile') {
+          color: #2d8bff;
+          background: #fff;
+        }
+      }
+    }
+
+    .info {
+      color: #0b2443;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 14px;
+      margin: 0 0 0 20px;
+
+      @include screen('mobile') {
+        align-items: center;
+        color: #fff;
+        margin: 0 auto;
+      }
+
+      // &::before {
+      //   content: 'X';
+      //   aspect-ratio: 1;
+      //   display: block;
+      //   margin: 0 5px 0 0;
+      //   font-weight: bold;
+      // }
+
+      // &:hover {
+      //   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+      // }
+    }
+  }
+
+  &.type2 {
+    .outBox {
+      background: none;
+      padding: 0;
+    }
+
+    .searchForm {
+      .title {
+        color: #fff;
+      }
+
+      .inputBox .input::before {
+        border-color: #fff;
+      }
+
+      .info {
+        color: #fff;
+      }
+    }
+  }
+}

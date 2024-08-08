@@ -1,0 +1,120 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-campaign {
+  padding: 40px 20px;
+  background: url('../images/m1/campaign_bg.jpg') center bottom no-repeat;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  @include screen('mobile') {
+    height: auto;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.8;
+      display: block;
+      z-index: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+  .outBox {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px !important;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+    position: relative;
+    @include screen('mobile') {
+      flex-direction: column;
+      padding-bottom: 70px;
+    }
+  }
+  .infoBox {
+    width: 100%;
+    color: #fff;
+    max-width: 700px;
+    .title {
+      font-family: 'Josefin Sans';
+      font-size: 60px;
+      font-weight: 700;
+      flex-grow: 1;
+      line-height: 1.2;
+      margin: 0 0 30px;
+      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+      color: transparent;
+      background: linear-gradient(271deg, #c2c2a3 19.76%, #e5b753 56.63%, #d4723f 95.06%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @include screen('notebook') {
+        font-size: 50px;
+      }
+      @include screen('mobile') {
+        font-size: 44px;
+        filter: none;
+        margin: 0;
+      }
+    }
+  }
+  .video {
+    width: 40%;
+    flex-shrink: 0;
+    position: relative;
+    @include screen('mobile') {
+      width: 100%;
+    }
+    .outer {
+      width: 100%;
+      // height: 0;
+      // padding-bottom: 56.25%;
+      position: relative;
+    }
+    a {
+      display: block;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        top: 50%;
+        left: 50%;
+        width: 55px;
+        height: 39px;
+        z-index: 9;
+        display: block;
+        background: url('../images/m1/play.svg') center no-repeat;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+      }
+    }
+    iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .btnBox {
+    justify-content: flex-start;
+    @include screen('mobile') {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    @include screen('mobile') {
+      a {
+        margin: 0 auto;
+      }
+    }
+  }
+}

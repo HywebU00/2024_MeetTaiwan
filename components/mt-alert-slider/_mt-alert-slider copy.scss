@@ -1,0 +1,192 @@
+@import '../../sass/_variable'; //Variable
+@import '../../sass/_mixin'; //Mixin
+// alert
+.mt-alert-slider,
+.mt-alert-slider.full {
+  @include screen('mobile') {
+    padding: 1em 0em 0;
+  }
+  .alert-icon {
+    // display: flex;
+    // position: absolute;
+    // z-index: 1;
+    // background: darken($color-purple, 20);
+    // left: calc(50% - 75px);
+    // align-items: center;
+    // padding: 1em;
+    // top: 0.25em;
+    // padding-bottom: 0.75em;
+    span {
+      color: #fff;
+      font-size: 1.25em;
+      font-weight: 600;
+      opacity: 0.6;
+      font-family: $font-family;
+    }
+  }
+  .container {
+    background-color: darken($color-purple, 20);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 2em;
+    max-width: calc(1200px - 4em);
+  }
+  .alert-container,
+  .alert-container-full {
+    padding: 1em 10em 0.5em 10em;
+    // border: 1px solid #ffffff7c;
+    @include screen('mobile') {
+      padding: 1em 5em 0.5em 5em;
+    }
+    @include screen('xs_mobile') {
+      padding: 1em;
+    }
+    .alert-item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      width: 100%;
+      padding-top: 0.25em;
+      position: relative;
+      min-height: 200px;
+      align-items: center;
+      @include screen('mobile') {
+        padding: 1em;
+        display: flex;
+      }
+      @include screen('xs_mobile') {
+        flex-flow: row wrap;
+      }
+    }
+    a.close {
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      top: 0.75em;
+      right: 0.75em;
+      border-radius: 50%;
+      background: #fff;
+      display: block;
+      text-align: center;
+      i {
+        color: $primaryColor;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover,
+      &:focus {
+        background: #fff;
+        i {
+          color: $aHover;
+        }
+      }
+    }
+    .alert-content {
+      width: 100%;
+      @include screen('mobile') {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      @include screen('xs_mobile') {
+        flex-basis: 100%;
+      }
+      > div {
+        height: 10em;
+        width: 100%;
+        margin-bottom: 4em;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      h3 {
+        color: #fff;
+        margin-top: 0 !important;
+        margin-bottom: 0.25em;
+        // font-size: 1.25em;
+        font-size: 2em;
+        line-height: 1.25em;
+        width: 100%;
+        text-align: center;
+        @include text-line(2, 1.25em);
+        @include screen('xs_mobile') {
+          display: block;
+        }
+      }
+      p {
+        margin: 0;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.125em;
+        font-weight: 400;
+        margin-bottom: auto;
+        @include text-line(2, 1.45em);
+        padding-bottom: 0.5rem;
+        height: 2 * 1.45em;
+        @include screen('mobile') {
+          font-size: 1em;
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 100%;
+          padding-right: 2em;
+        }
+        a {
+          color: #fff;
+        }
+        @include screen('xs_mobile') {
+          @include text-line(2, 1.45em);
+        }
+      }
+      a.more {
+        color: #fff;
+        padding: 0.5em 1em;
+        border: 1px solid #fff;
+        margin: 0 auto;
+
+        position: absolute;
+        left: calc(50% - 4.5rem);
+        bottom: 1.5em;
+        &:before {
+          display: none;
+        }
+        &:hover {
+          background-color: $color-dark;
+          border-color: $color-dark;
+        }
+        @include screen('xs_mobile') {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    &::before {
+      border-color: #fff;
+    }
+  }
+  .slick-dots {
+    bottom: 0.25em;
+    li button {
+      &:hover,
+      &:active {
+        &:before {
+          background: #fff;
+          opacity: 0.6;
+        }
+      }
+    }
+    li.slick-active {
+      button {
+        &:before {
+          background: #fff;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+.mt-alert-slider.full {
+  .container {
+    max-width: 1920px;
+  }
+}

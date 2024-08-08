@@ -1,0 +1,25 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.certpage-tw .mt-city-nav {
+  .cityOutBox {
+    justify-content: center;
+  }
+
+  ul {
+    flex-grow: unset;
+
+    a {
+      font-size: 22px;
+      padding: 5px 10px;
+
+      @media screen and (max-width: 1280px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 18px;
+      }
+    }
+  }
+}

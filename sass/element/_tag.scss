@@ -1,0 +1,60 @@
+// 文章標籤
+.mt-tag,
+.mt-facility {
+  clear: both;
+  margin-bottom: 0.25em;
+  position: relative;
+  font-size: 0.875rem;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    font-size: 0.938em;
+    border: 1px solid #ddd;
+    padding: 0.2em 0.75em;
+    color: #333;
+    max-width: 12em;
+    margin: 0.25em 0.25em 0.25em 0;
+    cursor: default;
+    @include text-overflow;
+    span {
+      display: inline-block;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+      font-weight: bold;
+    }
+  }
+}
+.mt-facility {
+  a {
+    padding: 0;
+    border: none;
+    color: #555;
+    text-overflow: clip;
+    max-width: 20em;
+    margin: 0.25em 0.25em 0.25em 0;
+    display: flex;
+    align-items: center;
+    cursor: default;
+    img {
+      width: 1.5em;
+      height: 1.25em;
+      margin-right: 0.2em;
+      opacity: 0.5;
+    }
+    &:after {
+      content: '、';
+      margin-left: 0.25em;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

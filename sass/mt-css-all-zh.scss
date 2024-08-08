@@ -1,0 +1,53 @@
+@charset "utf-8";
+// 共用設定 common setting
+@import '_mt-common';
+
+// 元件 component
+@import '../components/mt-sidebar/_mt-sidebar';
+@import '../components/mt-header/_mt-header';
+@import '../components/mt-kv1/_mt-kv1';
+@import '../components/mt-kv2/_mt-kv2';
+@import '../components/mt-kv3/_mt-kv3';
+@import '../components/mt-alert/_mt-alert';
+@import '../components/mt-alert-slider/_mt-alert-slider';
+@import '../components/mt-event-Info/_mt-event-Info';
+@import '../components/mt-slider-pic-right/_mt-slider-pic-right';
+@import '../components/mt-slider-pic-left/_mt-slider-pic-left';
+@import '../components/mt-success-case/_mt-success-case';
+@import '../components/mt-slider-grid/_mt-slider-grid';
+@import '../components/mt-slider-col-1/_mt-slider-col-1';
+@import '../components/mt-slider-col-2/_mt-slider-col-2';
+@import '../components/mt-epaper/_mt-epaper';
+@import '../components/mt-news-tab-1/_mt-news-tab-1';
+@import '../components/mt-news-tab-2/_mt-news-tab-2';
+@import '../components/mt-news-tab-3/_mt-news-tab-3';
+@import '../components/mt-slider-card/_mt-slider-card';
+@import '../components/mt-igwall/_mt-igwall';
+@import '../components/mt-fatfooter/_mt-fatfooter';
+@import '../components/mt-footer/_mt-footer';
+@import '../components/mt-gototop/_mt-gototop';
+@import '../components/mt-cookie/_mt-cookie';
+@import '../components/mt-userbar/_mt-userbar';
+@import '../components/mt-entrance/_mt-entrance';
+
+//版型 template
+@import 'template/_template';
+@import 'template/_lp';
+@import 'template/_cp';
+@import 'template/_sp';
+@import 'template/_sitemap';
+
+/*html新增*/
+@import 'template/_mp';
+@import '../components/mt-kv-html/_mt-kv-html-zh';
+@import '../components/mt-about/_mt-about-zh';
+@import '../components/mt-sp/_mt-sp-zh';
+@import '../components/mt-top-video/_mt-top-video';
+@import '../components/mt-wp/_mt-wp-zh';
+@import '../components/mt-sirco/_mt-sirco-zh';
+@import '../components/mt-earth/_mt-earth-zh';
+@import '../components/mt-st/_mt-st-zh';
+@import '../components/mt-awards2/_mt-awards2-zh';
+@import '../components/mt-campaign/_mt-campaign-zh';
+@import '../components/mt-video/_mt-video';
+/*html新增*/

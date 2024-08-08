@@ -1,0 +1,45 @@
+<!-- css -->
+<link rel="stylesheet" href="components/mt-top-video/mt-top-video.css" />
+
+<!-- mt_topVideo -->
+<div class="mt-topVideo full" data-aos="fade-up" data-aos-delay="0">
+  <div class="container">
+    <div class="title">
+      Stay Green ,<br />
+      Go Sustainable!
+    </div>
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/NbdIy35RjDo?si=g6HtBtyaPR0PuGD5&autoplay=1&loop=1&playlist=NbdIy35RjDo&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+<!-- JS -->
+<script>
+  window.addEventListener('load', function () {
+    const check = document.querySelector('.mt-topVideo');
+    const font = document.querySelector('.mt-topVideo .title');
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.8,
+    };
+    const callback = (entries, observer) => {
+      if (entries[0].isIntersecting && !check.classList.contains('active')) {
+        check.classList.add('active');
+        font.style.cssText = ' opacity: 1;bottom: 10px';
+      } else {
+        // check.classList.remove('active');
+        // font.style.cssText = ' opacity: 0;bottom: -300px';
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(check);
+  });
+</script>

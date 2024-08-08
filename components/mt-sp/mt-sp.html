@@ -1,0 +1,112 @@
+<!-- css -->
+<link rel="stylesheet" href="components/mt-sp/mt-sp.css" />
+
+<!-- mt_sp -->
+<div class="full">
+  <div class="container">
+    <div class="mt-sp">
+      <div class="outBox">
+        <h2 class="title">
+          <span data-aos="fade-down" data-aos-delay="0">STRATEGY & PLANNING</span>
+        </h2>
+        <div class="contentBox breadth">
+          <div class="titleBox">
+            <h3 class="secTitle" data-aos="fade-up" data-aos-delay="200">breadth</h3>
+            <div class="description" data-aos="fade-up" data-aos-delay="400">Drive Taiwan's MICE industry to align with international trends in ESG, SDGs, ISO, and other sustainable development practices, establishing a foundation for sustainability.</div>
+          </div>
+
+          <div class="listBox" data-aos="fade-up" data-aos-delay="600">
+            <div class="item">
+              <div class="iconBox">
+                <div class="icon"><span>01</span></div>
+              </div>
+              <a href="#block01">Taiwan MICE Sustainability White Paper</a>
+            </div>
+            <div class="item">
+              <div class="iconBox">
+                <div class="icon"><span>02</span></div>
+              </div>
+              <a href="#block02">Sustainability Certifications</a>
+            </div>
+            <div class="item">
+              <div class="iconBox">
+                <div class="icon"><span>03</span></div>
+              </div>
+              <a href="#block03">MICE Sustainability Awards</a>
+            </div>
+          </div>
+        </div>
+        <div class="contentBox depth">
+          <div class="titleBox">
+            <h3 class="secTitle" data-aos="fade-up" data-aos-delay="200">depth</h3>
+            <div class="description" data-aos="fade-up" data-aos-delay="400">Enhance the carbon reduction capabilities of MICE industry participants, linking MICE activities with international carbon reduction standards.</div>
+          </div>
+
+          <div class="bottomBox">
+            <div class="chartBox" data-aos="fade-right" data-aos-delay="600">
+              <div class="listBox">
+                <div class="item">
+                  <div class="icon">A</div>
+                  <div class="infoBox"><img src="images/m1/sp_icon01.png" alt="" /></div>
+                  <a href="#">Carbon Footprint Calculator & Evaluation System</a>
+                </div>
+                <div class="item">
+                  <div class="icon">B</div>
+                  <div class="infoBox"><img src="images/m1/sp_icon02.png" alt="" /></div>
+                  <a href="#">Providing Assistance in Carbon Reduction</a>
+                </div>
+                <div class="item">
+                  <div class="icon">C</div>
+                  <div class="infoBox"><img src="images/m1/sp_icon03.png" alt="" /></div>
+                  <a href="#">Product Category Rules for Conferences & Exhibitions</a>
+                </div>
+              </div>
+            </div>
+            <div class="countBox" data-aos="fade-left" data-aos-delay="800">
+              <div class="listBox">
+                <div class="item">
+                  <span>Responded Entities</span>
+                  <div class="count count1"><span>0</span></div>
+                </div>
+                <div class="item">
+                  <span>Calculated Carbon Emissions</span>
+                  <div class="count count2"><span>0</span>K</div>
+                  kg of CO2e
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS -->
+<script>
+  window.addEventListener('load', function () {
+    const count1 = document.querySelector('.mt-sp .count1 span');
+    const count2 = document.querySelector('.mt-sp .count2 span');
+    const check = document.querySelector('.mt-sp .depth .bottomBox');
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.2,
+    };
+    const callback = (entries, observer) => {
+      if (entries[0].isIntersecting && !check.classList.contains('active')) {
+        check.classList.add('active');
+        setTimeout(() => {
+          animateNumber(count1, 0, 75, 2000);
+          animateNumber(count2, 0, 134, 4000);
+        }, 500);
+        // } else {
+        // check.classList.remove('active');
+        // count1.innerHTML = 0;
+        // count2.innerHTML = 0;
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(check);
+  });
+</script>

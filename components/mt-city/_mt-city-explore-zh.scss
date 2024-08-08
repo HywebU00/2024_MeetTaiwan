@@ -1,0 +1,99 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.certpage-tw .mt-city-explore {
+  .listBox .item .title {
+    font-size: 65px;
+    line-height: 1;
+    margin: 0 0 3.5%;
+    padding-top: 10px;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 36px;
+    }
+
+    // @media screen and (max-width: 500px) {
+    //   font-size: 30px;
+    // }
+  }
+}
+
+/* 20231229 新增*/
+.mt-city-link .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mt-city-link .pic {
+  text-align: center;
+}
+
+.mt-city-link .listBox {
+  justify-content: space-evenly;
+}
+
+/* 20231229 新增*/
+/* 20240206 新增*/
+.mt-city-exhibition {
+  .sub-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    background: #f8f8f8;
+
+    @media screen and (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    width: 50%;
+    padding: .5rem 0 .5rem 1rem;
+    color: #646464;
+
+    @media screen and (max-width: 1280px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 575px) {
+      width: 100%;
+    }
+  }
+
+  .contentBox .infoBox .listBox {
+    flex-direction: column;
+
+    .title {
+      padding: 1rem 0 0 0;
+    }
+
+    .item:nth-child(2) {
+      margin-top: 1rem;
+    }
+
+    .info.traffic {
+      flex-direction: unset;
+
+      @media screen and (max-width: 575px) {
+        flex-direction: column;
+      }
+
+      .sub-info {
+        width: 50%;
+
+        @media screen and (max-width: 575px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* 20240206 新增*/

@@ -1,0 +1,88 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-awards2 {
+  padding: 40px 20px;
+  // background: url('../images/m1/awards_bg.jpg') center no-repeat;
+  // background-attachment: fixed;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: right center;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 40%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 70.68%);
+  }
+  .outBox {
+    height: 100%;
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px !important;
+    display: flex;
+    align-items: stretch;
+    margin: 0 auto;
+    gap: 30px;
+  }
+  .infoBox {
+    color: #fff;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(12, 8, 8, 0.94);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      color: #fff;
+      font-family: 'Josefin Sans';
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 20px;
+      text-align: center;
+      @include screen('notebook') {
+        font-size: 50px;
+      }
+      @include screen('mobile') {
+        font-size: 40px;
+      }
+      @include screen('xs_mobile') {
+        font-size: 30px;
+      }
+    }
+    .description {
+      color: #f1d07a;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: 1.4px;
+      margin: 0 0 40px;
+      @include screen('notebook') {
+        font-size: 24px;
+      }
+      @include screen('mobile') {
+        font-size: 20px;
+      }
+    }
+  }
+  .pic {
+    height: 100%;
+    mix-blend-mode: screen;
+  }
+  .btnBox {
+    a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-city-link {
+  background: #242424;
+  padding: 60px 0;
+
+  @media screen and (max-width: 500px) {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+    font-size: 40px;
+
+    @media screen and (max-width: 1280px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 1100px) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 26px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      height: 1px;
+      display: block;
+      background: #fff;
+      flex-grow: 1;
+      margin: 0 20px 8px 0;
+    }
+
+    &::after {
+      margin: 0 0 8px 20px;
+    }
+  }
+
+  .listBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .item {
+    width: calc((100% - 30px * 3)/4);
+
+    @media screen and (max-width: 767px) {
+      width: calc((100% - 30px * 2)/3);
+    }
+
+    @media screen and (max-width: 500px) {
+      width: calc((100% - 30px)/2);
+    }
+
+  }
+}

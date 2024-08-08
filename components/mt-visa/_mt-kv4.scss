@@ -1,0 +1,360 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-kv4 {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Homenaje', sans-serif;
+
+  // @media screen and (max-width: 1340px) {
+  //   padding: 0em 0 1em;
+  // }
+  //   @include screen('tablet') {
+  //     padding: 0em 0 1em;
+  //   }
+  // &:after {
+  //   position: absolute;
+  //   content: '———— MEET TAIWAN, your ideal destination for MICE. ————';
+  //   transform: rotate(90deg);
+  //   top: 2%;
+  //   left: 5em;
+  //   width: 32%;
+  //   transform-origin: top left;
+  //   color: #444;
+  //   text-indent: -1em;
+  //   padding-left: 1em;
+  //   font-size: 0.875em;
+  //   @media screen and (max-width: 1340px) {
+  //     display: none;
+  //   }
+  //   // @include screen('tablet') {
+  //   //   display: none;
+  //   // }
+  // }
+  .outBox {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .control {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include screen('mobile') {
+      bottom: 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+      bottom: 0;
+    }
+
+    .slick-dots {
+      width: auto;
+      bottom: auto;
+      right: auto;
+      position: relative;
+      z-index: 1;
+
+      // margin: 0 20px;
+      li {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+
+        button::before {
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          background: #fff;
+          opacity: 50%;
+        }
+
+        &.slick-active button::before {
+          opacity: 70%;
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        width: 6px;
+        height: 6px;
+        position: relative;
+        top: auto;
+        left: auto;
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        transform: rotate(45deg);
+      }
+    }
+
+    .slick-prev {
+      &:before {
+        border-width: 0 0 3px 3px;
+      }
+    }
+
+    .slick-next {
+      order: 3;
+
+      &:before {
+        border-width: 3px 3px 0 0;
+      }
+    }
+  }
+
+  .kvSlider {
+    width: 100%;
+
+    &:hover {
+
+      .slick-prev,
+      .slick-next {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    .item {
+      // @include aspect-ratio(3, 1);
+      position: relative;
+      width: 100%;
+
+      // @include screen('tablet') {
+      //   @include aspect-ratio(3, 2);
+      // }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   inset: 0;
+      //   display: block;
+      //   background: rgba(0, 0, 0, 0.4);
+      //   backdrop-filter: blur(1.5px);
+      // }
+      .pic {
+        height: 80vh;
+        height: 80dvh;
+
+        @include screen('tablet') {
+          height: 50vh;
+          height: 50dvh;
+        }
+
+        @include screen('mobile') {
+          height: 25vh;
+          height: 25dvh;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: #000;
+          opacity: 0.1;
+          display: block;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .caption {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 50%;
+        width: 80%;
+        transform: translate(-50%, -50%);
+
+        &.left {
+          width: 80%;
+
+          h3,
+          p {
+            max-width: 400px;
+            text-align: left;
+            margin: 0 auto 0 0;
+          }
+
+          p {
+            width: 60%;
+          }
+        }
+
+        &.right {
+          width: 80%;
+
+          h3,
+          p {
+            max-width: 400px;
+            text-align: right;
+            margin: 0 0 0 auto;
+          }
+
+          p {
+            width: 60%;
+          }
+        }
+
+        h3 {
+          font-size: 2.5em;
+          text-align: center;
+          color: #fff;
+          margin: 0 auto 0.25em;
+          max-width: 600px;
+          text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.75);
+          @include text-line(3, 1.25em);
+
+          @include screen('xs_mobile') {
+            font-size: 1.75em;
+          }
+        }
+
+        p {
+          font-size: 1em;
+          text-align: center;
+          color: #fff;
+          margin: 0;
+          width: 80%;
+          max-width: 400px;
+          margin: 0 auto;
+          text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.75);
+          @include text-line(3, 1.6em);
+
+          @include screen('xs_mobile') {
+            width: 80% !important;
+          }
+        }
+      }
+    }
+
+    .infoBox {
+      color: #fff;
+      position: absolute;
+      inset: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9;
+
+      @include screen('mobile') {
+        inset: 20px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 128px;
+        font-weight: 400;
+        letter-spacing: 5.12px;
+        line-height: 1;
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+        @include screen('notebook') {
+          font-size: 100px;
+          letter-spacing: -1px;
+        }
+
+        @include screen('mobile') {
+          font-size: 80px;
+        }
+
+        @include screen('xs_mobile') {
+          font-size: 60px;
+        }
+
+        @media screen and (max-width: 400px) {
+          font-size: 40px;
+        }
+
+        span {
+          display: block;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 55px;
+          font-weight: 800;
+
+          @include screen('tablet') {
+            font-size: 40px;
+          }
+
+          @include screen('mobile') {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .description {
+        text-align: center;
+        font-family: 'Lato';
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        max-width: 740px;
+        padding: 0 20px;
+        margin: 0 auto;
+
+        @include screen('mobile') {
+          font-size: 18px;
+        }
+
+        @include screen('xs_mobile') {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .video-background iframe {
+    pointer-events: none;
+  }
+
+  .video_background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+  }
+
+  .video_background .video_foreground {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    @include screen('xs_mobile') {
+      iframe {
+        height: 50% !important;
+      }
+    }
+  }
+}

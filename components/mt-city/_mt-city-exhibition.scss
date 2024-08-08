@@ -1,0 +1,414 @@
+@import '../../sass/variable'; //Variable
+@import '../../sass/mixin'; //Mixin
+
+.mt-city-exhibition {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+
+  .bg {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: none;
+    opacity: .4;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: #000;
+    z-index: -2;
+  }
+
+  &.active {
+    .bg {
+      display: block;
+    }
+  }
+
+  .contentBox {
+    padding: 0;
+    z-index: 1;
+
+    .outListBox {
+
+      // .slick-next:hover,
+      // .slick-next:focus {
+      //   filter: brightness(0.5);
+      // }
+
+      // .slick-next {
+      //   right: 10px;
+      // }
+
+      // .slick-prev {
+      //   left: 10px;
+      // }
+
+      & > .item + .item {
+        margin-top: 30px;
+      }
+
+      .box {
+        min-height: 220px;
+        background: #fff;
+        display: flex;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4);
+        position: relative;
+
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .titleBox {
+      font-size: 45px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100px;
+      line-height: 1;
+      width: 35%;
+      position: relative;
+      isolation: isolate;
+      flex-shrink: 0;
+      background: #9c9c9c;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+
+      @media screen and (max-width: 1280px) {
+        font-size: 40px;
+      }
+
+      @media screen and (max-width: 1100px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        background: #000;
+        font-size: 30px;
+      }
+
+      @media screen and (max-width: 500px) {
+        padding: 40px 20px 35px;
+      }
+
+      .titleBg {
+        position: absolute;
+        inset: 0;
+        display: block;
+        opacity: .9;
+        z-index: -1;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: #000;
+          opacity: .2;
+          display: block;
+        }
+      }
+    }
+
+    .infoBox {
+      width: 70%;
+      padding: 3% 3% 3% 4.5%;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 1000px) {
+        padding: 30px 30px 40px;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 100px;
+        background: #ffd800;
+        margin-bottom: 30px;
+      }
+
+      .description {
+        margin-bottom: 30px;
+      }
+
+      .listBox {
+        display: flex;
+        margin-bottom: 20px;
+
+
+        @media screen and (max-width: 900px) and (min-width:767px) {
+          flex-direction: column;
+        }
+
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+        }
+
+        .item {
+          display: flex;
+          font-weight: bold;
+          flex-grow: 1;
+
+          @media screen and (max-width: 900px) and (min-width:767px) {
+            & + .item {
+              margin-top: 30px;
+              padding-top: 30px;
+              border-top: #ddd 1px solid;
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            & + .item {
+              margin-top: 30px;
+              padding-top: 30px;
+              border-top: #ddd 1px solid;
+            }
+          }
+
+          &:first-child {
+
+            .info .con {
+              @media screen and (min-width: 1281px) {
+                font-size: 48px;
+              }
+
+            }
+          }
+        }
+
+        .pic {
+          display: flex;
+          align-items: center;
+          width: 94px;
+          flex-shrink: 0;
+
+          @media screen and (max-width: 1280px) {
+            width: 70px;
+          }
+        }
+
+        .info {
+          width: 80%;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 0 0 0 40px;
+
+          @media screen and (max-width: 1280px) {
+            padding: 0 0 0 20px;
+          }
+        }
+
+        .title {
+          font-size: 23px;
+          color: #646464;
+          margin-bottom: 5px;
+
+          @media screen and (max-width: 1280px) {
+            font-size: 18px;
+          }
+        }
+
+        .con {
+          font-size: 45px;
+          display: flex;
+          align-items: flex-end;
+          line-height: 1;
+          color: #000;
+
+          @media screen and (max-width: 1280px) {
+            font-size: 40px;
+          }
+
+          @media screen and (max-width: 1100px) {
+            font-size: 35px;
+          }
+
+          & + .title {
+            margin-top: 10px;
+          }
+
+          & > span {
+            font-weight: 100;
+            display: block;
+            position: relative;
+          }
+
+          .unit {
+            font-size: 20px;
+            color: #242424;
+            display: block;
+            margin: 0 10px 5px 5px;
+
+            @media screen and (max-width: 1280px) {
+              font-size: 18px;
+              margin: 0 10px 8px 5px;
+            }
+
+            @media screen and (max-width: 600px) {
+              margin: 0 0px 6px 5px;
+            }
+          }
+
+        }
+      }
+
+      .link {
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: flex-end;
+        color: #3d3d3d;
+        line-height: 1;
+        margin: 0 0 -20px auto;
+        transition: all .3s linear;
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+
+        &::after {
+          content: '';
+          width: 39px;
+          height: 7px;
+          display: block;
+          background: url('../images/mcity/arrow.svg') center bottom no-repeat;
+          background-size: contain;
+          margin: 0 0 5px 5px;
+          transition: all .3s linear;
+          filter: grayscale(1) brightness(2);
+        }
+
+        &:hover {
+          color: #7D0277;
+
+          &::after {
+            filter: none;
+            animation: arrowMove 1s linear infinite;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes arrowMove {
+  from {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/* 20231229 新增*/
+.mt-city-link .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mt-city-link .pic {
+  text-align: center;
+}
+
+.mt-city-link .listBox {
+  justify-content: space-evenly;
+}
+
+/* 20231229 新增*/
+/* 20240206 新增*/
+.mt-city-exhibition {
+  .sub-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    background: #f8f8f8;
+
+    @media screen and (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    width: 50%;
+    padding: .5rem 0 .5rem 1rem;
+    color: #646464;
+
+    @media screen and (max-width: 1280px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 575px) {
+      width: 100%;
+    }
+  }
+
+  .contentBox .infoBox .listBox {
+    flex-direction: column;
+
+    .title {
+      padding: 1rem 0 0 0;
+    }
+
+    .item:nth-child(2) {
+      margin-top: 1rem;
+    }
+
+    .info.traffic {
+      flex-direction: unset;
+
+      @media screen and (max-width: 575px) {
+        flex-direction: column;
+      }
+
+      .sub-info {
+        width: 50%;
+
+        @media screen and (max-width: 575px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* 20240206 新增*/

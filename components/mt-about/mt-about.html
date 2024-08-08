@@ -1,0 +1,53 @@
+<!-- css -->
+<link rel="stylesheet" href="components/mt-about/mt-about.css" />
+
+<!-- mt_about -->
+<div class="mt-about" style="background-image: url('images/m1/about.jpg')">
+  <div class="container">
+    <div class="col" data-aos="fade-right" data-aos-delay="0">
+      <h1 class="title">Origin of Sustainable MICE</h1>
+      <div class="description">
+        The government of our country has begun planning possible pathways to achieve the net-zero emissions target by 2050. In addition to promoting energy transition, systematic decarbonization strategies need to be planned in sectors such as manufacturing, transportation, housing, and
+        agriculture. <br /><br />
+        Given that the MICE (Meetings, Incentives, Conferences, and Exhibitions) industry is a leading sector in the service industry, driving many related industries, it cannot remain indifferent to climate issues and government policies.
+        <br /><br />
+        Since 2013, the International Trade Administration, Ministry of Economic Affairs, has been promoting the concept of green MICE through MEET TAIWAN. It assists Taiwanese MICE industry practitioners to "Stay Green, Go Sustainable" by establishing green concepts, encouraging action, and
+        providing guidance for obtaining international certifications.
+        <br /><br />
+        The goal is to continuously align the MICE industry with international standards and make sustainability a characteristic of Taiwan's MICE industry, exerting continuous influence.
+      </div>
+    </div>
+    <div class="col" data-aos="fade-left" data-aos-delay="200">
+      <div class="listBox">
+        <div class="item"><img src="images/m1/about.jpg" /></div>
+        <div class="item"><img src="images/m1/about.jpg" /></div>
+        <div class="item"><img src="images/m1/about.jpg" /></div>
+        <div class="item"><img src="images/m1/about.jpg" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS -->
+<script>
+  $(function () {
+    //slick
+    $('.mt-about .listBox').slick({
+      arrows: true, //左右箭頭
+      autoplay: true, //自動播放
+      autoplaySpeed: 15000, //自動播放秒數
+      dots: true, //顯示圓點
+      dotsClass: 'slick-dots', //原點css
+      draggable: true, //滑鼠可以拖曳
+      infinite: true, //無限輪播
+      pauseOnHover: true, //滑鼠移過後暫停自動撥放
+      pauseOnDotsHover: false, //滑鼠移過圓點後暫停自動撥放
+      rtl: false, //改變輪播方向
+      slidesToShow: 1, //一次顯示幾張
+      slidesToScroll: 1, //一次輪播幾張
+      vertical: false, //改成垂直方向
+      lazyLoad: 'ondemand', //lazyLoad
+      fade: true, //淡入
+    });
+    $('.mt-about .listBox').slick('refresh');
+  });
+</script>

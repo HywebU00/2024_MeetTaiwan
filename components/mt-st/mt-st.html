@@ -1,0 +1,96 @@
+<!-- css -->
+<link rel="stylesheet" href="components/mt-st/mt-st.css" />
+
+<!-- mt_st -->
+<div id="block02" class="mt-st full">
+  <div class="container">
+    <div class="content">
+      <h3 class="title" data-aos="fade-up" data-aos-delay="0">Sustainability Certifications</h3>
+      <div class="description" data-aos="fade-up" data-aos-delay="200">
+        To ensure greater alignment of Taiwanese MICE stakeholders, events, and venues with international sustainability trends, the MEET TAIWAN project remains committed to assisting Taiwanese stakeholders in improving their practices. This, in turn, can contribute to a more positive image of the
+        MICE industry through international certification and third-party verification.
+      </div>
+      <div class="infoBox" data-aos="fade-up" data-aos-delay="0">
+        <ul data-aos="fade-up" data-aos-delay="0">
+          <li class="count1">
+            <div class="info">
+              <div class="title">Sustainable Event Management</div>
+              <div class="certifications">ISO 20121</div>
+            </div>
+            <div class="count"><span>0</span>Licenses</div>
+          </li>
+          <li class="count2">
+            <div class="info">
+              <div class="title">Carbon Footprint</div>
+              <div class="certifications">PAS 2050 / ISO 14067:2018</div>
+            </div>
+            <div class="count"><span>0</span>Licenses</div>
+          </li>
+          <li class="count3">
+            <div class="info">
+              <div class="title">Carbon Footprint Verification</div>
+              <div class="certifications">ISO 14064-1:2018</div>
+            </div>
+            <div class="count"><span>0</span>Licenses</div>
+          </li>
+          <li class="count4">
+            <div class="info">
+              <div class="title">Energy Management System</div>
+              <div class="certifications">ISO 50001</div>
+            </div>
+            <div class="count"><span>0</span>Licenses</div>
+          </li>
+          <li class="count5">
+            <div class="info">
+              <div class="title">Corporate Sustainability Reports</div>
+              <div class="certifications">GRI Standards</div>
+            </div>
+            <div class="count"><span>0</span>Licenses</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="btnBox" data-aos="fade-up" data-aos-delay="0.2">
+        <a href="#" target="_blank">View All Entities</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS -->
+<script>
+  window.addEventListener('load', function () {
+    const count1 = document.querySelector('.mt-st .count1 span');
+    const count2 = document.querySelector('.mt-st .count2 span');
+    const count3 = document.querySelector('.mt-st .count3 span');
+    const count4 = document.querySelector('.mt-st .count4 span');
+    const count5 = document.querySelector('.mt-st .count5 span');
+    const check = document.querySelector('.mt-st ul');
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.2,
+    };
+    const callback = (entries, observer) => {
+      if (entries[0].isIntersecting && !check.classList.contains('active')) {
+        check.classList.add('active');
+        setTimeout(() => {
+          animateNumber(count1, 0, 19, 2000);
+          animateNumber(count2, 0, 5, 500);
+          animateNumber(count3, 0, 9, 1000);
+          animateNumber(count4, 0, 4, 400);
+          animateNumber(count5, 0, 1, 100);
+        }, 500);
+        // } else {
+        //   check.classList.remove('active');
+        //   count1.innerHTML = 0;
+        //   count2.innerHTML = 0;
+        //   count3.innerHTML = 0;
+        //   count4.innerHTML = 0;
+        //   count5.innerHTML = 0;
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(check);
+  });
+</script>
