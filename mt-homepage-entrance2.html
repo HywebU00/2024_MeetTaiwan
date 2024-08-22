@@ -510,6 +510,66 @@
       </a>
     </div>
   </div>
+  <!-- JS -->
+  <script>
+    $(function () {
+      //slick
+      $('.eventList').slick({
+        slidesToShow: 4,
+        autoplay: false,
+        arrow: false,
+        lazyLoaded: true,
+        rtl: false,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3.5,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+
+        {
+          breakpoint: 650,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 375,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+
+            dots: true, //顯示圓點
+          },
+        },
+        ],
+      });
+      $('.eventList').slick('refresh');
+    })
+  </script>
   <!-- mt-slider-pic-right -->
   <div class="mt-slider-pic-right">
     <div class="container">
@@ -1245,6 +1305,9 @@
       <div data-aos="fade-up" data-aos-delay="500" class="epaper">
         <div class="item">
           <a href="#">
+            <div class="journal">
+              <p>116期</p>
+            </div>
             <div class="img-container">
               <!-- 請針對縮圖產出尺寸使用不同解析度 src -->
               <picture>
@@ -1257,7 +1320,7 @@
               </picture>
             </div>
             <time>2021/10/28</time>
-            <div class="journal">116期</div>
+
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, voluptatem. Sequi laudantium
               dolorum sed doloribus enim non, architecto accusamus nemo, optio natus assumenda sapiente
               officiis voluptatibus est quos provident id! </h3>
@@ -1265,6 +1328,9 @@
         </div>
         <div class="item">
           <a href="#">
+            <div class="journal">
+              <p>116期</p>
+            </div>
             <div class="img-container">
               <!-- 請針對縮圖產出尺寸使用不同解析度 src -->
               <picture>
@@ -1277,7 +1343,7 @@
               </picture>
             </div>
             <time>2021/10/28</time>
-            <div class="journal">116期</div>
+
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, voluptatem. Sequi laudantium
               dolorum sed doloribus enim non, architecto accusamus nemo, optio natus assumenda sapiente
               officiis voluptatibus est quos provident id! </h3>
@@ -1285,6 +1351,9 @@
         </div>
         <div class="item">
           <a href="#">
+            <div class="journal">
+              <p>116期</p>
+            </div>
             <div class="img-container">
               <!-- 請針對縮圖產出尺寸使用不同解析度 src -->
               <picture>
@@ -1297,7 +1366,7 @@
               </picture>
             </div>
             <time>2021/10/28</time>
-            <div class="journal">116期</div>
+
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, voluptatem. Sequi laudantium
               dolorum sed doloribus enim non, architecto accusamus nemo, optio natus assumenda sapiente
               officiis voluptatibus est quos provident id! </h3>
@@ -1307,6 +1376,67 @@
       <a href="#" class="more"><span>more</span></a>
     </div>
   </div>
+  <script>
+    $(function () {
+      //slick
+      $('.mt-epaper .epaper').slick({
+        slidesToShow: 3,
+        autoplay: false,
+        arrow: false,
+        lazyLoaded: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 375,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true, //顯示圓點
+            autoplay: false,
+          },
+        },
+        ],
+      });
+      $('.mt-epaper .epaper').slick('refresh');
+    })
+  </script>
   <!-- mt-slider-card -->
   <div class="mt-slider-card">
     <div class="container">

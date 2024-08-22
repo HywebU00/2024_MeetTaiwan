@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MEET TAIWAN為臺灣會展網(台灣會展網)，提供國內會議展覽業者最優質服務，只要成為會員，就可以於網站發布會展活動訊息，不論是新聞、活動檔期、活動影音，都開放業者提供資料，此外，同時可申請協助建置活動網站及APP的服務，讓業者辦理活動不僅科技化，同時也能節能減碳，落實綠色會展。" />
+  <meta name="keywords" content="台灣會展、會議展覽、台灣展覽、會展網、會展產業" />
+  <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+  <title>MEET TAIWAN-臺灣具有經驗豐富的會議展覽人才和完善的洽商平台，處處創造商機，時時締造成功媒合</title>
+  <!--  預先載入-->
+  <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="vendor/fontawesome-5.10.2-web/css/all.css" />
+  <link rel="stylesheet" href="css/mt-css-all.min.css" />
+  <link rel="stylesheet" href="css/aos.min.css" />
+  <link rel="stylesheet" href="vendor/slick/slick.css" />
+  <link rel="stylesheet" href="vendor/slick/slick-theme.css" />
+  <link rel="stylesheet" href="vendor/fancybox/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="vendor/scrolltable/jquery.scroltable.min.css" />
+  <!-- JS -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/mt-js-all.min.js"></script>
+  <!-- fav_ico -->
+  <link type="image/ico" rel="icon" href="images/favicon.ico" />
+  <style>
+    .wrapper {
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 12px #00000022;
+      display: block;
+      overflow: hidden;
+      padding: 2% 2% 3rem;
+      min-height: 350px;
+      height: 40vh;
+      text-align: center;
+      position: relative;
+    }
+
+    canvas {
+      background: #fff;
+      height: 100%;
+    }
+
+    button {
+      margin: 2rem 0 1rem;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      color: #ccc;
+      font-size: 1rem;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .wrapper-tb {
+      width: 100%;
+      min-width: 300px;
+      display: block;
+      position: relative;
+      overflow: auto;
+      margin: 1rem auto;
+      height: 0;
+      opacity: 0;
+      background: #fff;
+      transition: 1s;
+    }
+
+    .chart-tb-contain.tb-on .wrapper-tb {
+      opacity: 1;
+      height: 100%;
+    }
+
+    .wrapper-tb::-webkit-scrollbar {
+      background: transparent;
+      height: 8px;
+    }
+
+    .wrapper-tb::-webkit-scrollbar-thumb {
+      background: #00000022;
+      height: 3px;
+      border-radius: 4px;
+    }
+
+    .chart-table {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .wrapper td {
+      padding: 0 7px !important;
+      line-height: 1.5 !important;
+    }
+
+    .chart-table td,
+    .chart-table th {
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .chart-table tr td:nth-child(1) {
+      min-width: 70px;
+    }
+
+    .chart-table tr td:nth-last-child(-n + 10) {
+      min-width: calc((100% - 70px)/10);
+    }
+
+    /* .infoTable  */
+    .infoTable {
+      /* box-shadow: 0 0 12px #00000022; */
+      margin-bottom: 1em;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      overflow: scroll;
+      font-size: 15px;
+
+      thead {
+        th {
+          line-height: 2.5em;
+          background-color: #a2bfe9;
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #dee1e7;
+          }
+
+          th {
+            min-width: 200px;
+            padding: 0.5em 1em;
+            background: #83a8d231;
+          }
+
+
+
+          td {
+            text-align: center;
+            min-width: 150px;
+            padding: 0.5em 1em;
+          }
+        }
+
+        +thead {
+          th {
+            padding: 0.5em 1em;
+
+          }
+
+        }
+      }
+
+      .tbodyTitle {
+        background: #b0bde238;
+
+        td {
+          border-right: #bfc8e1 1px solid;
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+
+        +tr {
+          th {
+            min-width: 120px;
+          }
+        }
+      }
+    }
+
+    /* exhibitionList */
+    .exhibitionList {
+      font-size: 14px;
+      margin-bottom: 5em;
+
+      &:has(span) {
+        ul {
+          list-style: decimal;
+
+        }
+      }
+
+      li {
+        line-height: 1.5em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- mt_sidebar -->
+  <div id="mt_sidebar"></div>
+  <!-- mt_header -->
+  <div id="mt_header"></div>
+  <!-- mt-content -->
+  <div class="mt-main-content">
+    <div class="inner_img">
+      <picture>
+        <source media="(min-width: 1200px)" data-srcset="images/inner_01_ballon.jpg" />
+        <source media="(min-width: 992px)" data-srcset="images/inner_01_ballon.jpg" />
+        <source media="(min-width: 576px)" data-srcset="images/inner_01_ballon.jpg" />
+        <source media="(max-width: 575px)" data-srcset="images/inner_01_ballon.jpg" />
+        <img data-src="images/inner_01_ballon.jpg" class="cover lazy" />
+        <noscript><img src="images/inner_01_ballon.jpg" /></noscript>
+      </picture>
+    </div>
+    <div class="container">
+      <!-- 中間內容 -->
+      <div class="mt-page-title">
+        <h2>臺灣會展概況</h2>
+        <!-- <small>news</small> -->
+      </div>
+      <!-- breadcrumb -->
+      <div class="breadcrumb">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">節點</a></li>
+          <li>節點</li>
+        </ul>
+      </div>
+      <div class="center_block">
+        <div class="mt-content">
+
+          <!-- 頁面標準功能 -->
+          <div class="mt-page-function">
+            <!-- 社群 -->
+            <div class="social-media">
+              <ul>
+                <li>
+                  <a href="#" class="i_facebook"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#" class="i_line"><i class="fab fa-line"></i></a>
+                </li>
+                <li>
+                  <a href="#" class="i_twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+
+                <li>
+                  <a href="#" class="i_share"><i class="fas fa-share-alt"></i></a>
+                </li>
+                <li>
+                  <a href="#" class="i_print"><i class="fas fa-print"></i></a>
+                </li>
+
+                <li>
+                  <a href="#" class="i_bookmark">
+                    <!-- <i class="fas fa-bookmark"></i>已收藏-->
+                    <i class="far fa-bookmark"></i><!-- 未收藏-->
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="cp_content">
+            <h2 class="mt-h2 text-left"><span>臺灣會展概況</span></h2>
+            <div class="cp_date">
+            </div>
+            <!-- user_edit 後台上稿區 -->
+            <div class="cp user_edit">
+              <!-- 此圖可帶文章摘要圖片 -->
+              <h3 style="margin-bottom: 1rem; color: #102b7a;">Taiwan MICE in Figures</h3>
+              <h4 style="color: #465580;">推動臺灣會展產業發展計畫</h4>
+              <p>
+                會展場館為提供各界舉辦會展及活動之重要場所，因應國內疫情變化，為確保會展場館從業人員、會展活動主辦單位、參展商、參加者及其家屬之健康，避免群聚感染、致疫情擴大，爰訂定本管理措施，提供場館管理單位、會展場館從業人員及參加者於中央流行疫情指揮中心成立期間，訂定各會展活動之管理措施，以降低疫情於會展場館發生機率與規模，以及社區傳播風險。
+              </p>
+              <div class="infoTable">
+                <table align="center" border="0" cellpadding="9" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>項目／年份</th>
+                      <th>2023</th>
+                      <th>2022</th>
+                      <th>2021</th>
+                      <th>2020</th>
+                      <th>2019</th>
+                      <th>2018</th>
+                      <th>2017</th>
+                      <th>2016</th>
+                      <th>2015</th>
+                      <th>2014</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>產值(新臺幣億元)</th>
+                      <td>424</td>
+                      <td>220</td>
+                      <td>189</td>
+                      <td>228</td>
+                      <td>482</td>
+                      <td>462</td>
+                      <td>440</td>
+                      <td>426</td>
+                      <td>391</td>
+                      <td>368</td>
+                    </tr>
+                    <tr>
+                      <th>在臺舉辦之國際會議場次</th>
+                      <td>382</td>
+                      <td>364</td>
+                      <td>175</td>
+                      <td>103</td>
+                      <td>291</td>
+                      <td>277</td>
+                      <td>248</td>
+                      <td>217</td>
+                      <td>215</td>
+                      <td>210</td>
+                    </tr>
+                    <tr>
+                      <th>在臺舉辦之企業會議暨獎旅場次</th>
+                      <td>130</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>10</td>
+                      <td>132</td>
+                      <td>127</td>
+                      <td>120</td>
+                      <td>126</td>
+                      <td>125</td>
+                      <td>118</td>
+                    </tr>
+                    <tr>
+                      <th>在臺舉辦之展覽數</th>
+                      <td>186</td>
+                      <td>205</td>
+                      <td>146</td>
+                      <td>91</td>
+                      <td>284</td>
+                      <td>279</td>
+                      <td>270</td>
+                      <td>268</td>
+                      <td>227</td>
+                      <td>216</td>
+                    </tr>
+                    <tr>
+                      <th>來臺參加會展之外籍人士人數</th>
+                      <td>134,639</td>
+                      <td>85,345*</td>
+                      <td>28,998*</td>
+                      <td>15,969*</td>
+                      <td>314,446</td>
+                      <td>286,474</td>
+                      <td>265,000</td>
+                      <td>243,000</td>
+                      <td>202,000</td>
+                      <td>188,883</td>
+                    </tr>
+                    <tr>
+                      <th>PEO/PCO之就業人口數</th>
+                      <td>3,794</td>
+                      <td>3,125</td>
+                      <td>2,745</td>
+                      <td>3,631*</td>
+                      <td>2,216</td>
+                      <td>2,157</td>
+                      <td>2,126</td>
+                      <td>2,055</td>
+                      <td>1,962</td>
+                      <td>1,863</td>
+                    </tr>
+                    <tr>
+                      <th>外籍人士來臺參加會展活動經濟效益(新臺幣億元)</th>
+                      <td>132.78</td>
+                      <td>46</td>
+                      <td>15.2</td>
+                      <td>7.49</td>
+                      <td>356.6</td>
+                      <td>255.1</td>
+                      <td>246</td>
+                      <td>226</td>
+                      <td>217</td>
+                      <td>209.3</td>
+                    </tr>
+                    <tr>
+                      <th>UFI認列B2B展覽銷售面積(M<sup>2</sup>)/亞太區排名</th>
+                      <td>未公告</td>
+                      <td>241,250/<br>6th</td>
+                      <td>未公告</td>
+                      <td>153,000/<br>5th</td>
+                      <td>885,000/<br>6th</td>
+                      <td>863,750/<br>6th</td>
+                      <td>847,750/<br>6th</td>
+                      <td>815,000/<br>6th</td>
+                      <td>796,500/<br>6th</td>
+                      <td>779,250/<br>6th</td>
+                    </tr>
+                    <tr>
+                      <th>ICCA認列協會型國際會議場次/亞洲國家排名</th>
+                      <td>106場*/<br id="isPasted">7th</td>
+                      <td>90場*/<br>5th</td>
+                      <td>103場/<br>4th*</td>
+                      <td>因疫情的關係，該年無公布報告</td>
+                      <td>163場/<br>4th</td>
+                      <td>173場/<br>5th</td>
+                      <td>141場/<br>7th</td>
+                      <td>141場/<br>7th</td>
+                      <td>124場/<br>7th</td>
+                      <td>145場/<br>4th</td>
+                    </tr>
+                    <tr>
+                      <th>主要展館之面積(m<sup>2</sup>)及攤位數(9 m<sup>2</sup>)*</th>
+                      <td>185,350/<br>12,621</td>
+                      <td>185,350/<br>12,621</td>
+                      <td>174,658/<br>12,021</td>
+                      <td>174,658/<br>12,021</td>
+                      <td>174,658/<br>12,021</td>
+                      <td>170,778/<br>9,917</td>
+                      <td>170,778/<br>9,917</td>
+                      <td>170,778/<br>9,917</td>
+                      <td>170,778/<br>9,917</td>
+                      <td>170,778/<br>9,917</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="exhibitionList">
+                <span>* 說明：</span>
+                <ul>
+                  <li>2020至2021年來臺參加會展之外籍人士人數皆含線上參與會展人士。</li>
+                  <li>2020年會展產業遭受疫情影響，會展核心業別（PEO、PCO）就業人口卻較2019年增加，係因計算公式不同。本計畫於2020年盤整會展產值及就業人口估算方式，重新調整會展就業人口計算公式，如以其推估2019年PEO、PCO就業人口則為3,640人。</li>
+                  <li>受到疫情影響，2020年ICCA僅針對會議(包含實體、線上、混合)場次進行統計及分析。隨者疫情日漸趨緩，ICCA於2021年調整每年國家及城市會議場次呈現方式，特別開發「目的地表現指標（Destination Performance Index, DPI）」6大績效指標項目，包含：預計舉辦會議（Planned
+                    meetings）、如期舉辦會議（Unaffected
+                    meetings）、線上會議（Virtual meetings）、混合會議（Hybrid meetings）、數位化運用(包含線上及混合會議)（Digitalization: Virtual/Hybrid）、商業延續性 (包含如期舉辦/線上/混合會議)（Business continuation:
+                    Unaffected/Virtual/Hybrid）。依據上述6項指標中的會議場次數，進行綜合排名及各項指標排名，2021年使用「亞洲國家」綜合排名之數據。</li>
+                  <li>2022年來臺參加會展之外籍人數人數總計為85,345人（實體外籍人數為44,271、線上外籍人數為41,074）。由於我國2022年上半年受到邊境管制影響，直至10月13日起入境免隔離及取消開立居家檢疫通知書，故來臺參加會展之外籍人數相較於疫情尚未發生前（2019年）少。</li>
+                  <li>2022年ICCA認列協會型國際會議場次包含實體會議及混合會議，不列計線上會議。</li>
+                </ul>
+              </div>
+              <!-- 我國會展活動場次與國外參加人數 start -->
+              <h4 style="color: #465580;">我國會展活動場次與國外參加人數</h4>
+              <div class="chart-tb-contain tb1">
+                <div class="wrapper">
+                  <canvas class="dataChart-tb1"></canvas>
+                  <button class="toggle-tb tb1"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="wrapper-tb tb1">
+                  <table class="chart-table" align="center" cellpadding="8" cellspacing="0" style="margin:0;">
+                    <thead>
+                      <tr class="tb-year">
+                        <th colspan="2">年度</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tb-datacol">
+                      <tr class="tb-total">
+                        <td colspan="2">總場次</td>
+                      </tr>
+                      <tr class="tb-number">
+                        <td colspan="2">參加國外人數</td>
+                      </tr>
+                      <tr class="tb-col">
+                        <td rowspan="7">地方場次</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="chart-tb-contain tb2">
+                <div class="wrapper">
+                  <canvas class="dataChart-tb2"></canvas>
+                  <button class="toggle-tb tb2"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="wrapper-tb tb2">
+                  <table class="chart-table" align="center" cellpadding="8" cellspacing="0" style="margin:0;">
+                    <thead>
+                      <tr class="tb-year">
+                        <th colspan="2" class="col-title">年度</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tb-datacol">
+                      <tr class="tb-total">
+                        <td colspan="2" class="col-title">總場次</td>
+                      </tr>
+                      <tr class="tb-number">
+                        <td colspan="2" class="col-title">參加國外人數</td>
+                      </tr>
+                      <tr class="tb-col">
+                        <td rowspan="7" class="col-title">地方場次</t> <!-- style="background:#FCB556bb;" -->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="chart-tb-contain tb3">
+                <div class="wrapper">
+                  <canvas class="dataChart-tb3"></canvas>
+                  <button class="toggle-tb tb3"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="wrapper-tb tb3">
+                  <table class="chart-table" align="center" cellpadding="8" cellspacing="0" style="margin:0;">
+                    <thead>
+                      <tr class="tb-year">
+                        <th colspan="2">年度</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tb-datacol">
+                      <tr class="tb-total">
+                        <td colspan="2">總場次</td>
+                      </tr>
+                      <tr class="tb-number">
+                        <td colspan="2">參加國外人數</td>
+                      </tr>
+                      <tr class="tb-col">
+                        <td rowspan="7">地方場次</t>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="exhibitionList">
+                <span>* 說明：</span>
+                <ul>
+                  <li>2021至2022年各地方場次（北、中、南、東、外島）包含實體、混合及線上會議。</li>
+                  <li>2021至2022年參加國外人數包含線上國外與會者。</li>
+                </ul>
+              </div>
+
+
+              <!-- 我國會展活動場次與國外參加人數 end -->
+              <!-- 展覽總數全國占比start -->
+              <h4 style="color: #465580;">展覽總數全國占比</h4>
+              <div class="infoTable">
+                <table align="center" cellpadding="9" cellspacing="0" class="scroltable">
+                  <thead>
+                    <tr>
+                      <th>年度</th>
+                      <th colspan="2">2023</th>
+                      <th colspan="2">2022</th>
+                      <th colspan="2">2021</th>
+                      <th colspan="2">2020</th>
+                      <th colspan="2">2019</th>
+                      <th colspan="2">2018</th>
+                      <th colspan="2">2017</th>
+                      <th colspan="2">2016</th>
+                      <th colspan="2">2015</th>
+                      <th colspan="2">2014</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="tbodyTitle">
+                      <th>全國總使用面積<br>(gross)</th>
+                      <td colspan="2">364萬m<sup>2</sup></td>
+                      <td colspan="2">372萬m<sup>2</sup></td>
+                      <td colspan="2">33萬m<sup>2</sup></td>
+                      <td colspan="2">30萬m<sup>2</sup></td>
+                      <td colspan="2">223萬m<sup>2</sup></td>
+                      <td colspan="2">220萬m<sup>2</sup></td>
+                      <td colspan="2">201萬m<sup>2</sup></td>
+                      <td colspan="2">209萬m<sup>2</sup></td>
+                      <td colspan="2">206萬m<sup>2</sup></td>
+                      <td colspan="2">205萬m<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                      <th>地區</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                      <th>展覽總數</th>
+                      <th>全國占比</th>
+                    </tr>
+                    <tr>
+                      <th>臺北</th>
+                      <td>129</td>
+                      <td>69.35%</td>
+                      <td>130</td>
+                      <td>63.73%</td>
+                      <td>84</td>
+                      <td>51.07%</td>
+                      <td>60</td>
+                      <td>68.13%</td>
+                      <td>164</td>
+                      <td>57.75%</td>
+                      <td>175</td>
+                      <td>62.72%</td>
+                      <td>170</td>
+                      <td>62.96%</td>
+                      <td>181</td>
+                      <td>67.50%</td>
+                      <td>137</td>
+                      <td>60.40%</td>
+                      <td>140</td>
+                      <td>64.80%</td>
+                    </tr>
+                    <tr>
+                      <th>臺中</th>
+                      <td>19</td>
+                      <td>10.22%</td>
+                      <td>30</td>
+                      <td>14.71%</td>
+                      <td>25</td>
+                      <td>35.43%</td>
+                      <td>22</td>
+                      <td>24.17%</td>
+                      <td>43</td>
+                      <td>15.14%</td>
+                      <td>37</td>
+                      <td>13.26%</td>
+                      <td>42</td>
+                      <td>15.56%</td>
+                      <td>43</td>
+                      <td>16%</td>
+                      <td>43</td>
+                      <td>18.90%</td>
+                      <td>32</td>
+                      <td>14.80%</td>
+                    </tr>
+                    <tr>
+                      <th>臺南</th>
+                      <td>10</td>
+                      <td>5.38%</td>
+                      <td>9</td>
+                      <td>4.41%</td>
+                      <td>10</td>
+                      <td>8.41%</td>
+                      <td>2</td>
+                      <td>2.20%</td>
+                      <td>22</td>
+                      <td>7.75%</td>
+                      <td>15</td>
+                      <td>5.38%</td>
+                      <td>17</td>
+                      <td>6.30%</td>
+                      <td>7</td>
+                      <td>2.60%</td>
+                      <td>15</td>
+                      <td>6.60%</td>
+                      <td>11</td>
+                      <td>5.10%</td>
+                    </tr>
+                    <tr>
+                      <th>高雄</th>
+                      <td>27</td>
+                      <td>14.52%</td>
+                      <td>32</td>
+                      <td>15.69%</td>
+                      <td>21</td>
+                      <td>5.07%</td>
+                      <td>5</td>
+                      <td>5.50%</td>
+                      <td>40</td>
+                      <td>14.08%</td>
+                      <td>44</td>
+                      <td>15.77%</td>
+                      <td>34</td>
+                      <td>12.59%</td>
+                      <td>32</td>
+                      <td>11.90%</td>
+                      <td>27</td>
+                      <td>11.90%</td>
+                      <td>22</td>
+                      <td>10.20%</td>
+                    </tr>
+                    <tr>
+                      <th>其他</th>
+                      <td>1</td>
+                      <td>0.55%</td>
+                      <td>4</td>
+                      <td>1.46%</td>
+                      <td>6</td>
+                      <td>0.00%</td>
+                      <td>0</td>
+                      <td>0.00%</td>
+                      <td>15</td>
+                      <td>5.28%</td>
+                      <td>8</td>
+                      <td>2.87%</td>
+                      <td>7</td>
+                      <td>2.59%</td>
+                      <td>5</td>
+                      <td>1.90%</td>
+                      <td>5</td>
+                      <td>2.20%</td>
+                      <td>11</td>
+                      <td>5.10%</td>
+                    </tr>
+                    <tr>
+                      <th>全國</th>
+                      <td>186</td>
+                      <td>100%</td>
+                      <td>205</td>
+                      <td>100%</td>
+                      <td>146</td>
+                      <td>100%</td>
+                      <td>91</td>
+                      <td>100%</td>
+                      <td>284</td>
+                      <td>100%</td>
+                      <td>279</td>
+                      <td>100%</td>
+                      <td>270</td>
+                      <td>100%</td>
+                      <td>268</td>
+                      <td>100%</td>
+                      <td>227</td>
+                      <td>100%</td>
+                      <td>216</td>
+                      <td>100%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="exhibitionList">
+                <ul>
+                  <li>AFECA：Asian Federation of Exhibition and Convention Associations (亞洲展覽會議協會聯盟)</li>
+                  <li>IAEE：International Association of Exhibitions and Events (國際展覽及活動協會)</li>
+                  <li>ICCA：International Congress and Convention Association (國際會議協會)</li>
+                  <li>SITE：Society for Incentive Travel Excellence (國際獎勵旅遊協會)</li>
+                  <li>UFI：The Global Association of the Exhibition Industry (國際展覽業協會)</li>
+                </ul>
+              </div>
+              <!-- 展覽總數全國占比end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fat footer -->
+    <div id="mt_fatfooter"></div>
+    <!-- footer -->
+    <div id="mt_footer"></div>
+    <!-- gotoTop -->
+    <div id="mt_gototop"></div>
+    <!-- mt-userbar  -->
+    <div id="mt_userbar"></div>
+</body>
+<script>
+  // for Demo load components
+  $(document).ready(function () {
+    $('#mt_sidebar').load('components/mt-sidebar/mt-sidebar.html');
+    $('#mt_header').load('components/mt-header/mt-header.html');
+    $('#mt_fatfooter').load('components/mt-fatfooter/mt-fatfooter.html');
+    $('#mt_footer').load('components/mt-footer/mt-footer.html');
+    $('#mt_gototop').load('components/mt-gototop/mt-gototop.html');
+    $('#mt_userbar').load('components/mt-userbar/mt-userbar.html');
+  });
+</script>
+<!-- 呼叫元件內的function -->
+<script src="js/mt-init.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script>
+  var ctx1 = document.querySelector(".dataChart-tb1");
+  var ctx2 = document.querySelector(".dataChart-tb2");
+  var ctx3 = document.querySelector(".dataChart-tb3");
+  const dataLabel = [
+    "參加國外人數",
+    "總場次",
+    "北部",
+    "中部",
+    "南部",
+    "東部",
+    "離島",
+    "線上",
+    "年度"
+  ];
+  const dataYear = [
+    "2023",
+    "2022",
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016",
+    "2015",
+    "2014"
+  ];
+  // Conference DataList
+  const dataTitle = ["國際會議", "國際展覽", "企業會議暨獎旅"];
+  const dataTotalType = ["line", "line", "bar"];
+  const dataCTX = [ctx1, ctx2, ctx3];
+  const dataList = [
+    [
+
+      [
+        "#1c3270",//1  
+        "#a2c9dd",//2
+        "#65a4c6",//3
+        "#25679e",//4
+        "#225793",//5
+        "#132b50",
+        "#326990",//6
+
+      ],
+
+      [58958, 12625, 13718, 5618, 60770, 61403, 58900, 57800, 28300, 32300],
+      [],
+      [254, 193, 67, 51, 207, 201, 178, 165, 165, 156],
+      [42, 36, 12, 15, 36, 28, 30, 15, 9, 8],
+      [75, 53, 16, 35, 45, 43, 35, 36, 40, 44],
+      [5, 10, 2, 2, 3, 5, 5, 1, 1, 2],
+      [2, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+      [4, 68, 76, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    [
+
+      [
+        "#5f2972",
+        "#dbccf3",
+        "#bda7e6",
+        "#7e73b9",
+        "#8948a3",
+        "#683081",
+        "#461c59",
+
+      ],
+
+      [55681, 72505, 15280, 8813, 220116, 193811, 185000, 150000, 137700, 132000],
+      [],
+      [130, 133, 84, 62, 178, 181, 176, 185, 141, 150],
+      [19, 30, 25, 22, 44, 38, 43, 44, 44, 33],
+      [37, 41, 31, 7, 62, 60, 51, 39, 42, 33],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    [
+
+      [
+        "#03045e",
+        "#004e98",
+        "#0077b6"
+      ],
+      [20000, 215, 0, 1538, 33561, 31260, 20700, 34200, 35800, 24500],
+      [130, 3, 0, 10, 132, 127, 120, 126, 125, 118],
+    ]
+  ];
+  let c = 0;
+  while (c < 3) {
+    let i = 0;
+    let text = 0;
+    while (i <= 9) {
+      let k = 3;
+      if (c < 2) {
+        while (k <= 8) {
+          if (!dataList[c][k][i]) {
+            text += 0;
+          } else {
+            text += dataList[c][k][i];
+          }
+          k++;
+        }
+        dataList[c][2].push(text);
+      }
+      i++;
+      text = 0;
+    }
+    const dataSets = [
+      {
+        type: "bar",
+        label: c < 2 ? " " : "總場次",
+        backgroundColor: c < 2 ? "transparent" : dataList[c][0][2] + "88",
+        borderColor: "transparent",
+        data: dataList[c][2],
+        yAxisID: "y" + (c < 2 ? "2" : "3")
+      },
+      {
+        type: "line",
+        label: "參加國外人數",
+        backgroundColor: dataList[c][0][0],
+        borderColor: dataList[c][0][0],
+        data: dataList[c][1],
+        yAxisID: "y1"
+      },
+      {
+        type: "bar",
+        label: "北部",
+        backgroundColor: dataList[c][0][1],
+        data: dataList[c][3]
+      },
+      {
+        type: "bar",
+        label: "中部",
+        backgroundColor: dataList[c][0][2],
+        data: dataList[c][4]
+      },
+      {
+        type: "bar",
+        label: "南部",
+        backgroundColor: dataList[c][0][3],
+        data: dataList[c][5]
+      },
+      {
+        type: "bar",
+        label: "東部",
+        backgroundColor: dataList[c][0][4],
+        data: dataList[c][6]
+      },
+      {
+        type: "bar",
+        label: "離島",
+        backgroundColor: dataList[c][0][5],
+        data: dataList[c][7]
+      },
+      {
+        type: "bar",
+        label: "線上",
+        backgroundColor: dataList[c][0][6],
+        data: dataList[c][8]
+      }
+    ];
+
+    if (c > 1) {
+      var IncentiveDataSets = dataSets.slice(0, 2);
+    }
+
+    const data = {
+      labels: dataYear,
+      datasets: c < 2 ? dataSets : IncentiveDataSets
+    };
+
+    const getOrCreateTooltip = (chart) => {
+      let tooltipEl = chart.canvas.parentNode.querySelector("div");
+      if (!tooltipEl) {
+        tooltipEl = document.createElement("div");
+        tooltipEl.style.background = "rgba(0, 0, 0, 0.7)";
+        tooltipEl.style.borderRadius = "3px";
+        tooltipEl.style.color = "white";
+        tooltipEl.style.opacity = 1;
+        tooltipEl.style.pointerEvents = "none";
+        tooltipEl.style.position = "absolute";
+        tooltipEl.style.transform = "translate(-50%, 0)";
+        tooltipEl.style.transition = "all .1s ease";
+
+        const table = document.createElement("table");
+        table.style.margin = "0px";
+
+        tooltipEl.appendChild(table);
+        chart.canvas.parentNode.appendChild(tooltipEl);
+      }
+
+      return tooltipEl;
+    };
+
+    const externalTooltipHandler = (context) => {
+      // Tooltip Element
+      const { chart, tooltip } = context;
+      const tooltipEl = getOrCreateTooltip(chart);
+
+      // Hide if no tooltip
+      if (tooltip.opacity === 0) {
+        tooltipEl.style.opacity = 0;
+        return;
+      }
+
+      // Set Text
+      if (tooltip.body) {
+        const titleLines = tooltip.title || [];
+        const bodyLines = tooltip.body.map((b) => b.lines);
+
+        const tableHead = document.createElement("thead");
+
+        titleLines.forEach((title) => {
+          const tr = document.createElement("tr");
+          tr.style.borderWidth = 0;
+
+          const th = document.createElement("th");
+          th.style.borderWidth = 0;
+          th.style.fontSize = "1.2rem";
+          const text = document.createTextNode(title);
+
+          th.appendChild(text);
+          tr.appendChild(th);
+          tableHead.appendChild(tr);
+          console.log();
+        });
+
+        const tableBody = document.createElement("tbody");
+        bodyLines.forEach((body, i) => {
+          const colors = tooltip.labelColors[i];
+          const span = document.createElement("span");
+          span.style.background = colors.backgroundColor;
+          span.style.borderColor = colors.borderColor;
+          span.style.borderWidth = "2px";
+          span.style.marginRight = "10px";
+          span.style.height = "10px";
+          span.style.width = "10px";
+          span.style.display = "inline-block";
+          span.style.borderRadius = "50%";
+
+          const tr = document.createElement("tr");
+          tr.style.backgroundColor = "inherit";
+          tr.style.borderWidth = 0;
+
+          const td = document.createElement("td");
+          td.style.borderWidth = 0;
+
+          if (body[0].split(":")[0] === "參加國外人數") {
+            const text = document.createTextNode(body + " 人次");
+            td.appendChild(span);
+            td.appendChild(text);
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
+          } else if (
+            body[0].split(":")[0] === " " ||
+            body[0].split(":")[0] === "總場次"
+          ) {
+            const text = document.createTextNode(
+              "共計" + body[0].split(":")[1] + " 場"
+            );
+
+            td.style.fontSize = "1rem";
+            td.style.textAlign = "center";
+
+            td.appendChild(text);
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
+          } else {
+            if (body[0].split(":")[1] == 0) {
+            } else {
+              const text = document.createTextNode(body + " 場");
+
+              td.appendChild(span);
+              td.appendChild(text);
+              tr.appendChild(td);
+              tableBody.appendChild(tr);
+            }
+          }
+        });
+        const tableRoot = tooltipEl.querySelector("table");
+
+        // Remove old children
+        while (tableRoot.firstChild) {
+          tableRoot.firstChild.remove();
+        }
+
+        // Add new children
+        tableRoot.appendChild(tableHead);
+        tableRoot.appendChild(tableBody);
+      }
+
+      const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+
+      // Display, position, and set styles for font
+      tooltipEl.style.opacity = 1;
+      tooltipEl.style.left = positionX + tooltip.caretX + "px";
+      tooltipEl.style.top = positionY + tooltip.caretY + "px";
+      tooltipEl.style.font = tooltip.options.bodyFont.string;
+      tooltipEl.style.fontSize = "12px";
+      tooltipEl.style.fontFamily = "Roboto";
+      tooltipEl.style.padding =
+        tooltip.options.padding + "px " + tooltip.options.padding + "px";
+    };
+
+    // new Chart(ctx1, {
+    new Chart(dataCTX[c], {
+      type: "bar",
+      data: data,
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            stacked: true,
+            type: "linear",
+            suggestedMin: 100,
+            suggestedMax: 400,
+            display: c < 2 ? true : false,
+            title: {
+              display: true,
+              text: "在臺舉辦場次",
+              padding: 10
+            }
+          },
+          y1: {
+            beginAtZero: true,
+            type: "linear",
+            display: true,
+            position: "right",
+            grid: {
+              drawOnChartArea: false
+            },
+            title: {
+              display: true,
+              text: "參加國外人數",
+              padding: 10
+            }
+          },
+          y2: {
+            beginAtZero: true,
+            type: "linear",
+            display: false,
+            suggestedMin: 100,
+            suggestedMax: 400,
+            grid: {
+              drawOnChartArea: false
+            }
+          },
+          y3: {
+            beginAtZero: true,
+            type: "linear",
+            display: c < 2 ? false : true,
+            grid: {
+              drawOnChartArea: false
+            },
+            title: {
+              display: true,
+              text: "在臺舉辦場次",
+              padding: 10
+            }
+          },
+          x: {
+            stacked: true,
+            grid: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: "年份"
+            }
+          }
+        },
+        responsive: true,
+        interaction: {
+          mode: "index",
+          intersect: false
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: dataTitle[c],
+            padding: 20,
+            font: {
+              size: 18
+            }
+          },
+          legend: {
+            labels: {
+              usePointStyle: true,
+              pointStyle: "circle",
+              padding: 20
+            },
+            position: "bottom"
+          },
+          tooltip: {
+            enabled: false,
+            position: "nearest",
+            external: externalTooltipHandler
+          }
+        }
+      }
+    });
+
+    //  // TABLE SETTING //  //
+    var ttx = document.querySelector(".tb" + (c + 1) + " .chart-table");
+
+    if (dataTitle[c]) {
+      const ttxYear = document.querySelector(".tb" + (c + 1) + " .tb-year");
+      const ttxYearTitle = document.querySelector(
+        ".tb" + (c + 1) + " .tb-year th"
+      );
+
+      let y = 0;
+      while (y < 10) {
+        const th = document.createElement("th");
+        const TBtext = dataYear[y];
+        th.innerHTML = TBtext;
+        ttxYear.appendChild(th);
+        y++;
+
+        ttxYearTitle.style.backgroundColor = dataList[c][0][2];
+        ttx.style.backgroundColor = dataList[c][0][2] + "11";
+        th.style.backgroundColor = dataList[c][0][2] + "aa";
+        th.style.padding = "9px";
+      }
+
+      const ttxTotal = document.querySelector(".tb" + (c + 1) + " .tb-total");
+      const ttxTotalTitle = document.querySelector(
+        ".tb" + (c + 1) + " .tb-total td"
+      );
+      let t = 0;
+      while (t < 10) {
+        const td = document.createElement("td");
+        const TBtext = dataList[c][2][t];
+        td.innerHTML = toThousands(TBtext) + " 場";
+        ttxTotal.appendChild(td);
+        t++;
+
+        ttxTotalTitle.style.backgroundColor = dataList[c][0][2] + "44";
+      }
+
+      const ttxNumber = document.querySelector(".tb" + (c + 1) + " .tb-number");
+      const ttxNumberTitle = document.querySelector(
+        ".tb" + (c + 1) + " .tb-number td"
+      );
+
+      let u = 0;
+      while (u < 10) {
+        const td = document.createElement("td");
+        const TBtext = dataList[c][1][u];
+        td.innerHTML = toThousands(TBtext) + " 人";
+        ttxNumber.appendChild(td);
+        td.style.backgroundColor = dataList[c][0][2] + "aa";
+        u++;
+
+        ttxNumberTitle.style.backgroundColor = dataList[c][0][2];
+      }
+      if (c < 2) {
+        const ttxDataCol = document.querySelector(
+          ".tb" + (c + 1) + " .tb-datacol"
+        );
+
+        let lo = 0;
+        while (lo < 6) {
+          let n = 0;
+          let u = 0;
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+
+          td.innerHTML = toThousands(dataLabel[lo + 2]);
+          tr.appendChild(td);
+          td.style.backgroundColor = dataList[c][0][2] + "66";
+
+          while (n < 10) {
+            const td = document.createElement("td");
+            const TBtext = dataList[c][lo + 3][n];
+            if (TBtext === 0) {
+              td.innerHTML = "-";
+            } else {
+              td.innerHTML = toThousands(TBtext) + " 場";
+            }
+            tr.appendChild(td);
+
+            n++;
+          }
+
+          ttxDataCol.appendChild(tr);
+
+          if (lo % 2) {
+            tr.style.backgroundColor = dataList[c][0][2] + "11";
+          } else {
+            tr.style.backgroundColor = dataList[c][0][2] + "44";
+          }
+          lo++;
+        }
+      }
+    }
+
+    const ttxCol = document.querySelector(".tb" + (c + 1) + " .tb-col");
+    ttxCol.style.backgroundColor = dataList[c][0][2] + "bb";
+    if (c > 1) {
+      ttxCol.style.display = "none";
+    }
+    c++;
+  }
+  function toThousands(num) {
+    return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, "$1,");
+  }
+  document.querySelector(".toggle-tb.tb1").addEventListener("click", TBtoogle);
+  document.querySelector(".toggle-tb.tb2").addEventListener("click", TBtoogle);
+  document.querySelector(".toggle-tb.tb3").addEventListener("click", TBtoogle);
+
+  function TBtoogle(e) {
+    const tb = this.parentNode.parentNode.classList;
+    const tgBtnClass = this.querySelector("i").classList;
+    const result = tb.toggle("tb-on");
+    tgBtnClass.toggle("fa-chevron-down");
+    tgBtnClass.toggle("fa-chevron-up");
+  }
+
+</script>
+
+</html>

@@ -1,30 +1,42 @@
 .breadcrumb {
+  // border-bottom: 1px solid #eee;
+  // padding: 0.1em 0em 0.1em;
+  padding: 1em 0;
+  font-size: 0.875em;
+  margin: 0px auto 0.5em;
+  margin-left: 10.8em;
+  margin-left: 120px;
+  width: 100%;
+  ul {
+    @include li-reset;
+    li {
+      display: inline-block;
+      margin: 0px 0.1em 0.1em 0px;
+      &:before {
+        @extend %slash;
+      }
+      &:first-child:before {
+        content: '';
+        display: inline-block;
+        color: #666;
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+  }
+  a {
+    color: #555;
+    &:hover,
+    &:focus {
+      color: $aHover;
+    }
+  }
+}
+//會員頁面ＣＳＳ
+.mt-main-content:has(.member-function),
+.mt-main-content:has(.sp_member) {
+  .breadcrumb {
     border-bottom: 1px solid #eee;
-    padding: 0.1em 0em 0.1em;
-    font-size: 0.875em;
-    margin: 0px auto 0.5em;
-    ul {
-        @include li-reset;
-        li {
-            display: inline-block;
-            margin: 0px 0.1em 0.1em 0px;
-            &:before {
-                @extend %slash;
-            }
-            &:first-child:before {
-                content: '';
-                display: inline-block;
-                color: #666;
-                margin-left: 0;
-                padding: 0;
-            }
-        }
-    }
-    a {
-        color: #555;
-        &:hover,
-        &:focus {
-            color: $aHover;
-        }
-    }
+    margin-left: 0em;
+  }
 }

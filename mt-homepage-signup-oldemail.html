@@ -1372,6 +1372,67 @@
       <a href="#" class="more"><span>more</span></a>
     </div>
   </div>
+  <script>
+    $(function () {
+      //slick
+      $('.mt-epaper .epaper').slick({
+        slidesToShow: 3,
+        autoplay: false,
+        arrow: false,
+        lazyLoaded: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: false,
+          },
+        },
+        {
+          breakpoint: 375,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true, //顯示圓點
+            autoplay: false,
+          },
+        },
+        ],
+      });
+      $('.mt-epaper .epaper').slick('refresh');
+    })
+  </script>
   <!-- mt-slider-card -->
   <div class="mt-slider-card">
     <div class="container">

@@ -107,6 +107,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- mt-awards -->
   <div class="col_12">
     <div class="container">
@@ -251,6 +253,1137 @@
     });
   </script>
   </div>
+  <div class="full">
+    <div class="container">
+      <div>
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+      </div>
+      <style>
+        .mt-awards {
+          background-image: url("https://www.meettaiwan.com/images/mt-award-bg.jpg");
+          background-size: cover;
+          padding: 4rem 0;
+          width: 100%;
+          min-width: 320px;
+        }
+
+        .mt-awards .contain {
+          display: flex;
+          z-index: 10;
+          max-width: 1200px;
+          justify-content: space-between;
+          margin: 0 auto;
+        }
+
+        .bg-left,
+        .bg-right {
+          position: absolute;
+          display: block;
+          background-color: #8491bdbb;
+          -webkit-clip-path: polygon(0 0, 100% 0%, calc(100% - 100px) 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0%, calc(100% - 100px) 100%, 0% 100%);
+          width: calc(50% + 30px);
+          height: 360px;
+          z-index: 0;
+          left: 0%;
+          top: 11rem;
+          padding-bottom: 0.5em;
+          margin-top: -15px;
+          transform: translate(0%, 0);
+          min-width: 256px;
+        }
+
+        .bg-right {
+          left: unset;
+          right: 0;
+          width: calc(50vw - 600px);
+          transform: translate(0, 0);
+          -webkit-clip-path: polygon(100px 0, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(100px 0, 100% 0%, 100% 100%, 0% 100%);
+          min-width: 80px;
+        }
+
+        .btn-splide {
+          display: none;
+        }
+
+        .splide-btn {
+          margin: 0.5rem 0 0 -5%;
+          background: transparent;
+          border: none;
+          font-size: 1.2rem;
+          color: #55679f;
+        }
+
+        .splide-btn:focus {
+          outline: none;
+        }
+
+        .splide-btn#btnNext {
+          margin-left: -20%;
+          margin-right: 20%;
+        }
+
+        .awards-album {
+          width: 100%;
+          max-width: 500px;
+          margin-top: 3.5rem;
+        }
+
+        .awards-album .splide {
+          box-shadow: 0 0 8px #00000044;
+        }
+
+        .awards-album .splide__slide img {
+          width: 100%;
+          height: auto;
+        }
+
+        .information {
+          z-index: 10;
+          padding: 0 0 0 0;
+          margin: 0 3rem 0 -3rem;
+        }
+
+        .information .award-list {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .information .title {
+          font-size: 2.5rem;
+          color: white;
+          text-shadow: 0 0 10px #00000088;
+          letter-spacing: 0.2rem;
+          text-align: center;
+          position: relative;
+          padding-bottom: 1.5rem;
+          margin-bottom: 1rem;
+          margin-left: 2rem;
+        }
+
+        .information .title::after {
+          position: absolute;
+          content: "";
+          width: 30%;
+          background: #55679f;
+          height: 4px;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+
+        .information .splide {
+          width: 420px;
+        }
+
+        .information .splide__track {
+          overflow: hidden;
+          margin: 0 -20%;
+        }
+
+        .information .splide__list {
+          overflow: visible;
+          rotate: 15deg;
+          cursor: default;
+        }
+
+        .information .splide__slide {
+          margin-top: -3rem;
+          padding-top: 1rem;
+          padding-bottom: 3rem;
+          transition: 0.3s;
+          transform: rotate(-15deg);
+          margin-left: 6rem;
+          padding-left: 1rem;
+          list-style-type: "◆" !important;
+          color: #333;
+        }
+
+        .information .splide__slide .award-title {
+          font-size: 1.2rem;
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .information .splide__slide .award-title .ranking {
+          font-size: 1rem;
+          width: auto;
+          display: inline-block;
+          padding-left: 1rem;
+        }
+
+        .information .splide__slide.is-active {
+          color: #55679f;
+        }
+
+        .information .splide__slide:hover {
+          color: #666;
+        }
+
+        @media (max-width: 1399.98px) {
+          .mt-awards {
+            padding: 4rem 0 3rem;
+          }
+
+          .mt-awards .contain {
+            justify-content: space-around;
+          }
+
+          .bg-left,
+          .bg-right {
+            width: calc(50% + 50px);
+            height: 320px;
+            top: 13rem;
+            -webkit-clip-path: polygon(0 0, 100% 0%, calc(100% - 80px) 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, calc(100% - 80px) 100%, 0% 100%);
+          }
+
+          .bg-right {
+            display: none;
+          }
+
+          .awards-album {
+            max-width: 450px;
+            margin-top: 6rem;
+          }
+
+          .information {
+            width: 40%;
+            margin: 0;
+          }
+
+          .information .splide {
+            width: 100%;
+          }
+
+          .information .splide__slide {
+            margin-top: -4rem;
+            margin-left: 8rem;
+          }
+
+          .information .splide__track {
+            margin: 0 -5%;
+          }
+
+          .splide-btn {
+            margin: .5rem 0;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: #55679f;
+          }
+
+          .splide-btn#btnNext {
+            margin: .5rem 0;
+          }
+        }
+
+        @media (max-width: 1199.98px) {
+          .mt-awards {
+            padding: 3.5rem 0 3rem;
+          }
+
+          .awards-album {
+            max-width: 400px;
+            margin-top: 6rem;
+          }
+
+          .information {
+            width: 45%;
+          }
+
+          [lang="en"] .information .title {
+            font-size: 2rem;
+          }
+
+          .bg-left,
+          .bg-right {
+            top: 14rem;
+            height: 240px;
+            width: calc(50% + 30px);
+            -webkit-clip-path: polygon(0 0, 100% 0%, calc(100% - 50px) 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, calc(100% - 50px) 100%, 0% 100%);
+          }
+        }
+
+        @media (max-width: 991.98px) {
+          .mt-awards {
+            padding: 2.5rem 0 3rem;
+          }
+
+          .mt-awards .contain {
+            max-width: 92%;
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+
+          .awards-album {
+            position: absolute;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: calc(10rem - 5vw);
+            max-width: 370px;
+            min-width: 300px;
+            width: 40%;
+            z-index: 15;
+            display: flex;
+          }
+
+          .information {
+            width: 100%;
+            margin: 0;
+          }
+
+          .information .title {
+            font-size: 2.2rem;
+            padding-bottom: 1rem;
+            margin-left: 0;
+          }
+
+          .information .title::after {
+            width: 20%;
+            transform: translate(-50%, 0);
+            margin-left: 0;
+          }
+
+          .information .splide {
+            width: 50%;
+          }
+
+          .information .award-list {
+            align-items: flex-end;
+            margin-top: 2.5rem;
+          }
+
+          .information .splide__track {
+            margin: 0;
+          }
+
+          .information .splide__slide {}
+
+          .splide-btn {
+            margin: .5rem 20%;
+          }
+
+          .splide-btn#btnNext {
+            margin: 0 20%;
+          }
+
+          .information .splide__list {
+            rotate: 0deg;
+          }
+
+          .information .splide__slide {
+            transform: rotate(0);
+            margin-left: 3rem;
+            margin-top: .2rem;
+            padding-bottom: 0;
+          }
+        }
+
+        @media (max-width: 767.98px) {
+          .mt-awards .contain {
+            max-width: 90%;
+            position: relative;
+          }
+
+          .bg-left,
+          .bg-right {
+            width: calc(50% + 140px);
+            height: 245px;
+            top: 8rem;
+          }
+
+          .bg-right {
+            width: calc(50% - 115px);
+            display: block;
+            top: 16.3rem;
+            -webkit-clip-path: polygon(50px 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(50px 0, 100% 0%, 100% 100%, 0% 100%);
+          }
+
+          .btn-splide {
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            bottom: -2.5rem;
+            right: 0;
+          }
+
+          .btn-splide .splide-btn {
+            margin: 0 0 0 .5rem;
+            color: #fff;
+            padding: .5em 1rem .5rem 0 !important;
+          }
+
+          .btn-splide .splide-btn#btnNext {
+            margin: 0;
+          }
+
+          .awards-album {
+            max-width: 24rem;
+            width: 100%;
+            align-self: center;
+            margin-top: 6rem;
+          }
+
+          .information .title {
+            margin-top: 10px;
+          }
+
+          .information .splide-btn {
+            display: none;
+          }
+
+          .information .award-list {
+            align-items: center;
+            margin-top: 25rem;
+          }
+
+          .information .splide__slide {
+            margin-top: 0;
+            margin-left: 1rem;
+            padding-bottom: 0rem;
+            padding-top: 0;
+          }
+
+          [lang="en"] .information .splide__slide {
+            margin-top: 0;
+          }
+
+          .information .splide {
+            width: 24rem;
+          }
+
+          .information .splide__slide .award-title .ranking {
+            padding-left: .3rem;
+          }
+        }
+
+        @media (max-width: 575.98px) {
+          .mt-awards .contain {
+            max-width: 100%;
+            padding: 0 1em;
+          }
+
+          .bg-left,
+          .bg-right {
+            width: 80vw;
+            height: 57vw;
+            top: 7rem;
+            margin-top: 0;
+          }
+
+          .bg-right {
+            width: 25vw;
+            display: block;
+            margin-top: 0;
+            top: calc(7rem + 25vw + 2.5rem);
+          }
+
+          .awards-album {
+            max-width: 100%;
+            align-self: center;
+            padding: 0 1em;
+            margin-top: 5.8rem;
+          }
+
+          .btn-splide {
+            right: 15px;
+          }
+
+          .btn-splide {
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            bottom: -2.7rem;
+            right: 0;
+          }
+
+          .information .title {
+            font-size: 2rem;
+          }
+
+          [lang="en"] .information .title {
+            margin-top: -1.2rem;
+            line-height: 1;
+          }
+
+          .information .award-list {
+            margin-top: 97vw;
+          }
+
+          .information .splide {
+            width: 100%;
+          }
+
+          .information .splide__slide {
+            padding-left: .5rem;
+          }
+
+          .information .splide__slide .award-title {
+            font-size: 1.1rem;
+            margin-bottom: .5rem;
+          }
+        }
+      </style>
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+          Splide.defaults = {
+            autoplay: true,
+            speed: 300,
+            pagination: false,
+            arrows: false,
+            drag: false,
+            updateOnMove: true,
+          };
+
+          let albumSplide = new Splide('.awards-album .splide',
+            {
+              type: 'fade',
+              rewind: true,
+            });
+
+          let infoSplide = new Splide('.information .splide',
+            {
+              direction: 'ttb',
+              height: '300px',
+              focus: 'center',
+              type: 'loop',
+              autoHeight: true,
+              gap: '1rem',
+              breakpoints:
+              {
+                1400:
+                {
+                  height: '260px',
+                },
+                1200:
+                {
+                  height: '220px',
+                },
+                992:
+                {
+                  height: '215px',
+                },
+                768:
+                {
+                  height: '240px',
+                  focus: 0,
+                  trimSpace: 'move',
+                  gap: '2rem',
+                },
+                576:
+                {
+                  gap: '1.5rem',
+                },
+              }
+            });
+
+          albumSplide.sync(infoSplide);
+          albumSplide.mount();
+          infoSplide.mount();
+
+          //attach events to custom buttons
+          btnNext.addEventListener('click', e => {
+            infoSplide.go('+1')
+          })
+          btnNextTablet.addEventListener('click', e => {
+            infoSplide.go('+1')
+          })
+
+          btnPrev.addEventListener('click', e => {
+            infoSplide.go('-1')
+          })
+          btnPrevTablet.addEventListener('click', e => {
+            infoSplide.go('-1')
+          })
+
+        });
+
+      </script>
+      <section class="mt-awards">
+        <div class="bg-left aos-init aos-animate" data-aos="fade-right" data-aos-delay="0" data-aos-duration="200"><br></div>
+        <div class="bg-right aos-init aos-animate" data-aos="fade-left" data-aos-delay="0" data-aos-duration="200"><br></div>
+        <div class="contain aos-init aos-animate" data-aos="fade-up" data-aos-delay="0" data-aos-duration="300">
+          <div class="awards-album">
+            <div class="splide splide--fade splide--ltr is-active is-overflow is-initialized" id="image-carousel" role="region" aria-roledescription="carousel">
+              <div class="splide__track splide__track--fade splide__track--ltr" id="image-carousel-track" style="padding-left: 0px; padding-right: 0px;" aria-live="off" aria-atomic="true"
+                aria-busy="false">
+                <ul class="splide__list" id="image-carousel-list" role="presentation">
+                  <li class="splide__slide 2023-MnC-ASA" id="image-carousel-slide01" role="group" aria-roledescription="slide" aria-label="1 of 39"
+                    style="width: calc(100%); transform: translateX(0%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202308/T-43043434.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-eventex" id="image-carousel-slide02" role="group" aria-roledescription="slide" aria-label="2 of 39"
+                    style="width: calc(100%); transform: translateX(-100%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-31684427.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-imdSmart" id="image-carousel-slide03" role="group" aria-roledescription="slide" aria-label="3 of 39"
+                    style="width: calc(100%); transform: translateX(-200%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202404/T-39485632.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-happiness" id="image-carousel-slide04" role="group" aria-roledescription="slide" aria-label="4 of 39"
+                    style="width: calc(100%); transform: translateX(-300%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202404/T-80778526.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-ecofree" id="image-carousel-slide05" role="group" aria-roledescription="slide" aria-label="5 of 39"
+                    style="width: calc(100%); transform: translateX(-400%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-26544343.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-freedom" id="image-carousel-slide06" role="group" aria-roledescription="slide" aria-label="6 of 39"
+                    style="width: calc(100%); transform: translateX(-500%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-94879996.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-city" id="image-carousel-slide07" role="group" aria-roledescription="slide" aria-label="7 of 39"
+                    style="width: calc(100%); transform: translateX(-600%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-11681430.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-coollist" id="image-carousel-slide08" role="group" aria-roledescription="slide" aria-label="8 of 39"
+                    style="width: calc(100%); transform: translateX(-700%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202312/T-28370522.png" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-qs" id="image-carousel-slide09" role="group" aria-roledescription="slide" aria-label="9 of 39"
+                    style="width: calc(100%); transform: translateX(-800%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-42063754.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-NUMBEO-safety" id="image-carousel-slide10" role="group" aria-roledescription="slide" aria-label="10 of 39"
+                    style="width: calc(100%); transform: translateX(-900%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-60252491.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2024-NUMBEO-health" id="image-carousel-slide11" role="group" aria-roledescription="slide" aria-label="11 of 39"
+                    style="width: calc(100%); transform: translateX(-1000%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-02587939.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-eiu" id="image-carousel-slide12" role="group" aria-roledescription="slide" aria-label="12 of 39"
+                    style="width: calc(100%); transform: translateX(-1100%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-43167902.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-imdTalent is-prev" id="image-carousel-slide13" role="group" aria-roledescription="slide" aria-label="13 of 39"
+                    style="width: calc(100%); transform: translateX(-1200%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-57244020.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-40coolest is-active is-visible" id="image-carousel-slide14" role="group" aria-roledescription="slide" aria-label="14 of 39"
+                    style="width: calc(100%); transform: translateX(-1300%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-27099522.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-gtLife is-next" id="image-carousel-slide15" role="group" aria-roledescription="slide" aria-label="15 of 39"
+                    style="width: calc(100%); transform: translateX(-1400%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-15108910.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-gtTest" id="image-carousel-slide16" role="group" aria-roledescription="slide" aria-label="16 of 39"
+                    style="width: calc(100%); transform: translateX(-1500%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-85755845.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-ceoworld" id="image-carousel-slide17" role="group" aria-roledescription="slide" aria-label="17 of 39"
+                    style="width: calc(100%); transform: translateX(-1600%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-68991759.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-tech" id="image-carousel-slide18" role="group" aria-roledescription="slide" aria-label="18 of 39"
+                    style="width: calc(100%); transform: translateX(-1700%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-49188435.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-press" id="image-carousel-slide19" role="group" aria-roledescription="slide" aria-label="19 of 39"
+                    style="width: calc(100%); transform: translateX(-1800%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-28704208.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-freedomNet" id="image-carousel-slide20" role="group" aria-roledescription="slide" aria-label="20 of 39"
+                    style="width: calc(100%); transform: translateX(-1900%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-14928571.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-suscity" id="image-carousel-slide21" role="group" aria-roledescription="slide" aria-label="21 of 39"
+                    style="width: calc(100%); transform: translateX(-2000%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-55974319.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-gpci" id="image-carousel-slide22" role="group" aria-roledescription="slide" aria-label="22 of 39"
+                    style="width: calc(100%); transform: translateX(-2100%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-78845986.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-halal" id="image-carousel-slide23" role="group" aria-roledescription="slide" aria-label="23 of 39"
+                    style="width: calc(100%); transform: translateX(-2200%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202403/T-50921050.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-IMDd" id="image-carousel-slide24" role="group" aria-roledescription="slide" aria-label="24 of 39"
+                    style="width: calc(100%); transform: translateX(-2300%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202312/T-13281179.png" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-ufi" id="image-carousel-slide25" role="group" aria-roledescription="slide" aria-label="25 of 39"
+                    style="width: calc(100%); transform: translateX(-2400%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-37705310.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-IMD" id="image-carousel-slide26" role="group" aria-roledescription="slide" aria-label="26 of 39"
+                    style="width: calc(100%); transform: translateX(-2500%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-98764146.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-expat-insider" id="image-carousel-slide27" role="group" aria-roledescription="slide" aria-label="27 of 39"
+                    style="width: calc(100%); transform: translateX(-2600%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-34476144.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-wr-safest" id="image-carousel-slide28" role="group" aria-roledescription="slide" aria-label="28 of 39"
+                    style="width: calc(100%); transform: translateX(-2700%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-45525695.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-nyt" id="image-carousel-slide29" role="group" aria-roledescription="slide" aria-label="29 of 39"
+                    style="width: calc(100%); transform: translateX(-2800%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202307/T-70528684.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-gmti" id="image-carousel-slide30" role="group" aria-roledescription="slide" aria-label="30 of 39"
+                    style="width: calc(100%); transform: translateX(-2900%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-40516694.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2023-corrup" id="image-carousel-slide31" role="group" aria-roledescription="slide" aria-label="31 of 39"
+                    style="width: calc(100%); transform: translateX(-3000%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202404/T-47970326.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2022-MnC-ASA" id="image-carousel-slide32" role="group" aria-roledescription="slide" aria-label="32 of 39"
+                    style="width: calc(100%); transform: translateX(-3100%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-74955458.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2021-MnC-ASA" id="image-carousel-slide33" role="group" aria-roledescription="slide" aria-label="33 of 39"
+                    style="width: calc(100%); transform: translateX(-3200%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-86832115.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2021-telly" id="image-carousel-slide34" role="group" aria-roledescription="slide" aria-label="34 of 39"
+                    style="width: calc(100%); transform: translateX(-3300%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-21990528.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2020-MnC-ASA" id="image-carousel-slide35" role="group" aria-roledescription="slide" aria-label="35 of 39"
+                    style="width: calc(100%); transform: translateX(-3400%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-54996817.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2019-stevie" id="image-carousel-slide36" role="group" aria-roledescription="slide" aria-label="36 of 39"
+                    style="width: calc(100%); transform: translateX(-3500%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-70585081.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2019-ttg" id="image-carousel-slide37" role="group" aria-roledescription="slide" aria-label="37 of 39"
+                    style="width: calc(100%); transform: translateX(-3600%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-63892713.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2022-global-peace" id="image-carousel-slide38" role="group" aria-roledescription="slide" aria-label="38 of 39"
+                    style="width: calc(100%); transform: translateX(-3700%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202306/T-22360657.jpg" alt="" class="fr-fic fr-dii"></li>
+                  <li class="splide__slide 2022-beri" id="image-carousel-slide39" role="group" aria-roledescription="slide" aria-label="39 of 39"
+                    style="width: calc(100%); transform: translateX(-3800%); transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1) 0s;" aria-hidden="true"><img
+                      src="https://www.meettaiwan.com/public/imb-lib/202404/T-47970326.jpg" alt="" class="fr-fic fr-dii"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="btn-splide"><button class="splide-btn" id="btnPrevTablet"><i class="fas fa-chevron-left"></i></button> <button class="splide-btn" id="btnNextTablet"><i
+                  class="fas fa-chevron-right"></i></button></div>
+          </div>
+          <div class="information">
+            <h3 class="title">國際獎項與評比</h3>
+            <div class="award-list"><button class="splide-btn" id="btnPrev"><i class="fas fa-chevron-up"></i></button>
+              <div class="splide splide--loop splide--ttb is-active is-overflow is-initialized" id="splide01" role="region" aria-roledescription="carousel">
+                <div class="splide__track splide__track--loop splide__track--ttb" id="splide01-track" style="padding-top: 0px; padding-bottom: 0px; height: calc(300px);" aria-live="off"
+                  aria-atomic="true" aria-busy="false">
+                  <ul class="splide__list" id="splide01-list" role="presentation" style="transform: translateY(-5005.19px);">
+                    <li class="splide__slide 2023-MnC-ASA splide__slide--clone" id="splide01-clone01" role="group" aria-roledescription="slide" aria-label="1 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「亞洲最佳展覽城市」 <br>MEET TAIWAN蟬聯3年榮獲「亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eventex splide__slide--clone" id="splide01-clone02" role="group" aria-roledescription="slide" aria-label="2 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Eventex Awards<br><span class="ranking">MEET TAIWAN榮獲「最佳永續活動」銀獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-imdSmart splide__slide--clone" id="splide01-clone03" role="group" aria-roledescription="slide" aria-label="3 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 IMD智慧城市指數<br><span class="ranking">全球排名第16&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-happiness splide__slide--clone" id="splide01-clone04" role="group" aria-roledescription="slide" aria-label="4 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 世界幸福報告<br><span class="ranking">排名第31&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-ecofree splide__slide--clone" id="splide01-clone05" role="group" aria-roledescription="slide" aria-label="5 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 經濟自由指數<br><span class="ranking">排名第4&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-freedom splide__slide--clone" id="splide01-clone06" role="group" aria-roledescription="slide" aria-label="6 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 全球自由指數<br><span class="ranking">亞洲第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-city splide__slide--clone" id="splide01-clone07" role="group" aria-roledescription="slide" aria-label="7 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">全球品牌顧問機構<br>2024 最佳城市<br><span class="ranking">排名第42，上升19個名次&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-coollist splide__slide--clone" id="splide01-clone08" role="group" aria-roledescription="slide" aria-label="8 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 國家地理旅遊雜誌：<br>全球最酷30景點<br><span class="ranking">臺南獲選2024全球最酷30景點&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-qs splide__slide--clone" id="splide01-clone09" role="group" aria-roledescription="slide" aria-label="9 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年全球最佳大學城市<br><span class="ranking">臺北、新竹雙市入前百名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-safety splide__slide--clone" id="splide01-clone10" role="group" aria-roledescription="slide" aria-label="10 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>城市安全指數<br><span class="ranking">臺灣排名第4 <br>臺北全球城市第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-health splide__slide--clone" id="splide01-clone11" role="group" aria-roledescription="slide" aria-label="11 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>各國城市醫療保健指數<br><span class="ranking">臺灣排名第1 <br>臺北排名全球城市第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eiu splide__slide--clone" id="splide01-clone12" role="group" aria-roledescription="slide" aria-label="12 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 EIU民主指數<br><span class="ranking">排名第10&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-imdTalent splide__slide--clone" id="splide01-clone13" role="group" aria-roledescription="slide" aria-label="13 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 IMD世界人才排名報告<br><span class="ranking">全球排名第20&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-40coolest splide__slide--clone is-active" id="splide01-clone14" role="group" aria-roledescription="slide" aria-label="14 of 39"
+                      style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">全球最酷的40個街區2023<br><span class="ranking">臺北的中山區被選為40個最酷街區中的第34名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtLife splide__slide--clone" id="splide01-clone15" role="group" aria-roledescription="slide" aria-label="15 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>休閒生活風格獎<br><span class="ranking">國際最佳探險目的地−臺灣排名第8 <br>亞洲最佳休閒目的地−臺北排名第5 <br>最佳轉機（Layover）機場−桃園國際機場排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtTest splide__slide--clone" id="splide01-clone16" role="group" aria-roledescription="slide" aria-label="16 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>測試讀者調查獎<br><span class="ranking">中華航空排名北亞最佳航空公司第1，長榮航空排名第3 <br>桃園國際機場排名亞洲最佳機場第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ceoworld splide__slide--clone" id="splide01-clone17" role="group" aria-roledescription="slide" aria-label="17 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 CEOWORLD健康保健指數<br><span class="ranking">排名第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-tech splide__slide--clone" id="splide01-clone18" role="group" aria-roledescription="slide" aria-label="18 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">全球金融2023世界科技最先進國家與地區排名<br><span class="ranking">排名第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-press splide__slide--clone" id="splide01-clone19" role="group" aria-roledescription="slide" aria-label="19 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023世界新聞自由指數<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-freedomNet splide__slide--clone" id="splide01-clone20" role="group" aria-roledescription="slide" aria-label="20 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023全球網路自由度報告<br><span class="ranking">排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-suscity splide__slide--clone" id="splide01-clone21" role="group" aria-roledescription="slide" aria-label="21 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">永續城市指數報告<br><span class="ranking">臺灣四縣市入榜： <br>臺北排名第23、臺中排名第26、屏東排名第39、新竹排名第62&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gpci splide__slide--clone" id="splide01-clone22" role="group" aria-roledescription="slide" aria-label="22 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年全球影響力城市指數報告<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-halal splide__slide--clone" id="splide01-clone23" role="group" aria-roledescription="slide" aria-label="23 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023清真旅遊獎<br><span class="ranking">榮獲「最有潛力穆斯林友善旅遊目的地城市獎–非伊斯蘭合作組織&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMDd splide__slide--clone" id="splide01-clone24" role="group" aria-roledescription="slide" aria-label="24 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 世界數位競爭力調查評比<br><span class="ranking">臺灣全球排名第9&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ufi splide__slide--clone" id="splide01-clone25" role="group" aria-roledescription="slide" aria-label="25 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 國際展覽業協會UFI<br>產業夥伴獎<br><span class="ranking">經濟部貿易署「 EXPO-TECH數位展覽領航計畫」榮獲「2023年UFI產業夥伴獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMD splide__slide--clone" id="splide01-clone26" role="group" aria-roledescription="slide" aria-label="26 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 IMD世界競爭力評比<br><span class="ranking">臺灣全球排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-expat-insider splide__slide--clone" id="splide01-clone27" role="group" aria-roledescription="slide" aria-label="27 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Expat Insider：<br>外國人最宜居國家<br><span class="ranking">臺灣全球排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-wr-safest splide__slide--clone" id="splide01-clone28" role="group" aria-roledescription="slide" aria-label="28 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 英國保險公司William Russell：<br>全球最友善城市<br><span class="ranking">臺北綜合排名第8，同時被評為「全球最安全城市」之首&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-nyt splide__slide--clone" id="splide01-clone29" role="group" aria-roledescription="slide" aria-label="29 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 紐約時報：<br>全球最值得去的52個地方<br><span class="ranking">臺北入選其中&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gmti splide__slide--clone" id="splide01-clone30" role="group" aria-roledescription="slide" aria-label="30 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 萬事達卡<br>全球穆斯林旅遊指數排名（GMTI）<br><span class="ranking">臺灣排名全球非穆斯林國家第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-corrup splide__slide--clone" id="splide01-clone31" role="group" aria-roledescription="slide" aria-label="31 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年亞洲、美國和澳洲腐敗看法<br><span class="ranking">排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-MnC-ASA splide__slide--clone" id="splide01-clone32" role="group" aria-roledescription="slide" aria-label="32 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022年 M&amp;C Asia Stella Awards<br><span class="ranking">MEET TAIWAN蟬聯2年榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-MnC-ASA splide__slide--clone" id="splide01-clone33" role="group" aria-roledescription="slide" aria-label="33 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2021年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2022年度亞洲最佳會展目的地」 <br>MEET TAIWAN榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-telly splide__slide--clone" id="splide01-clone34" role="group" aria-roledescription="slide" aria-label="34 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2021年 The Telly Awards美國泰利獎<br><span class="ranking">經濟部國貿局以Meet Taiwan形象影片榮獲金獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2020-MnC-ASA splide__slide--clone" id="splide01-clone35" role="group" aria-roledescription="slide" aria-label="35 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2020年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2020年度亞洲最佳會議獎旅目的地獎」 <br>MEET TAIWAN榮獲「最佳創新目的地行銷特別獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-stevie splide__slide--clone" id="splide01-clone36" role="group" aria-roledescription="slide" aria-label="36 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2019年 史迪威Stevie Awards國際商業大獎<br><span class="ranking">MEET TAIWAN 榮獲銅獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-ttg splide__slide--clone" id="splide01-clone37" role="group" aria-roledescription="slide" aria-label="37 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2019年 TTG Travel Awards<br><span class="ranking">MEET TAIWAN榮獲「年度最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-global-peace splide__slide--clone" id="splide01-clone38" role="group" aria-roledescription="slide" aria-label="38 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022年 全球和平指數研究報告<br><span class="ranking">臺灣排名全球第34&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-beri splide__slide--clone" id="splide01-clone39" role="group" aria-roledescription="slide" aria-label="39 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022 BERI「投資環境風險評估報告」<br><span class="ranking">排名第14&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-MnC-ASA" id="splide01-slide01" role="group" aria-roledescription="slide" aria-label="1 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「亞洲最佳展覽城市」 <br>MEET TAIWAN蟬聯3年榮獲「亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eventex" id="splide01-slide02" role="group" aria-roledescription="slide" aria-label="2 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 Eventex Awards<br><span class="ranking">MEET TAIWAN榮獲「最佳永續活動」銀獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-imdSmart" id="splide01-slide03" role="group" aria-roledescription="slide" aria-label="3 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 IMD智慧城市指數<br><span class="ranking">全球排名第16&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-happiness" id="splide01-slide04" role="group" aria-roledescription="slide" aria-label="4 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 世界幸福報告<br><span class="ranking">排名第31&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-ecofree" id="splide01-slide05" role="group" aria-roledescription="slide" aria-label="5 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 經濟自由指數<br><span class="ranking">排名第4&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-freedom" id="splide01-slide06" role="group" aria-roledescription="slide" aria-label="6 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 全球自由指數<br><span class="ranking">亞洲第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-city" id="splide01-slide07" role="group" aria-roledescription="slide" aria-label="7 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">全球品牌顧問機構<br>2024 最佳城市<br><span class="ranking">排名第42，上升19個名次&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-coollist" id="splide01-slide08" role="group" aria-roledescription="slide" aria-label="8 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 國家地理旅遊雜誌：<br>全球最酷30景點<br><span class="ranking">臺南獲選2024全球最酷30景點&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-qs" id="splide01-slide09" role="group" aria-roledescription="slide" aria-label="9 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年全球最佳大學城市<br><span class="ranking">臺北、新竹雙市入前百名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-safety" id="splide01-slide10" role="group" aria-roledescription="slide" aria-label="10 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>城市安全指數<br><span class="ranking">臺灣排名第4 <br>臺北全球城市第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-health" id="splide01-slide11" role="group" aria-roledescription="slide" aria-label="11 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>各國城市醫療保健指數<br><span class="ranking">臺灣排名第1 <br>臺北排名全球城市第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eiu" id="splide01-slide12" role="group" aria-roledescription="slide" aria-label="12 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 EIU民主指數<br><span class="ranking">排名第10&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-imdTalent is-visible is-prev" id="splide01-slide13" role="group" aria-roledescription="slide" aria-label="13 of 39" style="margin-bottom: 1rem;">
+                      <h5 class="award-title">2023年 IMD世界人才排名報告<br><span class="ranking">全球排名第20&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-40coolest is-active is-visible" id="splide01-slide14" role="group" aria-roledescription="slide" aria-label="14 of 39" style="margin-bottom: 1rem;">
+                      <h5 class="award-title">全球最酷的40個街區2023<br><span class="ranking">臺北的中山區被選為40個最酷街區中的第34名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtLife is-next" id="splide01-slide15" role="group" aria-roledescription="slide" aria-label="15 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>休閒生活風格獎<br><span class="ranking">國際最佳探險目的地−臺灣排名第8 <br>亞洲最佳休閒目的地−臺北排名第5 <br>最佳轉機（Layover）機場−桃園國際機場排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtTest" id="splide01-slide16" role="group" aria-roledescription="slide" aria-label="16 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>測試讀者調查獎<br><span class="ranking">中華航空排名北亞最佳航空公司第1，長榮航空排名第3 <br>桃園國際機場排名亞洲最佳機場第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ceoworld" id="splide01-slide17" role="group" aria-roledescription="slide" aria-label="17 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 CEOWORLD健康保健指數<br><span class="ranking">排名第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-tech" id="splide01-slide18" role="group" aria-roledescription="slide" aria-label="18 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">全球金融2023世界科技最先進國家與地區排名<br><span class="ranking">排名第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-press" id="splide01-slide19" role="group" aria-roledescription="slide" aria-label="19 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023世界新聞自由指數<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-freedomNet" id="splide01-slide20" role="group" aria-roledescription="slide" aria-label="20 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023全球網路自由度報告<br><span class="ranking">排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-suscity" id="splide01-slide21" role="group" aria-roledescription="slide" aria-label="21 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">永續城市指數報告<br><span class="ranking">臺灣四縣市入榜： <br>臺北排名第23、臺中排名第26、屏東排名第39、新竹排名第62&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gpci" id="splide01-slide22" role="group" aria-roledescription="slide" aria-label="22 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年全球影響力城市指數報告<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-halal" id="splide01-slide23" role="group" aria-roledescription="slide" aria-label="23 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023清真旅遊獎<br><span class="ranking">榮獲「最有潛力穆斯林友善旅遊目的地城市獎–非伊斯蘭合作組織&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMDd" id="splide01-slide24" role="group" aria-roledescription="slide" aria-label="24 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 世界數位競爭力調查評比<br><span class="ranking">臺灣全球排名第9&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ufi" id="splide01-slide25" role="group" aria-roledescription="slide" aria-label="25 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 國際展覽業協會UFI<br>產業夥伴獎<br><span class="ranking">經濟部貿易署「 EXPO-TECH數位展覽領航計畫」榮獲「2023年UFI產業夥伴獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMD" id="splide01-slide26" role="group" aria-roledescription="slide" aria-label="26 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 IMD世界競爭力評比<br><span class="ranking">臺灣全球排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-expat-insider" id="splide01-slide27" role="group" aria-roledescription="slide" aria-label="27 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 Expat Insider：<br>外國人最宜居國家<br><span class="ranking">臺灣全球排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-wr-safest" id="splide01-slide28" role="group" aria-roledescription="slide" aria-label="28 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 英國保險公司William Russell：<br>全球最友善城市<br><span class="ranking">臺北綜合排名第8，同時被評為「全球最安全城市」之首&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-nyt" id="splide01-slide29" role="group" aria-roledescription="slide" aria-label="29 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 紐約時報：<br>全球最值得去的52個地方<br><span class="ranking">臺北入選其中&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gmti" id="splide01-slide30" role="group" aria-roledescription="slide" aria-label="30 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年 萬事達卡<br>全球穆斯林旅遊指數排名（GMTI）<br><span class="ranking">臺灣排名全球非穆斯林國家第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-corrup" id="splide01-slide31" role="group" aria-roledescription="slide" aria-label="31 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2023年亞洲、美國和澳洲腐敗看法<br><span class="ranking">排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-MnC-ASA" id="splide01-slide32" role="group" aria-roledescription="slide" aria-label="32 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2022年 M&amp;C Asia Stella Awards<br><span class="ranking">MEET TAIWAN蟬聯2年榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-MnC-ASA" id="splide01-slide33" role="group" aria-roledescription="slide" aria-label="33 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2021年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2022年度亞洲最佳會展目的地」 <br>MEET TAIWAN榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-telly" id="splide01-slide34" role="group" aria-roledescription="slide" aria-label="34 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2021年 The Telly Awards美國泰利獎<br><span class="ranking">經濟部國貿局以Meet Taiwan形象影片榮獲金獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2020-MnC-ASA" id="splide01-slide35" role="group" aria-roledescription="slide" aria-label="35 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2020年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2020年度亞洲最佳會議獎旅目的地獎」 <br>MEET TAIWAN榮獲「最佳創新目的地行銷特別獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-stevie" id="splide01-slide36" role="group" aria-roledescription="slide" aria-label="36 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2019年 史迪威Stevie Awards國際商業大獎<br><span class="ranking">MEET TAIWAN 榮獲銅獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-ttg" id="splide01-slide37" role="group" aria-roledescription="slide" aria-label="37 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2019年 TTG Travel Awards<br><span class="ranking">MEET TAIWAN榮獲「年度最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-global-peace" id="splide01-slide38" role="group" aria-roledescription="slide" aria-label="38 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2022年 全球和平指數研究報告<br><span class="ranking">臺灣排名全球第34&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-beri" id="splide01-slide39" role="group" aria-roledescription="slide" aria-label="39 of 39" style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">2022 BERI「投資環境風險評估報告」<br><span class="ranking">排名第14&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-MnC-ASA splide__slide--clone" id="splide01-clone40" role="group" aria-roledescription="slide" aria-label="1 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「亞洲最佳展覽城市」 <br>MEET TAIWAN蟬聯3年榮獲「亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eventex splide__slide--clone" id="splide01-clone41" role="group" aria-roledescription="slide" aria-label="2 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Eventex Awards<br><span class="ranking">MEET TAIWAN榮獲「最佳永續活動」銀獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-imdSmart splide__slide--clone" id="splide01-clone42" role="group" aria-roledescription="slide" aria-label="3 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 IMD智慧城市指數<br><span class="ranking">全球排名第16&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-happiness splide__slide--clone" id="splide01-clone43" role="group" aria-roledescription="slide" aria-label="4 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 世界幸福報告<br><span class="ranking">排名第31&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-ecofree splide__slide--clone" id="splide01-clone44" role="group" aria-roledescription="slide" aria-label="5 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 經濟自由指數<br><span class="ranking">排名第4&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-freedom splide__slide--clone" id="splide01-clone45" role="group" aria-roledescription="slide" aria-label="6 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 全球自由指數<br><span class="ranking">亞洲第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-city splide__slide--clone" id="splide01-clone46" role="group" aria-roledescription="slide" aria-label="7 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">全球品牌顧問機構<br>2024 最佳城市<br><span class="ranking">排名第42，上升19個名次&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-coollist splide__slide--clone" id="splide01-clone47" role="group" aria-roledescription="slide" aria-label="8 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 國家地理旅遊雜誌：<br>全球最酷30景點<br><span class="ranking">臺南獲選2024全球最酷30景點&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-qs splide__slide--clone" id="splide01-clone48" role="group" aria-roledescription="slide" aria-label="9 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年全球最佳大學城市<br><span class="ranking">臺北、新竹雙市入前百名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-safety splide__slide--clone" id="splide01-clone49" role="group" aria-roledescription="slide" aria-label="10 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>城市安全指數<br><span class="ranking">臺灣排名第4 <br>臺北全球城市第2&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2024-NUMBEO-health splide__slide--clone" id="splide01-clone50" role="group" aria-roledescription="slide" aria-label="11 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2024年 NUMBEO<br>各國城市醫療保健指數<br><span class="ranking">臺灣排名第1 <br>臺北排名全球城市第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-eiu splide__slide--clone" id="splide01-clone51" role="group" aria-roledescription="slide" aria-label="12 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 EIU民主指數<br><span class="ranking">排名第10&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-imdTalent splide__slide--clone" id="splide01-clone52" role="group" aria-roledescription="slide" aria-label="13 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 IMD世界人才排名報告<br><span class="ranking">全球排名第20&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-40coolest splide__slide--clone is-active" id="splide01-clone53" role="group" aria-roledescription="slide" aria-label="14 of 39"
+                      style="margin-bottom: 1rem;" aria-hidden="true">
+                      <h5 class="award-title">全球最酷的40個街區2023<br><span class="ranking">臺北的中山區被選為40個最酷街區中的第34名&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtLife splide__slide--clone" id="splide01-clone54" role="group" aria-roledescription="slide" aria-label="15 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>休閒生活風格獎<br><span class="ranking">國際最佳探險目的地−臺灣排名第8 <br>亞洲最佳休閒目的地−臺北排名第5 <br>最佳轉機（Layover）機場−桃園國際機場排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gtTest splide__slide--clone" id="splide01-clone55" role="group" aria-roledescription="slide" aria-label="16 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Global Traveler<br>測試讀者調查獎<br><span class="ranking">中華航空排名北亞最佳航空公司第1，長榮航空排名第3 <br>桃園國際機場排名亞洲最佳機場第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ceoworld splide__slide--clone" id="splide01-clone56" role="group" aria-roledescription="slide" aria-label="17 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 CEOWORLD健康保健指數<br><span class="ranking">排名第1&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-tech splide__slide--clone" id="splide01-clone57" role="group" aria-roledescription="slide" aria-label="18 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">全球金融2023世界科技最先進國家與地區排名<br><span class="ranking">排名第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-press splide__slide--clone" id="splide01-clone58" role="group" aria-roledescription="slide" aria-label="19 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023世界新聞自由指數<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-freedomNet splide__slide--clone" id="splide01-clone59" role="group" aria-roledescription="slide" aria-label="20 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023全球網路自由度報告<br><span class="ranking">排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-suscity splide__slide--clone" id="splide01-clone60" role="group" aria-roledescription="slide" aria-label="21 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">永續城市指數報告<br><span class="ranking">臺灣四縣市入榜： <br>臺北排名第23、臺中排名第26、屏東排名第39、新竹排名第62&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gpci splide__slide--clone" id="splide01-clone61" role="group" aria-roledescription="slide" aria-label="22 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年全球影響力城市指數報告<br><span class="ranking">排名第35&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-halal splide__slide--clone" id="splide01-clone62" role="group" aria-roledescription="slide" aria-label="23 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023清真旅遊獎<br><span class="ranking">榮獲「最有潛力穆斯林友善旅遊目的地城市獎–非伊斯蘭合作組織&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMDd splide__slide--clone" id="splide01-clone63" role="group" aria-roledescription="slide" aria-label="24 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 世界數位競爭力調查評比<br><span class="ranking">臺灣全球排名第9&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-ufi splide__slide--clone" id="splide01-clone64" role="group" aria-roledescription="slide" aria-label="25 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 國際展覽業協會UFI<br>產業夥伴獎<br><span class="ranking">經濟部貿易署「 EXPO-TECH數位展覽領航計畫」榮獲「2023年UFI產業夥伴獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-IMD splide__slide--clone" id="splide01-clone65" role="group" aria-roledescription="slide" aria-label="26 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 IMD世界競爭力評比<br><span class="ranking">臺灣全球排名第6&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-expat-insider splide__slide--clone" id="splide01-clone66" role="group" aria-roledescription="slide" aria-label="27 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 Expat Insider：<br>外國人最宜居國家<br><span class="ranking">臺灣全球排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-wr-safest splide__slide--clone" id="splide01-clone67" role="group" aria-roledescription="slide" aria-label="28 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 英國保險公司William Russell：<br>全球最友善城市<br><span class="ranking">臺北綜合排名第8，同時被評為「全球最安全城市」之首&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-nyt splide__slide--clone" id="splide01-clone68" role="group" aria-roledescription="slide" aria-label="29 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 紐約時報：<br>全球最值得去的52個地方<br><span class="ranking">臺北入選其中&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-gmti splide__slide--clone" id="splide01-clone69" role="group" aria-roledescription="slide" aria-label="30 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年 萬事達卡<br>全球穆斯林旅遊指數排名（GMTI）<br><span class="ranking">臺灣排名全球非穆斯林國家第3&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2023-corrup splide__slide--clone" id="splide01-clone70" role="group" aria-roledescription="slide" aria-label="31 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2023年亞洲、美國和澳洲腐敗看法<br><span class="ranking">排名第5&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-MnC-ASA splide__slide--clone" id="splide01-clone71" role="group" aria-roledescription="slide" aria-label="32 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022年 M&amp;C Asia Stella Awards<br><span class="ranking">MEET TAIWAN蟬聯2年榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-MnC-ASA splide__slide--clone" id="splide01-clone72" role="group" aria-roledescription="slide" aria-label="33 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2021年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2022年度亞洲最佳會展目的地」 <br>MEET TAIWAN榮獲「2022年度亞洲最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2021-telly splide__slide--clone" id="splide01-clone73" role="group" aria-roledescription="slide" aria-label="34 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2021年 The Telly Awards美國泰利獎<br><span class="ranking">經濟部國貿局以Meet Taiwan形象影片榮獲金獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2020-MnC-ASA splide__slide--clone" id="splide01-clone74" role="group" aria-roledescription="slide" aria-label="35 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2020年 M&amp;C Asia Stella Awards<br><span class="ranking">臺灣榮獲「2020年度亞洲最佳會議獎旅目的地獎」 <br>MEET TAIWAN榮獲「最佳創新目的地行銷特別獎」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-stevie splide__slide--clone" id="splide01-clone75" role="group" aria-roledescription="slide" aria-label="36 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2019年 史迪威Stevie Awards國際商業大獎<br><span class="ranking">MEET TAIWAN 榮獲銅獎&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2019-ttg splide__slide--clone" id="splide01-clone76" role="group" aria-roledescription="slide" aria-label="37 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2019年 TTG Travel Awards<br><span class="ranking">MEET TAIWAN榮獲「年度最佳會展局」&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-global-peace splide__slide--clone" id="splide01-clone77" role="group" aria-roledescription="slide" aria-label="38 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022年 全球和平指數研究報告<br><span class="ranking">臺灣排名全球第34&nbsp;</span></h5>
+                    </li>
+                    <li class="splide__slide 2022-beri splide__slide--clone" id="splide01-clone78" role="group" aria-roledescription="slide" aria-label="39 of 39" style="margin-bottom: 1rem;"
+                      aria-hidden="true">
+                      <h5 class="award-title">2022 BERI「投資環境風險評估報告」<br><span class="ranking">排名第14&nbsp;</span></h5>
+                    </li>
+                  </ul>
+                </div>
+              </div><button class="splide-btn" id="btnNext"><i class="fas fa-chevron-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
   <!-- mt-success-case -->
   <div id="mt_success_case"></div>
   <!-- mt-content-list -->
@@ -263,7 +1396,7 @@
         <div class="item">
           <div class="pic">
             <div class="img-container">
-              <img src="https://source.unsplash.com/random/1" alt="" />
+              <img src="https://www.meettaiwan.com/images/sp/mice-ability/list/list_0.jpg" alt="" />
             </div>
           </div>
           <div data-aos="fade-left" data-aos-delay="500" class="info">
@@ -271,6 +1404,18 @@
             <p>
               臺灣在醫學、資訊與科學等領域之研究水準揚名國際，同時與國際相關學會、協會等密切交流，造就了臺灣專業且成熟的會議市場。根據國際會議協會(ICCA)全球協會型國際會議場次統計資料，2019年在臺舉辦協會型
             </p>
+            <button class="list-more-btn">
+              <img src="images/icon/icon_add3.svg" alt="">
+            </button>
+            <ul class="more-list">
+              <li><a href="https://www.twtc.com.tw/">台北世界貿易中心展覽大樓</a></li>
+              <li><a href="https://www.ticc.com.tw/">台北國際會議中心</a></li>
+              <li><a href="https://www.tainex.com.tw/">台北南港展覽館1館</a></li>
+              <li><a href="https://www.tainex.com.tw/">台北南港展覽館2館</a></li>
+              <li><a href="https://www.icctainan.com/">大台南會展中心</a></li>
+              <li><a href="https://www.kecc.com.tw">高雄展覽館</a></li>
+              <li>桃園會展中心（即將完工）</li>
+            </ul>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cumque, accusamus blanditiis nobis eum eaque dolore dolor
@@ -331,6 +1476,56 @@
             <p>
               臺灣在醫學、資訊與科學等領域之研究水準揚名國際，同時與國際相關學會、協會等密切交流，造就了臺灣專業且成熟的會議市場。根據國際會議協會(ICCA)全球協會型國際會議場次統計資料，2019年在臺舉辦協會型
             </p>
+            <button class="list-more-btn">
+              <img src="images/icon/icon_add3.svg" alt="">
+            </button>
+            <ul class="more-list">
+              <li>
+                2023年 第38屆世界獸醫師大會（約5,000人）
+              </li>
+              <li>
+                2023年 世界新聞媒體年會（約1,000人）
+              </li>
+              <li>
+                2023年 亞太肝臟研究學會年會（約3,000人）
+              </li>
+              <li>
+                2022年 世界不動產聯合會第41屆全球領袖高峰會（1,000人）
+              </li>
+              <li>
+                2022年 第33屆國際神經精神藥理學學院世界大會（1,012人）
+              </li>
+              <li>
+                2022年 第9屆亞洲腹部放射醫學年會（1,266人）
+              </li>
+              <li>
+                2022年 第25屆東亞護理學者論壇（1,200人）
+              </li>
+              <li>
+                2022年 第九屆世界生物力學大會（2,200人）
+              </li>
+              <li>
+                2021年 亞太體外維生系統大會（1,462人）
+              </li>
+              <li>
+                2021年 第17屆亞洲大洋洲國際神經學大會（2,917人）
+              </li>
+              <li>
+                2021年 第17屆國際病毒性肝炎及肝病大會（1,548人）
+              </li>
+              <li>
+                2021年 第三十二屆國際消化外科腫瘤醫學會世界大會（1,000人）
+              </li>
+              <li>
+                2020年 國際會議協會（ICCA）年會（1,500人）
+              </li>
+              <li>
+                2020年 全球通訊大會（2,000人）
+              </li>
+              <li>
+                2020年 全球網際網路會議（1,200人）
+              </li>
+            </ul>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cumque, accusamus blanditiis nobis eum eaque dolore dolor

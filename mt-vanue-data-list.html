@@ -54,6 +54,20 @@
       </picture>
     </div>
     <div class="container">
+      <!-- header 位置調整 start -->
+      <div class="mt-page-title">
+        <h2>尋找會展場地</h2>
+        <!-- <small>Lorem ipsum dolor sit amet.</small> -->
+      </div>
+      <!-- breadcrumb -->
+      <div class="breadcrumb">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">節點</a></li>
+          <li>節點</li>
+        </ul>
+      </div>
+      <!-- header 位置調整 end -->
       <!-- 左側 -->
       <div class="left_block">
         <div class="sidebar__inner">
@@ -311,21 +325,11 @@
       </div>
       <!-- 中間內容 -->
       <div class="center_block">
-        <div class="mt-page-title">
-          <h2>尋找會展場地</h2>
-          <small>Lorem ipsum dolor sit amet.</small>
-        </div>
+
         <div class="mt-content">
-          <!-- breadcrumb -->
-          <div class="breadcrumb">
-            <ul>
-              <li><a href="#">首頁</a></li>
-              <li><a href="#">節點</a></li>
-              <li>節點</li>
-            </ul>
-          </div>
+
           <!-- 頁面標準功能 -->
-          <div class="mt-page-function"></div>
+          <!-- <div class="mt-page-function"></div> -->
           <!-- 頁面搜尋 -->
           <div class="adv_function">
             <div class="flex-form">
@@ -465,24 +469,73 @@
                     tenetur nam cum ullam perferendis labore optio totam
                     voluptate.
                   </p>
-                  <div class="mt-facility">
+                  <div class="mt-facility ">
                     <a href="javascript:;">展覽館<span>1</span>間</a>
                     <a href="javascript:;">會議室數量<span>3</span>間</a>
                     <a href="javascript:;">單一會議室最大容納<span>160</span>人</a>
                     <a href="javascript:;">房間數量<span>321</span>間</a>
                   </div>
-                  <div class="mt-facility">
-                    <a href="javascript:;"><img src="images/service/icon_projector.svg" alt="" />投影設備</a>
-                    <a href="javascript:;"><img src="images/service/icon_speaker.svg" alt="" />會議音響系統</a>
-                    <a href="javascript:;"><img src="images/service/icon_microphone.svg" alt="" />無線麥克風</a>
-                    <a href="javascript:;"><img src="images/service/icon_translate.svg" alt="" />同步翻譯</a>
-                    <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />停車場</a>
+                  <div class="mt-facility facility-slider" style="width: 543px;">
+                    <div class="">
+                      <a href="#"><img src="images/service/icon_projector.svg" alt="" />投影設備</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_speaker.svg" alt="" />會議音響系統</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_microphone.svg" alt="" />無線麥克風</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_translate.svg" alt="" />同步翻譯</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />停車場</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />淨下設施 (洗滌器)</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />淨下設施(免治馬桶)</a>
+                    </div>
+                    <div class="">
+                      <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />祈禱室(需事先提出)</a>
+                    </div>
                   </div>
                   <div class="mt-tag">
                     <a href="javascript:;">ISO 20121</a>
                     <a href="javascript:;">PAS 2050:2011</a>
                     <a href="javascript:;">ISO 14064-1</a>
                   </div>
+                  <style>
+                    .facility-slider {
+                      /* padding: 0 2em; */
+                      /* padding-right: 2em; */
+                    }
+
+                    .facility-slider .slick-prev {
+                      top: -20%;
+                      left: -3%;
+                      transform: scale(0.8);
+                    }
+
+                    .facility-slider .slick-next {
+                      right: -3%;
+                      top: -20%;
+                      transform: scale(0.8);
+                    }
+                  </style>
+                  <script>
+                    $('.facility-slider div').length > 5 ? facilitySlider() : null;
+                    //slick
+                    function facilitySlider() {
+                      $('.facility-slider').slick({
+                        speed: 300,
+                        slidesToShow: 1,
+                        infinite: false,
+                        variableWidth: true
+                      });
+                    }
+                  </script>
                 </div>
                 <!-- 蒐藏標籤 -->
                 <a href="javascript:;" class="i_bookmark">
@@ -545,6 +598,11 @@
                     <a href="javascript:;"><img src="images/service/icon_microphone.svg" alt="" />無線麥克風</a>
                     <a href="javascript:;"><img src="images/service/icon_translate.svg" alt="" />同步翻譯</a>
                     <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />停車場</a>
+                    <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />淨下設施 (洗滌器)</a>
+                    <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />淨下設施(免治馬桶)</a>
+                    <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />祈禱室(需事先提出)</a>
+                    <!-- <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />祈禱室</a> -->
+                    <a href="javascript:;"><img src="images/service/icon_parking.svg" alt="" />麥加指標</a>
                   </div>
                   <div class="mt-tag">
                     <a href="javascript:;">ISO 20121</a>

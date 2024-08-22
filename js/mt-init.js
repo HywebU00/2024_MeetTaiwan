@@ -932,12 +932,11 @@ $(window).on('load', function () {
 
   //------  立即訂閱電子報按鈕  ---------------
 
-  if ($('.btn-subscribe').length != 0) {
-    $('.btn-subscribe').click(function () {
-      $('.form-subscribe').toggleClass('toggle');
-      // $(".form-subscribe").slideToggle();
-    });
-  }
+  // if ($('.btn-subscribe').length != 0) {
+  //   $('.btn-subscribe').click(function () {
+  //     $('.form-subscribe').toggleClass('toggle');
+  //   });
+  // }
 
   //------- slider-grid-btn 收合與展開 -----------
   if ($('.slider-grid-btn').length != 0) {
