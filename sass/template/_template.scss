@@ -405,7 +405,7 @@
 
   .form {
     font-size: 0.875rem;
-
+    display: contents;
     hr {
       border-top: 1px solid #eee;
       margin: 1em 0;
@@ -415,7 +415,7 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: flex-start;
-
+      height: 2em;
       .check_grp,
       .radio-grp,
       .btn {
@@ -599,7 +599,7 @@
             position: absolute;
             content: '';
             right: 1.15em;
-            top: 0.75em;
+            top: 0.8em;
             height: 1em;
             width: 2px;
             background: #ddd;

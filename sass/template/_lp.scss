@@ -2191,13 +2191,6 @@
             }
           }
           tbody {
-            tr {
-              td {
-                &:last-child {
-                  text-align: end;
-                }
-              }
-            }
             @include screen('mobile') {
               tr {
                 padding: 0;
