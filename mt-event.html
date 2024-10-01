@@ -89,7 +89,6 @@
                     <img data-src="images/event_pic.jpg" class="lazy" />
                     <noscript><img src="images/event_pic.jpg" /></noscript>
                   </picture>
-                  <span>圖說</span>
                 </a>
               </div>
               <div class="events_info">
@@ -107,7 +106,9 @@
                       <li><a href="#"><i class="fas fa-globe"></i></a></li>
                       <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                       <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#">
+                          <div class="icon-X"></div>
+                        </a></li>
                     </ul>
                   </li>
                 </ul>
@@ -195,9 +196,9 @@
                 </script>
               </div>
 
-              <h3 class="mt-h3 mt-h3-subtitle">活動描述</h3>
+              <h3 class="mt-h3 mt-h3-subtitle"><span>活動描述</span></h3>
               <p>蔬菜水果、生鮮農產食品、肉類及乳製品、水產食品、調味品及添加物、冷凍調理食品、脫水食品、酒類、咖啡、茶、飲料、糖果餅乾、烘焙食品、保健食品、休閒食品、素食食品、有機食品。</p>
-              <h3 class="mt-h3 mt-h3-subtitle ">活動影片</h3>
+              <h3 class="mt-h3 mt-h3-subtitle "><span>活動影片</span></h3>
               <div class="youtube_block">
                 <div class="youtube_embed">
                   <iframe src="https://www.youtube.com/embed/wYdIq5WN5ak" title="YouTube video player" frameborder="0"
@@ -208,7 +209,7 @@
                 error nulla aspernatur vel quibusdam neque sunt impedit dolores in alias doloremque
                 eius iusto perferendis aliquam molestiae ipsam!</p>
               <!-- <div class="divider"><span>活動地點</span></div> -->
-              <h3 class="mt-h3 mt-h3-subtitle">活動地點</h3>
+              <h3 class="mt-h3 mt-h3-subtitle"><span>活動地點</span></h3>
               <div class="google_map">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.230290541785!2d120.29614321544379!3d22.607873985164723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e03785bbda15f%3A0x159de9d70633312e!2z6auY6ZuE5bGV6Ka96aSoIEthb2hzaXVuZyBFeGhpYml0aW9uIENlbnRlcg!5e0!3m2!1szh-TW!2stw!4v1641350670325!5m2!1szh-TW!2stw"
@@ -227,9 +228,7 @@
                       <h3><span>2035 E-Mobility Taiwan</span></h3>
                     </div>
                     <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
-                    <div class="info">
-                      <p>Organized by Taiwan External Trade Development</p>
-                    </div>
+
                     <span class="more"></span>
                   </a>
                 </div>
@@ -240,11 +239,7 @@
                       <h3><span>Contemporary Curating Rethink</span></h3>
                     </div>
                     <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
-                    <div class="info">
-                      <p> “Aging in Place” is the ultimate desire for all the human beings. However, social
-                        barriers are quite significant.care,community care </p>
 
-                    </div>
                     <span class="more"></span>
                   </a>
                 </div>
@@ -255,11 +250,7 @@
                       <h3><span>A New Era of Care Industry – Innovative Technology </span></h3>
                     </div>
                     <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
-                    <div class="info">
-                      <p>Lorem ipsum dolor sit amet consectetur aaepe in expeditatis dicta tenetur, commodi ad?
-                      </p>
 
-                    </div>
                     <span class="more"></span>
                   </a>
                 </div>
@@ -270,10 +261,7 @@
                       <h3><span>2035 E-Mobility Taiwan</span></h3>
                     </div>
                     <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
-                    <div class="info">
-                      <p> Organized by Taiwan External Trade Development Council (TAITRA), "2035 E-Mobility
-                        Taiwan" will be held at Taipei Nangang Exhibition Center, Hall 2 (TaiNEX 2) from </p>
-                    </div>
+
                     <span class="more"></span>
                   </a>
                 </div>
@@ -284,11 +272,7 @@
                       <h3><span>2035 E-Mobility Taiwan </span></h3>
                     </div>
                     <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
-                    <div class="info">
-                      <p> Organized by Taiwan External Trade Development Council (TAITRA), "2035 E-Mobility
-                        Taiwan" will be held at Taipei Nangang Exhibition Center, Hall 2 (TaiNEX 2) from </p>
 
-                    </div>
                     <span class="more"></span>
                   </a>
                 </div>
@@ -318,15 +302,15 @@
                       settings: {
                         slidesToShow: 2.5,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         autoplay: false,
                       },
                     }, {
                       breakpoint: 200,
                       settings: {
-                        slidesToShow: 1.5,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         autoplay: false,
                       },
                     },],

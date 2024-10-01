@@ -1,0 +1,150 @@
+.miceFigures {
+  h3 {
+    margin-bottom: 1rem;
+    color: #102b7a;
+  }
+  h4 {
+    color: #465580;
+  }
+  .wrapper {
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 12px #00000022;
+    display: block;
+    overflow: hidden;
+    padding: 2% 2% 3rem;
+    min-height: 350px;
+    height: 40vh;
+    text-align: center;
+    position: relative;
+    button {
+      color: #ccc;
+    }
+  }
+  .wrapper-tb {
+    margin: 1rem auto;
+    height: 0;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .chart-tb-contain.tb-on {
+    .wrapper-tb {
+      opacity: 1;
+      height: 100%;
+    }
+  }
+  .wrapper-tb {
+    &:-webkit-scrollbar {
+      background: transparent;
+      height: 8px;
+    }
+    &:-webkit-scrollbar-thumb {
+      background: #00000022;
+      height: 3px;
+      border-radius: 4px;
+    }
+  }
+
+  .chart-table {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    td,
+    th {
+      text-align: center;
+      font-size: 15px;
+    }
+    tr {
+      td {
+        &:nth-child(1) {
+          min-width: 70px;
+        }
+        &:nth-last-child(-n + 10) {
+          min-width: calc((100% - 70px) / 10);
+        }
+      }
+    }
+  }
+  /* .infoTable  */
+  .infoTable {
+    /* box-shadow: 0 0 12px #00000022; */
+    margin-bottom: 1em;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    overflow: scroll;
+    font-size: 15px;
+
+    thead {
+      th {
+        line-height: 2.5em;
+        background-color: #a2bfe9;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #dee1e7;
+        }
+
+        th {
+          min-width: 200px;
+          padding: 0.5em 1em;
+          background: #83a8d231;
+        }
+
+        td {
+          text-align: center;
+          min-width: 150px;
+          padding: 0.5em 1em;
+        }
+      }
+
+      + thead {
+        th {
+          padding: 0.5em 1em;
+        }
+      }
+    }
+
+    .tbodyTitle {
+      background: #b0bde238;
+
+      td {
+        border-right: #bfc8e1 1px solid;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+
+      + tr {
+        th {
+          min-width: 120px;
+        }
+      }
+    }
+  }
+
+  /* exhibitionList */
+  .exhibitionList {
+    font-size: 14px;
+    margin-bottom: 5em;
+    &:has(span) {
+      ul {
+        list-style: decimal;
+      }
+    }
+
+    li {
+      line-height: 1.5em;
+    }
+  }
+  .scroltable-nav {
+    &.scroltable-nav-right,
+    &.scroltable-nav-left {
+      display: none !important;
+    }
+  }
+}

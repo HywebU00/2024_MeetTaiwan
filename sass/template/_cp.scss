@@ -14,6 +14,17 @@
       left: calc(50% - 50px);
       background: $secondaryColor;
     }
+    &:not(.cp_like .mt-h3) {
+      @extend .mt-edit-h3;
+      text-align: start;
+      span {
+        display: inline-block;
+        background: #fff;
+        padding: 0.25em 1em 0.25em 0;
+        position: relative;
+        z-index: 1;
+      }
+    }
   }
 
   h3.mt-h3-subtitle {
@@ -606,8 +617,19 @@
             font-weight: bold;
             flex-grow: 0;
             flex-shrink: 1;
-            flex-basis: 30%;
-            min-width: 6em;
+            flex-basis: 10%;
+            min-width: 4em;
+            text-align: justify;
+            // text-align: end;
+            margin-right: 1em;
+            // color: $primaryColor;
+            height: 1.5em;
+            &::after {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              height: 0;
+            }
           }
         }
       }
@@ -619,10 +641,21 @@
           font-size: 1.4em;
           color: #888;
           cursor: pointer;
+          display: flex;
+          align-items: center;
           a {
             color: #888;
             &:hover {
               color: $secondaryColor;
+            }
+            .icon-X {
+              width: 21px;
+              height: 21px;
+              background: url(../images/icon/icon_x_logo.svg) center center no-repeat;
+              background-size: contain;
+              &:hover {
+                background-image: url(../images/icon/icon_x_logo_p.svg);
+              }
             }
           }
           &:hover {
@@ -632,10 +665,14 @@
       }
     }
     .events_info {
-      li span {
-        text-align: right;
-        margin-right: 1em;
-        color: $primaryColor;
+      li {
+        flex-basis: 18%;
+        text-align: end;
+        span {
+          text-align: right;
+          margin-right: 1em;
+          color: $primaryColor;
+        }
       }
     }
     .youtube_block {
@@ -715,7 +752,7 @@
 
     .pic {
       float: left;
-      margin: 1em 2em 1em 0;
+      margin: 1em 1.5em 1em 0;
       width: auto;
       width: 45%;
       max-width: 400px;
@@ -740,7 +777,7 @@
         display: block;
         margin: 0 auto;
         object-fit: contain;
-        max-height: 260px;
+        max-height: 300px;
       }
 
       span {
@@ -793,9 +830,7 @@
       .pic {
         min-width: 50%;
       }
-      p {
-        padding-left: 2em;
-      }
+
       @include screen('tablet') {
         flex-wrap: wrap;
         .pic {
@@ -803,19 +838,22 @@
         }
         @include screen('tablet') {
           p {
-            padding: 2em 0 0 0;
+            padding: 0;
           }
         }
       }
     }
     .mt-pic_block-right {
       flex-direction: row-reverse;
-      p {
-        padding: 0 2em 0 0;
+      .pic {
+        margin: 1em 0em 1em 1.5em;
       }
+      // p {
+      //   padding: 0 2em 0 0;
+      // }
       @include screen('tablet') {
         p {
-          padding: 2em 0 0 0;
+          padding: 0;
         }
       }
     }
@@ -827,13 +865,13 @@
       }
       p {
         padding: 0;
-        margin: 2em 0 0 0;
+        margin: 1em 0 0 0;
       }
     }
     .mt-pic_db-block {
       display: flex;
       .item {
-        padding: 0 1.5em;
+        padding: 0 0.75em;
         width: 50%;
         &:first-child {
           padding-left: 0;
@@ -850,9 +888,9 @@
           height: 20em;
         }
       }
-      p {
-        margin-top: 2em;
-      }
+      // p {
+      //   margin-top: 2em;
+      // }
       @include screen('tablet') {
         .pic {
           img {
@@ -889,7 +927,7 @@
       width: 100%;
       margin: 0 auto 2em;
       @extend %clearfix;
-      padding: 1em;
+      // padding: 1em;
       //背景填色 start
       // background: #f3f3f3;
       // box-shadow: rgb(255 255 255 / 16%) 0px 1px 9px, #f3f3f3 0px 0px 0px 16px;
@@ -1172,6 +1210,9 @@
             }
           }
         }
+      }
+      @include screen('tablet') {
+        padding: 1em 0em;
       }
     }
 

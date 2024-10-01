@@ -2,6 +2,7 @@
 @import '../../sass/_mixin'; //Mixin
 // mt-event-Info
 .mt-event-Info {
+  padding: 0 1em;
   .container {
     padding: 2em 1em 1em;
 
@@ -9,7 +10,6 @@
       padding: 2em 0em;
     }
     @include screen('tablet') {
-      // padding: 2em 1em;
       padding: 2em 0em;
     }
   }
@@ -94,6 +94,7 @@
         top: -15px;
         min-width: 12em;
         font-size: 0.938em;
+        // font-size: 0.6em;
         font-weight: bold;
         z-index: 1;
         margin-top: 0.5em;

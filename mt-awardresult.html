@@ -80,7 +80,9 @@
                   <a href="#" class="i_line"><i class="fab fa-line"></i></a>
                 </li>
                 <li>
-                  <a href="#" class="i_twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="i_twitter">
+                    <div class="icon-X"></div>
+                  </a>
                 </li>
                 <li>
                   <a href="#" class="i_link">
@@ -138,20 +140,21 @@
                     <img data-src="images/award_pic.jpg" class="lazy" />
                     <noscript><img src="images/award_pic.jpg" /></noscript>
                   </picture>
-                  <span>圖說</span>
                 </a>
               </div>
               <div class="awards_info">
                 <ul>
-                  <li><span>地點：</span>駁二藝術特區</li>
-                  <li><span>會展時間：</span><time>2017/10/01</time>-<time>2017/10/31</time></li>
-                  <li><span>執行單位： </span>集思國際會議顧問有限公司</li>
-                  <li><span>相關網址： </span>
+                  <li><span>地點</span>駁二藝術特區</li>
+                  <li><span>會展時間</span><time>2017/10/01</time>-<time>2017/10/31</time></li>
+                  <li><span>執行單位</span>集思國際會議顧問有限公司</li>
+                  <li><span>相關網址</span>
                     <ul class="sns_info">
                       <li><a href="#"><i class="fas fa-globe"></i></a></li>
                       <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                       <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#">
+                          <div class="icon-X"></div>
+                        </a></li>
                     </ul>
                   </li>
                 </ul>
@@ -458,7 +461,7 @@
                       settings: {
                         slidesToShow: 2.5,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         autoplay: false,
                       },
                     }, {
@@ -466,7 +469,7 @@
                       settings: {
                         slidesToShow: 1.5,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         autoplay: false,
                       },
                     },],
@@ -477,7 +480,108 @@
               </script>
             </div>
             <!-- cp_like -->
-            <div class="cp_like">
+            <div class="cp_like mt-event-Info">
+              <h3 class="mt-h3">您可能對這些有興趣</h3>
+              <div class="eventList">
+                <div data-aos="fade-left" data-aos-delay="500" class="item">
+                  <a href="#">
+                    <div class="mt-tag">Exhibition/會議/展覽/其他活動</div>
+                    <div class="title">
+                      <h3><span>2035 E-Mobility Taiwan</span></h3>
+                    </div>
+                    <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
+
+                    <span class="more"></span>
+                  </a>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="750" class="item">
+                  <a href="#">
+                    <div class="mt-tag">Exhibition</div>
+                    <div class="title">
+                      <h3><span>Contemporary Curating Rethink</span></h3>
+                    </div>
+                    <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
+
+                    <span class="more"></span>
+                  </a>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="1000" class="item">
+                  <a href="#">
+                    <div class="mt-tag">Meeting</div>
+                    <div class="title">
+                      <h3><span>A New Era of Care Industry – Innovative Technology </span></h3>
+                    </div>
+                    <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
+
+                    <span class="more"></span>
+                  </a>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="1250" class="item">
+                  <a href="#">
+                    <div class="mt-tag">Others</div>
+                    <div class="title">
+                      <h3><span>2035 E-Mobility Taiwan</span></h3>
+                    </div>
+                    <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
+
+                    <span class="more"></span>
+                  </a>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="1250" class="item">
+                  <a href="#">
+                    <div class="mt-tag">Others</div>
+                    <div class="title">
+                      <h3><span>2035 E-Mobility Taiwan </span></h3>
+                    </div>
+                    <div class="date"><time>2021/10/20</time> - <time>2021/10/22</time></div>
+
+                    <span class="more"></span>
+                  </a>
+                </div>
+              </div>
+              <script>
+                $(function () {
+                  //slick
+                  $('.eventList').slick({
+                    mobileFirst: true,
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrow: true,
+                    lazyLoaded: true,
+                    lazyLoad: 'ondemand',
+                    ease: 'ease',
+                    responsive: [{
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                      },
+                    }, {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 2.5,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        autoplay: false,
+                      },
+                    }, {
+                      breakpoint: 200,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        autoplay: false,
+                      },
+                    },],
+                  });
+                  $('.eventList').slick('refresh');
+                })
+              </script>
+            </div>
+            <!-- <div class="cp_like ">
               <h3 class="mt-h3">您可能對這些有興趣</h3>
               <div class="cp_like_slider">
                 <div class="item">
@@ -491,39 +595,29 @@
                 </div>
                 <div class="item">
                   <a href="#">
-                    <div class="cp_date">
-                      2022/01/01</div>
+
                     <h3><span>ART TAIPEI台北國際藝術博覽會 10月22日起在台北世貿一館展出</span></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem quos
-                      neque velit, mollitia doloremque rem placeat in numquam natus harum fuga
-                      voluptas ex amet voluptatibus maiores dolores dolorem voluptatum!</p>
+
                   </a>
 
                 </div>
                 <div class="item">
                   <a href="#">
-                    <div class="cp_date">
-                      2022/01/01</div>
+
                     <h3><span>台灣區工具機暨零組件工業同業公會</span></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem quos
-                      neque velit, mollitia doloremque rem placeat in numquam natus harum fuga
-                      voluptas ex amet voluptatibus maiores dolores dolorem voluptatum!</p>
+
                   </a>
                 </div>
                 <div class="item">
                   <a href="#">
-                    <div class="cp_date">
-                      2022/01/01</div>
+
                     <h3><span>中華民國洋服同業總會 / 世界洋服同業聯盟 / 艾力得國際會議顧問股份有限公司</span></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem quos
-                      neque velit, mollitia doloremque rem placeat in numquam natus harum fuga
-                      voluptas ex amet voluptatibus maiores dolores dolorem voluptatum! </p>
+
                   </a>
                 </div>
               </div>
               <script>
                 $(function () {
-                  //slick
                   $('.cp_like_slider').slick({
                     mobileFirst: true,
                     dots: false,
@@ -556,7 +650,7 @@
                       settings: {
                         slidesToShow: 1.5,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         autoplay: false,
                       },
                     },],
@@ -565,7 +659,7 @@
                 })
 
               </script>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
