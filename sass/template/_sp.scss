@@ -11349,8 +11349,10 @@ p.error {
 
     li {
       &:hover {
-        transform: scale(1.06);
-        transition: all 0.5s;
+        > div {
+          transform: scale(1.06);
+          transition: all 0.5s;
+        }
         .mask {
           top: 2.5%;
           transform: scale(0.89);
