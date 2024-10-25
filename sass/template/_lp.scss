@@ -274,7 +274,7 @@
       //min-height: 80em;
       //min-height: 92em;
       @include screen('xs_mobile') {
-        padding: 1em 0.5em 1em;
+        padding: 1em 1em 1em;
       }
     }
   }
@@ -589,6 +589,9 @@
           width: 30%;
           margin-left: 0;
         }
+        .btn-filter {
+          width: unset;
+        }
       }
     }
   }
@@ -636,6 +639,8 @@
         align-content: flex-start;
         overflow: hidden;
         cursor: pointer;
+        flex-direction: column;
+        flex-wrap: nowrap;
         //type 2
         // border-radius: 0.5em;
         //type 3
@@ -683,6 +688,7 @@
           margin-bottom: 0.5em;
           position: relative;
           aspect-ratio: 16/9;
+          flex-shrink: 0;
           // 漸層遮罩
           // &:after {
           //   position: absolute;
@@ -829,8 +835,8 @@
           flex-shrink: 1;
           flex-basis: 90%;
           margin: 0.25em 1rem 1em;
-          @include text-line(2, 1.45em);
-          height: 2.9em;
+          // @include text-line(2, 1.45em);
+          // height: 2.9em;
         }
       }
     }
@@ -1903,37 +1909,39 @@
           p {
             color: #888;
             font-size: 0.938em;
-            @include text-line(6, 1.45em);
+            @include text-line(3, 1.45em);
           }
 
-          .i_eco {
-            position: absolute;
-            width: 1.5em;
-            height: 1.5em;
-            right: 2.5em;
-            // right: 2em;
-            top: 0.25em;
-
-            img {
-              width: 100%;
-            }
-
-            @include screen('xs_mobile') {
-              top: 1.35em;
-              right: 1em;
-            }
-          }
-          .i_muslim {
-            position: absolute;
-            width: 1.5em;
-            height: 1.5em;
-            right: 3.8em;
-            top: 0.25em;
-            line-height: 1.5em;
-            color: $primaryColor;
-            @include screen('xs_mobile') {
-              top: 1.35em;
+          .icon {
+            display: flex;
+            .i_eco {
+              width: 1.5em;
+              height: 1.5em;
               right: 2.5em;
+              top: 0.25em;
+              img {
+                width: 100%;
+              }
+
+              @include screen('xs_mobile') {
+                top: 1.35em;
+                right: 1em;
+              }
+            }
+            .i_muslim {
+              width: 1.5em;
+              height: 1.5em;
+              right: 3.8em;
+              top: 0.25em;
+              line-height: 1.5em;
+              color: $primaryColor;
+              i {
+                margin-left: 0.25em;
+              }
+              @include screen('xs_mobile') {
+                top: 1.35em;
+                right: 2.5em;
+              }
             }
           }
           .i_bookmark {
@@ -2158,10 +2166,12 @@
 
     .mt-category {
       margin: 0;
+      display: flex;
+      align-items: center;
       ul > li {
         padding: 0.5em 0.5em 0.5em 0;
         border: 0;
-
+        flex-basis: fit-content;
         a {
           background: $primaryColor;
           border: 1px solid $primaryColor;
@@ -2181,6 +2191,8 @@
         ul > li {
           margin-bottom: 0;
           margin-left: 0;
+          flex-basis: fit-content;
+          white-space: nowrap;
         }
       }
 
@@ -2196,9 +2208,13 @@
         min-width: 234px;
         + div {
           width: calc(100% - 250px);
-          padding: 1em 2em 3em;
-          @include screen('mobile') {
+          padding: 1.6em 2em 3em;
+          @include screen('tablet') {
             width: 100%;
+            padding: 0em;
+          }
+          @include screen('mobile') {
+            padding: 0 0.5em;
           }
         }
       }
@@ -2206,6 +2222,7 @@
         margin-bottom: 1em;
         .flex-form {
           margin: 0.25rem 0;
+          flex-wrap: nowrap;
         }
         .form_grp {
           input {
@@ -2222,6 +2239,12 @@
         // padding: 0 0.75em;
         .title {
           min-width: 150px;
+          p {
+            display: flex;
+            align-items: center;
+            min-height: 2.875rem;
+            max-height: unset;
+          }
         }
         @include screen('mobile') {
           padding: 0;
@@ -2233,6 +2256,9 @@
           thead {
             th {
               text-align: start;
+              &:nth-child(3) {
+                text-align: center;
+              }
             }
           }
           tbody {
@@ -2240,23 +2266,38 @@
               tr {
                 padding: 0;
                 margin-bottom: 1em;
+                border: #ddd 1px solid;
+                padding: 1em;
               }
               td {
+                margin: 0.25em;
+                border-bottom: #ddd 1px solid;
+                padding: 0;
+                padding-bottom: 0.5rem;
                 &:first-child {
                   font-weight: 400;
                 }
-                &:last-child {
-                  display: flex;
-                  align-items: center;
-                }
-                padding: 0;
+                // &:last-child {
+                //   display: flex;
+                //   align-items: center;
+                // }
+
                 span {
-                  background: #f1f1f1;
-                  padding: 0.5em 1em 0.5em 0.5em;
-                  min-height: 40px;
-                  width: 150px;
-                  text-align: end;
-                  min-width: 150px;
+                  // background: #f1f1f1;
+                  // padding: 0.5em 1em 0.5em 0.5em;
+                  // min-height: 40px;
+                  // width: 150px;
+                  // text-align: end;
+                  display: block;
+                  margin-bottom: 0.25rem;
+                  font-weight: bold;
+                  // min-width: 150px;
+                }
+              }
+              .title {
+                display: block;
+                p {
+                  min-height: unset;
                 }
               }
             }
@@ -2266,6 +2307,11 @@
     }
     .lp_list {
       padding: 0;
+    }
+    .adv_function {
+      @include screen('mobile') {
+        padding: 0;
+      }
     }
   }
   .awards_partner.grid.awards_slider {
