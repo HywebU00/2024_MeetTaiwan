@@ -331,7 +331,8 @@
     @include screen('mobile') {
       width: unset;
       display: flex;
-      justify-content: flex-end;
+      // justify-content: flex-end;
+      justify-content: flex-start;
 
       .btn {
         width: auto;
@@ -646,12 +647,14 @@
         //type 3
 
         @include screen('tablet') {
+          // flex-basis: 46%;
           flex-basis: 46%;
           margin: 0 2% 2em;
         }
 
         @include screen('xs_mobile') {
-          flex-basis: 90%;
+          flex-basis: 100%;
+          // flex-basis: 90%;
           margin: 0 auto 2em;
         }
         &:hover {
