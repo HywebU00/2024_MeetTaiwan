@@ -601,7 +601,7 @@
     .sheets {
       flex-grow: 0;
       flex-shrink: 1;
-      flex-basis: 100%;
+      // flex-basis: 100%;
       display: block;
       text-align: right;
       padding: 0 1em;
@@ -1911,21 +1911,39 @@
             font-size: 0.938em;
             @include text-line(3, 1.45em);
           }
+          .i_eco {
+            position: absolute;
+            width: 1.5em;
+            height: 1.5em;
+            right: 2.5em;
+            // right: 2em;
+            top: 0.25em;
+            img {
+              width: 100%;
+            }
 
+            @include screen('xs_mobile') {
+              top: 1.35em;
+              right: 1em;
+            }
+          }
           .icon {
             display: flex;
             .i_eco {
-              width: 1.5em;
-              height: 1.5em;
-              right: 2.5em;
-              top: 0.25em;
+              position: relative;
+              top: 0;
+              left: 0;
+              // width: 1.5em;
+              // height: 1.5em;
+              // right: 2.5em;
+              // top: 0.25em;
               img {
                 width: 100%;
               }
 
               @include screen('xs_mobile') {
-                top: 1.35em;
-                right: 1em;
+                top: 0em;
+                right: 0em;
               }
             }
             .i_muslim {
@@ -1944,6 +1962,7 @@
               }
             }
           }
+
           .i_bookmark {
             position: absolute;
             width: 1em;
