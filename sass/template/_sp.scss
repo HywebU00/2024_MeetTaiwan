@@ -7040,11 +7040,16 @@ p.error {
                 opacity: 0.2;
               }
             }
+            h4 {
+              transition: all 0.5s;
+              font-size: 1.2em;
+            }
           }
           h4 {
             color: #fff;
             z-index: 1;
             line-height: 1.75em;
+            transition: all 0.5s;
             span {
               display: block;
             }
@@ -7521,6 +7526,49 @@ p.error {
       text-align: center;
       line-height: 2em;
       font-size: 2em;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 30px;
+        height: 3px;
+        left: 35%;
+        top: 30px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 30px;
+        height: 3px;
+        right: 35%;
+        top: 30px;
+      }
+      @include screen('tablet') {
+        &::before {
+          left: 30%;
+        }
+        &::after {
+          right: 30%;
+        }
+      }
+      @include screen('mobile') {
+        &::before {
+          left: 25%;
+        }
+        &::after {
+          right: 25%;
+        }
+      }
+      @include screen('xs_mobile') {
+        &::before {
+          left: 20%;
+        }
+        &::after {
+          right: 20%;
+        }
+      }
     }
     p {
       color: #fff;
@@ -7560,7 +7608,7 @@ p.error {
       height: calc(100% - 6.3em);
       padding-bottom: 5em;
       position: relative;
-      position: relative;
+
       &::after {
         content: '';
         position: absolute;
@@ -7575,6 +7623,10 @@ p.error {
       .icon {
         margin-bottom: 2em;
         position: relative;
+        img {
+          width: 50px;
+          height: 52px;
+        }
         &:after {
           content: '';
           position: absolute;
@@ -7604,6 +7656,8 @@ p.error {
         background-color: #323856;
       }
       @include screen('mobile') {
+        height: auto;
+
         &::after {
           width: 100px;
           height: 100px;
@@ -7635,6 +7689,9 @@ p.error {
       }
       .sliderBox {
         margin-top: 6.3em;
+        @include screen('mobile') {
+          margin-top: 0;
+        }
       }
     }
     @include screen('tablet') {
@@ -7644,6 +7701,9 @@ p.error {
     @include screen('mobile') {
       flex-wrap: wrap;
       .pic {
+        img {
+          display: none;
+        }
       }
       .item {
         width: 100%;

@@ -242,7 +242,6 @@ while (c < 3) {
     tooltipEl.style.top = positionY + tooltip.caretY + 'px';
     tooltipEl.style.font = tooltip.options.bodyFont.string;
     tooltipEl.style.fontSize = '12px';
-    tooltipEl.style.fontFamily = 'Roboto';
     tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
   };
 
