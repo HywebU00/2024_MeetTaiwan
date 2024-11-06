@@ -977,68 +977,70 @@
   <!-- 若要滿版 須增加 className full -->
   <!-- mt-cabin start -->
   <div class="mt-cabin">
-    <div class="container">
-      <ul>
-        <li>
-          <div class="">
-            <div class="mask">
-              <h2 class="">
-                <span>會展廊帶</span>
-              </h2>
-              <div class="picGrp">
-                <div class="pic">
-                  <img src="images/road_01.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/road_02.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/road_03.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/road_04.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/road_05.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/road_06.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="">
-            <div class="mask">
-              <h2 class="">
-                <span>體驗台灣</span>
-              </h2>
-              <div class="picGrp">
-                <div class="pic">
-                  <img src="images/experience_01.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/experience_02.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/experience_03.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/experience_04.png" alt="">
-                </div>
-                <div class="pic">
-                  <img src="images/experience_05.png" alt="">
-                </div>
-              </div>
-
-            </div>
-          </div>
+    <div class="airplaneMask">
     </div>
-    </li>
-    </ul>
-
-  </div>
+    <div class="airplaneCover"></div>
+    <div class="box">
+      <div class="container">
+        <ul>
+          <li>
+            <div class="">
+              <div class="mask">
+                <h2 class="">
+                  <span>會展廊帶</span>
+                </h2>
+                <div class="picGrp">
+                  <div class="pic">
+                    <img src="images/road_01.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/road_02.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/road_03.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/road_04.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/road_05.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/road_06.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="">
+              <div class="mask">
+                <h2 class="">
+                  <span>體驗台灣</span>
+                </h2>
+                <div class="picGrp">
+                  <div class="pic">
+                    <img src="images/experience_01.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/experience_02.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/experience_03.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/experience_04.png" alt="">
+                  </div>
+                  <div class="pic">
+                    <img src="images/experience_05.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <!-- mt-cabin end -->
@@ -2215,26 +2217,46 @@
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const cabinContent = document.querySelector(".mt-cabin");
-    gsap.registerPlugin(ScrollTrigger);
+    const airplaneMask = document.querySelector(".mt-cabin .airplaneMask");
+    const airplaneCover = document.querySelector(".mt-cabin .airplaneCover");
     gsap.fromTo(
-      cabinContent,
+      airplaneCover,
       {
-        clipPath: "circle(10% at 50% 50%)",
+        opacity: 1
       },
       {
-        clipPath: "circle(75% at 50% 50%)",
+        opacity: 0,
+        display: 'none',
         ease: "none",
         scrollTrigger: {
           markers: false,
-          trigger: cabinContent,
+          trigger: airplaneCover,
           scrub: 1,
-          start: "top-=30 center",
+          start: "top+=100 center",
           end: "top center-=100",
         },
       }
     );
-  });
+    gsap.fromTo(
+      airplaneMask,
+      {
+        scale: 1,
+      },
+      {
+        scale: 10,
+        display: 'none',
+        ease: "none",
+        scrollTrigger: {
+          markers: false,
+          trigger: airplaneMask,
+          scrub: 1,
+          start: "top+=100 center",
+          end: "top center-=100",
+        },
+      }
+    );
+  })
+
 </script>
 
 

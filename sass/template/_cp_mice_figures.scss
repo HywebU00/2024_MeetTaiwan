@@ -102,10 +102,13 @@
     overflow: hidden;
     overflow: scroll;
     font-size: 15px;
-    table {
-      border-radius: 0.5rem;
-      // overflow: hidden;
-    }
+
+    // .scroltable-container {
+    //   table {
+    //     border-radius: 0.75rem;
+    //     overflow: hidden;
+    //   }
+    // }
     thead {
       th {
         line-height: 2.5em;
@@ -113,6 +116,28 @@
         &:nth-child(1) {
           position: sticky;
           left: 0;
+          &::after {
+            position: absolute;
+            content: '';
+            background: url('../images/radus.svg') no-repeat;
+            width: 15px;
+            height: 15px;
+            top: 0;
+            left: 0;
+          }
+        }
+        &:last-child {
+          position: relative;
+          &::after {
+            position: absolute;
+            content: '';
+            background: url('../images/radus.svg') no-repeat;
+            width: 15px;
+            height: 15px;
+            top: 0;
+            right: 0;
+            transform: rotate(90deg);
+          }
         }
       }
     }
@@ -122,7 +147,35 @@
         &:nth-child(even) {
           background-color: #dee1e7;
         }
-        &:nth-child(1) {
+        &:last-child {
+          th {
+            position: relative;
+            &::after {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              content: '';
+              background: url('../images/radus.svg') no-repeat;
+              width: 15px;
+              height: 15px;
+              transform: rotate(270deg);
+            }
+          }
+          td {
+            &:last-child {
+              position: relative;
+              &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                content: '';
+                background: url('../images/radus.svg') no-repeat;
+                width: 15px;
+                height: 15px;
+                transform: rotate(-180deg);
+              }
+            }
+          }
         }
         th {
           &:nth-child(1) {
