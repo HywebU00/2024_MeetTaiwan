@@ -7131,6 +7131,12 @@ p.error {
         .cardGrp {
           margin: 0 1em;
         }
+        .info {
+          margin-bottom: 2em;
+          P {
+            line-height: 2em;
+          }
+        }
       }
       @include screen('mobile') {
         margin: 1em;
@@ -7612,48 +7618,6 @@ p.error {
       line-height: 2em;
       font-size: 2em;
       position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        background: #fff;
-        width: 30px;
-        height: 3px;
-        left: 35%;
-        top: 30px;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        background: #fff;
-        width: 30px;
-        height: 3px;
-        right: 35%;
-        top: 30px;
-      }
-      @include screen('tablet') {
-        &::before {
-          left: 30%;
-        }
-        &::after {
-          right: 30%;
-        }
-      }
-      @include screen('mobile') {
-        &::before {
-          left: 25%;
-        }
-        &::after {
-          right: 25%;
-        }
-      }
-      @include screen('xs_mobile') {
-        &::before {
-          left: 20%;
-        }
-        &::after {
-          right: 20%;
-        }
-      }
     }
     p {
       color: #fff;
@@ -7681,6 +7645,7 @@ p.error {
       font-size: 1.75em;
       margin-left: 0.5em;
       margin-bottom: 1.5em;
+      line-height: 1.2em;
     }
     p {
       color: #fff;
@@ -7800,6 +7765,9 @@ p.error {
     .mt-content_db-block,
     .info {
       margin: 1em;
+      p {
+        line-height: 2em;
+      }
     }
   }
 }
@@ -7859,7 +7827,13 @@ p.error {
       float: unset;
       max-width: unset;
     }
-
+    @include screen('notebook') {
+      .item {
+        p {
+          line-height: 2em;
+        }
+      }
+    }
     @include screen('tablet') {
       .pic {
         // img {
@@ -7869,10 +7843,8 @@ p.error {
     }
     @include screen('mobile') {
       flex-wrap: wrap;
-      .pic {
-        // img {
-        //   height: auto;
-        // }
+      > div {
+        margin-bottom: 2em;
       }
       .item {
         width: 100%;
@@ -7887,6 +7859,137 @@ p.error {
   }
   @include screen('mobile') {
     margin: 0em 1em 1em 1em;
+    &.bg-white {
+      .mt-pic_db-block {
+        margin-top: 4em;
+      }
+    }
+  }
+}
+
+.mt-main-db-content,
+.mt-main-meeting-content {
+  h3 {
+    line-height: 2em;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 30px;
+      height: 3px;
+      left: 35%;
+      top: 30px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 30px;
+      height: 3px;
+      right: 35%;
+      top: 30px;
+    }
+    @include screen('tablet') {
+      span {
+        display: block;
+      }
+      &::before {
+        left: 30%;
+      }
+      &::after {
+        right: 30%;
+      }
+    }
+    @include screen('mobile') {
+      &::before {
+        left: 25%;
+      }
+      &::after {
+        right: 25%;
+      }
+    }
+    @include screen('xs_mobile') {
+      &::before {
+        left: 15%;
+      }
+      &::after {
+        right: 15%;
+      }
+    }
+    @media (max-width: 574px) {
+      &::before {
+        left: 5%;
+      }
+      &::after {
+        right: 5%;
+      }
+    }
+    @media (max-width: 376px) {
+      &::before {
+        left: 0%;
+      }
+      &::after {
+        right: 0%;
+      }
+    }
+  }
+}
+.mt-main-db-content {
+  h3 {
+    line-height: 1.25em;
+    &::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 30px;
+      height: 3px;
+      left: 23%;
+      top: 20px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 30px;
+      height: 3px;
+      right: 23%;
+      top: 20px;
+    }
+    @include screen('tablet') {
+      &::before {
+        top: 30px;
+        left: 30%;
+      }
+      &::after {
+        top: 30px;
+        right: 30%;
+      }
+    }
+    @include screen('mobile') {
+      &::before {
+        left: 25%;
+      }
+      &::after {
+        right: 25%;
+      }
+    }
+    @media (max-width: 574px) {
+      &::before {
+        left: 5%;
+      }
+      &::after {
+        right: 5%;
+      }
+    }
+    @media (max-width: 375px) {
+      &::before {
+        left: 0%;
+      }
+      &::after {
+        right: 0%;
+      }
+    }
   }
 }
 
@@ -11418,13 +11521,14 @@ p.error {
     z-index: 99;
   }
   .box {
-    background: linear-gradient(to bottom, #949baa 0%, #bec3d5 50%, #949baa 100%);
+    // background: linear-gradient(to bottom, #949baa 0%, #bec3d5 50%, #949baa 100%);
+    background: radial-gradient(#97a0b5 0%, #4a597f 120%);
     height: 860px;
     position: relative;
     &::after {
       content: '';
       position: absolute;
-      background: url(../images/chair_.png) no-repeat right bottom;
+      background: url(../images/chair_1.png) no-repeat right bottom;
       background-size: contain;
       width: 480px;
       height: 480px;
@@ -11435,7 +11539,7 @@ p.error {
     &::before {
       position: absolute;
       font-size: 3.2em;
-      color: #abb0bc;
+      color: #8b97b3;
       bottom: 30px;
       left: 30px;
       font-weight: 800;
@@ -11467,7 +11571,7 @@ p.error {
       margin: 0 3em;
       position: relative;
       cursor: pointer;
-      background: url(../images/window_bg.png) no-repeat center center;
+      background: url(../images/window_bg_01.png) no-repeat center center;
       background-size: contain;
       position: relative;
       transition: all 0.5s;
@@ -11517,8 +11621,8 @@ p.error {
         }
       }
       @include screen('mobile') {
-        width: 200px;
-        height: 300px;
+        width: 250px;
+        // height: 300px;
         margin: 0 1em;
         h2 {
           font-size: 1.75em;
@@ -11527,30 +11631,46 @@ p.error {
         .mask {
           width: 80%;
           height: 300px;
-          top: 1.15%;
+          top: 20%;
           left: 10%;
         }
-        .pic {
-          scale: 0.55;
-        }
+        // .pic {
+        //   scale: 0.55;
+        // }
+        ////////////////////
+        // width: 200px;
+        // height: 300px;
+        // margin: 0 1em;
+        // h2 {
+        //   font-size: 1.75em;
+        //   margin-top: 4em;
+        // }
+        // .mask {
+        //   width: 80%;
+        //   height: 300px;
+        //   top: 1.15%;
+        //   left: 10%;
+        // }
+        // .pic {
+        //   scale: 0.55;
+        // }
       }
       @include screen('xs_mobile') {
-        width: 160px;
-
-        margin: 0 0.75em;
-        h2 {
-          font-size: 1.5em;
-          margin-top: 5em;
-        }
-        .mask {
-          height: 300px;
-          width: 80%;
-          top: 1.6%;
-          left: 10%;
-        }
-        .pic {
-          scale: 0.5;
-        }
+        //   width: 160px;
+        //   margin: 0 0.75em;
+        //   h2 {
+        //     font-size: 1.5em;
+        //     margin-top: 5em;
+        //   }
+        //   .mask {
+        //     height: 300px;
+        //     width: 80%;
+        //     top: 1.6%;
+        //     left: 10%;
+        //   }
+        //   .pic {
+        //     scale: 0.5;
+        //   }
       }
     }
 
@@ -11609,7 +11729,7 @@ p.error {
               }
               &:nth-child(4) {
                 transform: rotate(-10deg);
-                right: -12%;
+                right: -6%;
               }
               &:nth-child(5) {
                 transform: rotate(-10deg);
@@ -11617,16 +11737,16 @@ p.error {
             }
           }
         }
-        @include screen('tablet') {
-          &:hover {
-            .mask {
-              top: 1.8%;
-            }
-          }
-        }
+        // @include screen('tablet') {
+        //   &:hover {
+        //     .mask {
+        //       top: 1.8%;
+        //     }
+        //   }
+        // }
         @include screen('mobile') {
           .mask {
-            top: 1.6%;
+            top: 20.5%;
           }
           &:nth-child(1) {
             > div {
@@ -11717,7 +11837,7 @@ p.error {
             }
             &:nth-child(4) {
               bottom: 8%;
-              right: -6%;
+              right: -15%;
             }
             &:nth-child(5) {
               bottom: 12%;
@@ -11814,6 +11934,15 @@ p.error {
         }
       }
     }
+    @media(max-width: 564px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
   }
 
   @include screen('notebook') {
@@ -11838,6 +11967,9 @@ p.error {
     }
   }
   @include screen('tablet') {
+    .container {
+      padding: 0;
+    }
     .box {
       &::after {
         width: 300px;
@@ -11847,6 +11979,7 @@ p.error {
   }
   @include screen('mobile') {
     height: 560px;
+
     .airplaneMask {
       height: 560px;
     }
