@@ -1042,41 +1042,6 @@
       </div>
     </div>
   </div>
-  <script>
-    $(function () {
-      //slick
-      // $('.mt-cabin ul').slick({
-      //   slidesToShow: 4,
-      //   autoplay: false,
-      //   arrow: false,
-      //   lazyLoaded: true,
-      //   rtl: false,
-      //   lazyLoad: 'ondemand',
-      //   ease: 'ease',
-      //   responsive: [
-
-      //   {
-      //     breakpoint: 650,
-      //     settings: {
-      //       slidesToShow: 1.5,
-      //       slidesToScroll: 1,
-      //       arrows: false,
-      //     },
-      //   },
-      //   {
-      //     breakpoint: 375,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1,
-      //       arrows: false,
-      //       dots: true, //顯示圓點
-      //     },
-      //   },
-      //   ],
-      // });
-      // $('.mt-cabin ul').slick('refresh');
-    })
-  </script>
   <!-- mt-cabin end -->
   <!-- mt-slider-col-2 -->
   <!-- 若要滿版 須增加 className full -->
@@ -2265,7 +2230,7 @@
         scrollTrigger: {
           trigger: airplaneCover,
           scrub: 1,
-          start: "top+=300 center",
+          start: "top+=200 center",
           end: "top-=150 cente",
         },
       }
@@ -2282,7 +2247,8 @@
         scrollTrigger: {
           trigger: airplaneMask,
           scrub: 1,
-          start: "top+=300 center",
+          markers: true,
+          start: "top+=200 center",
           end: "top-=150 cente",
         },
       }
