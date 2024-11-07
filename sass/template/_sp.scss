@@ -11934,7 +11934,8 @@ p.error {
         }
       }
     }
-    @media(max-width: 564px) {
+    @media (max-width: 564px) {
+      margin-top: -5rem;
       overflow-x: scroll;
       overflow-y: hidden;
       &::-webkit-scrollbar {
