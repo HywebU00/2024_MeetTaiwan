@@ -2216,11 +2216,48 @@
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script>
 
-  function airplaneUlScroll() {
+  function airplaneMobile() {
     const airplaneUl = document.querySelector(".mt-cabin ul");
     const airplaneCabin = document.querySelector(".mt-cabin");
     const airplaneLi = document.querySelectorAll(".mt-cabin li");
     let airplaneLiWidth
+    const airplaneMask = document.querySelector(".mt-cabin .airplaneMask");
+    const airplaneCover = document.querySelector(".mt-cabin .airplaneCover");
+    let windowsInner = window.innerWidth;
+    gsap.fromTo(
+      airplaneCover,
+      {
+        opacity: 1
+      },
+      {
+        opacity: 0,
+        display: 'none',
+        ease: "none",
+        scrollTrigger: {
+          trigger: airplaneCover,
+          scrub: 1,
+          start: "top center-=150",
+          end: "center center+=200",
+        },
+      }
+    );
+    gsap.fromTo(
+      airplaneMask,
+      {
+        scale: 1,
+      },
+      {
+        scale: 8,
+        display: 'none',
+        ease: "none",
+        scrollTrigger: {
+          trigger: airplaneMask,
+          scrub: 2,
+          start: "top center-=150",
+          end: "center-=50 center",
+        },
+      }
+    );
     airplaneLi.forEach((i) => {
       airplaneLiWidth = i.offsetWidth
     })
@@ -2240,11 +2277,10 @@
       }
     );
   }
-  document.addEventListener('DOMContentLoaded', function () {
+
+  function airplanePC() {
     const airplaneMask = document.querySelector(".mt-cabin .airplaneMask");
     const airplaneCover = document.querySelector(".mt-cabin .airplaneCover");
-    let windowsInner = window.innerWidth;
-
     gsap.fromTo(
       airplaneCover,
       {
@@ -2257,7 +2293,6 @@
         scrollTrigger: {
           trigger: airplaneCover,
           scrub: 1,
-
           start: "top center-=150",
           end: "center center+=200",
         },
@@ -2267,28 +2302,28 @@
       airplaneMask,
       {
         scale: 1,
-
       },
       {
-        scale: 8,
-
+        scale: 10,
         display: 'none',
         ease: "none",
         scrollTrigger: {
           trigger: airplaneMask,
           scrub: 2,
-
           start: "top center-=150",
-          end: "center-=50 center",
+          end: "center center+=200",
         },
       }
     );
-    windowsInner < 564 ? airplaneUlScroll() : '';
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    let windowsInner = window.innerWidth;
+    windowsInner < 564 ? airplaneMobile() : airplanePC();
   })
 
   document.addEventListener('resize', function () {
     let windowsInner = window.innerWidth;
-    windowsInner < 564 ? airplaneUlScroll() : '';
+    windowsInner < 564 ? airplaneUlScroll() : airplanePC();
   })
 </script>
 
