@@ -2258,8 +2258,10 @@
           trigger: airplaneCover,
           scrub: 1,
 
-          start: "top+=200 center",
-          end: "top-=150 cente",
+          // start: "top+=200 center",
+          // end: "top-=150 cente",
+          start: "top center+=150",
+          end: "center-=150 center",
         },
       }
     );
@@ -2274,9 +2276,12 @@
         ease: "none",
         scrollTrigger: {
           trigger: airplaneMask,
-          scrub: 1,
-          start: "top+=200 center",
-          end: "top-=150 cente",
+          scrub: 2,
+          // markers: true,
+          // start: "top+=200 center",
+          // end: "top-=150 center",
+          start: "top center+=150",
+          end: "center-=150 center",
         },
       }
     );
