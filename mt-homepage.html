@@ -2215,9 +2215,37 @@
 <script src="vendor/gsap/gsap.min.js"></script>
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script>
+
+  function airplaneUlScroll() {
+    const airplaneUl = document.querySelector(".mt-cabin ul");
+    const airplaneCabin = document.querySelector(".mt-cabin");
+    const airplaneLi = document.querySelectorAll(".mt-cabin li");
+    let airplaneLiWidth
+    airplaneLi.forEach((i) => {
+      airplaneLiWidth = i.offsetWidth
+    })
+    gsap.fromTo(
+      airplaneUl,
+      { x: airplaneLiWidth },
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: airplaneCabin,
+          scrub: 1,
+          pin: true,
+          markers: true,
+          start: "center center",
+          end: "center top",
+
+        },
+      }
+    );
+  }
   document.addEventListener('DOMContentLoaded', function () {
     const airplaneMask = document.querySelector(".mt-cabin .airplaneMask");
     const airplaneCover = document.querySelector(".mt-cabin .airplaneCover");
+    let windowsInner = window.innerWidth;
+
     gsap.fromTo(
       airplaneCover,
       {
@@ -2230,6 +2258,7 @@
         scrollTrigger: {
           trigger: airplaneCover,
           scrub: 1,
+
           start: "top+=200 center",
           end: "top-=150 cente",
         },
@@ -2247,14 +2276,19 @@
         scrollTrigger: {
           trigger: airplaneMask,
           scrub: 1,
-
           start: "top+=200 center",
           end: "top-=150 cente",
         },
       }
     );
+    windowsInner < 564 ? airplaneUlScroll() : '';
+
   })
 
+  document.addEventListener('resize', function () {
+    let windowsInner = window.innerWidth;
+    windowsInner < 564 ? airplaneUlScroll() : '';
+  })
 </script>
 
 
