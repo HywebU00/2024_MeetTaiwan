@@ -1773,6 +1773,14 @@
           margin: 0 1.5% 1em;
           align-items: flex-start;
           align-content: flex-start;
+          .info {
+            h3 {
+              margin-right: 2rem;
+            }
+            .i_eco {
+              right: 0.5em;
+            }
+          }
 
           @include screen('tablet') {
             flex-basis: 47%;
@@ -1905,7 +1913,7 @@
               }
             }
             @include screen('xs_mobile') {
-              margin-right: 0;
+              margin-right: 3rem;
             }
           }
 
