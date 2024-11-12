@@ -102,42 +102,43 @@
     overflow: hidden;
     overflow: scroll;
     font-size: 15px;
-
-    // .scroltable-container {
-    //   table {
-    //     border-radius: 0.75rem;
-    //     overflow: hidden;
-    //   }
-    // }
-    thead {
+    table > thead {
+      &:nth-child(1) {
+        th {
+          &:nth-child(1) {
+            &::after {
+              position: absolute;
+              content: '';
+              background: url('../images/radus.svg') no-repeat;
+              width: 15px;
+              height: 15px;
+              top: 0;
+              left: 0;
+            }
+          }
+          &:last-child {
+            position: relative;
+            &::after {
+              position: absolute;
+              content: '';
+              background: url('../images/radus.svg') no-repeat;
+              width: 15px;
+              height: 15px;
+              top: 0;
+              right: 0;
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+    table > thead {
       th {
         line-height: 2.5em;
         background-color: #a2bfe9;
         &:nth-child(1) {
           position: sticky;
           left: 0;
-          &::after {
-            position: absolute;
-            content: '';
-            background: url('../images/radus.svg') no-repeat;
-            width: 15px;
-            height: 15px;
-            top: 0;
-            left: 0;
-          }
-        }
-        &:last-child {
-          position: relative;
-          &::after {
-            position: absolute;
-            content: '';
-            background: url('../images/radus.svg') no-repeat;
-            width: 15px;
-            height: 15px;
-            top: 0;
-            right: 0;
-            transform: rotate(90deg);
-          }
         }
       }
     }
