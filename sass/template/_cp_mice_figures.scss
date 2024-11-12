@@ -132,6 +132,18 @@
         }
       }
     }
+    .tbodyTitle {
+      + tr {
+        td {
+          &:first-child {
+            background-color: #dee1e7;
+            position: sticky;
+            left: 0;
+            font-weight: bold;
+          }
+        }
+      }
+    }
     table > thead {
       th {
         line-height: 2.5em;
