@@ -475,8 +475,8 @@
           border-bottom: 1px solid #ccc;
           color: #333;
           min-height: 15em;
-          color: #fff;
-          background-color: #55679f;
+          // color: #fff;
+          // background-color: #55679f;
           // padding-bottom: 1rem;
           @include screen('mobile') {
             flex-flow: row wrap;

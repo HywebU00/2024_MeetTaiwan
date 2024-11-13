@@ -1001,6 +1001,9 @@
       padding: 0em 1em;
       background-color: #888; //$primaryColor;
       margin: 0 1em 0.5em auto;
+      a {
+        color: #fff;
+      }
     }
   }
 
@@ -2218,9 +2221,11 @@
     }
     .mt-tag {
       a {
-        border: 1px solid #ddd;
-        color: #333;
-        background: unset;
+        color: #fff;
+        background-color: #55679f;
+        // border: 1px solid #ddd;
+        // color: #333;
+        // background: unset;
       }
     }
     &.grid {
