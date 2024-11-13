@@ -1806,6 +1806,9 @@
               font-size: 1.25em;
               @include text-line(2, 1.45em);
               height: 2.9em;
+              @include screen('xs_mobile') {
+                height: unset;
+              }
             }
 
             p {
@@ -1932,10 +1935,14 @@
             img {
               width: 100%;
             }
-
+            // @include screen('xs_mobile') {
+            //   top: 1.35em;
+            //   right: 1em;
+            // }
             @include screen('xs_mobile') {
-              top: 1.35em;
-              right: 1em;
+              top: 0em;
+              position: relative;
+              left: 0;
             }
           }
           .icon {

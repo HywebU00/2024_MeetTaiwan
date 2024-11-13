@@ -1978,6 +1978,9 @@ p.error {
                 font-size: 1.2em;
                 background: #4b5c95;
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                @include screen('xs_mobile') {
+                  width: calc(100% - 0.6em);
+                }
               }
             }
             .form_content {
@@ -1988,6 +1991,9 @@ p.error {
               .input {
                 margin-top: 0.35em;
                 min-width: 20em;
+                @include screen('xs_mobile') {
+                  width: 100%;
+                }
               }
               input {
                 height: 3em;
@@ -2009,6 +2015,7 @@ p.error {
             }
             @include screen('xs_mobile') {
               margin-left: 0;
+              width: 100%;
             }
           }
         }
@@ -2025,6 +2032,10 @@ p.error {
         @include screen('xs_mobile') {
           margin: 1em 0em 2em 0em;
           padding: 0 1em;
+          height: 230px;
+          &::after {
+            display: none;
+          }
         }
         // ul {
         //   display: flex;
@@ -2167,7 +2178,7 @@ p.error {
       width: 50%;
       margin: 0 auto;
       > p {
-        margin-top: 5em;
+        margin-top: 2em;
       }
       @include screen('xs_mobile') {
         width: 80%;
