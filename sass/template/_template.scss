@@ -1001,5 +1001,8 @@ body {
   &:has(.bg-all) {
     background: url(../images/content_bg_all.png);
     background-size: contain;
+    @include screen('xs_mobile') {
+      background-size: 1200px;
+    }
   }
 }
