@@ -965,3 +965,41 @@
 .text-center {
   text-align: center;
 }
+body {
+  &:has(.bg-taipei),
+  &:has(.bg-all),
+  &:has(.bg-kaohsiung),
+  &:has(.bg-tainan),
+  &:has(.bg-taoyuan),
+  &:has(.bg-nangang) {
+    background: none;
+    .mt-main-content {
+      .center_block {
+        .mt-content {
+          background-color: unset;
+        }
+      }
+    }
+  }
+}
+.mt-main-content {
+  &:has(.bg-taipei) {
+    background: url(../images/content_bg_Taipei.png);
+  }
+  &:has(.bg-kaohsiung) {
+    background: url(../images/content_bg_Kaohsiung.png);
+  }
+  &:has(.bg-tainan) {
+    background: url(../images/content_bg_Tainan.png);
+  }
+  &:has(.bg-taoyuan) {
+    background: url(../images/content_bg_Taoyuan.png);
+  }
+  &:has(.bg-nangang) {
+    background: url(../images/content_bg_Nangang.png);
+  }
+  &:has(.bg-all) {
+    background: url(../images/content_bg_all.png);
+    background-size: contain;
+  }
+}
