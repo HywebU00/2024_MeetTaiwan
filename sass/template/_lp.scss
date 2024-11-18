@@ -642,9 +642,7 @@
         cursor: pointer;
         flex-direction: column;
         flex-wrap: nowrap;
-        //type 2
-        // border-radius: 0.5em;
-        //type 3
+        min-height: 327px;
 
         @include screen('tablet') {
           // flex-basis: 46%;
@@ -821,6 +819,7 @@
           text-align: left;
           position: relative;
           padding-left: 1.5em;
+          max-height: 23px;
           &::before {
             position: absolute;
             content: '';
@@ -838,7 +837,7 @@
           flex-shrink: 1;
           flex-basis: 90%;
           margin: 0.25em 1rem 1em;
-          // @include text-line(2, 1.45em);
+          // @include text-line(4, 1.45em);
           // height: 2.9em;
         }
       }
