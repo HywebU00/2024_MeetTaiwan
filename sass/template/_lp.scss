@@ -17,24 +17,51 @@
     }
   }
   &:has(.mt-content) {
-    // background: url(../images/body_bg.jpg) bottom left no-repeat;
-    // background-image: url(../images/body_bg.jpg);
-    // background-image: url(../images/mtbg_test.png);
     background-repeat: no-repeat;
     background-position: bottom right;
     background-attachment: fixed;
-    // .container {
-    //   position: relative;
-    //   &::after {
-    //     position: absolute;
-    //     content: '123';
-    //     background-image: url(../../images/body_bg.jpg);
-    //     width: 200px;
-    //     height: 300px;
-    //     top: 0%;
-    //     left: 10%;
-    //   }
-    // }
+  }
+  &:has(.lp_partner),
+  &:has(.lp_list),
+  &:has(.lp_album),
+  &:has(.lp_award),
+  &:has(.lp_qa),
+  &:has(.cp_album),
+  &:has(.lp_video),
+  &:has(.greenmiceContent),
+  &:has(.sp_epaper),
+  &:has(.lp_download) {
+    .search-function {
+      top: 0.5em;
+    }
+    .center_block .mt-content {
+      padding-top: 0;
+    }
+  }
+  &:has(.lp_album) {
+    .lp_album {
+      margin-top: 0.5em;
+    }
+  }
+  &:has(.lp_qa) {
+    .lp_qa {
+      margin-top: 0.5em;
+    }
+  }
+  &:has(.cp_album) {
+    .cp_album {
+      margin-top: 0em;
+    }
+  }
+  &:has(.lp_download) {
+    .lp_download {
+      margin-top: 0.5em;
+    }
+  }
+  &:has(.greenmiceContent) {
+    .mt-content {
+      margin-top: -0.5em;
+    }
   }
   .full-container {
     max-width: unset;
@@ -688,7 +715,8 @@
           width: 100%;
           margin-bottom: 0.5em;
           position: relative;
-          aspect-ratio: 16/9;
+          // aspect-ratio: 16/9;
+          // height: 35%;
           flex-shrink: 0;
           // 漸層遮罩
           // &:after {

@@ -1939,7 +1939,7 @@ p.error {
       .epaper_item {
         background: url(../images/subscribe_img.jpg) no-repeat;
         height: 300px;
-        margin: 2.5em 1.8em 2em 1.8em;
+        margin: 0.25em 1.8em 2em 1.8em;
         width: 100%;
         position: relative;
         &::after {
@@ -3118,7 +3118,8 @@ p.error {
       }
       .mt-content {
         > div {
-          padding-top: 2em;
+          // padding-top: 2em;
+            padding-top: 0em;
         }
       }
     }
