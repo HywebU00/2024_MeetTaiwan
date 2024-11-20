@@ -993,7 +993,8 @@ body {
     background: url(../images/content_bg_Tainan.png);
   }
   &:has(.bg-taoyuan) {
-    background: url(../images/content_bg_Taoyuan.png);
+    background: url(../images/content_bg_Taoyuan.jpg);
+    background-size: 600px;
   }
   &:has(.bg-nangang) {
     background: url(../images/content_bg_Nangang.png);

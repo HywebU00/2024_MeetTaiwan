@@ -9,7 +9,7 @@
   ul {
     @include li-reset;
     li {
-      display: inline-block;
+      display: inline;
       margin: 0px 0.1em 0.1em 0px;
       &:before {
         @extend %slash;
