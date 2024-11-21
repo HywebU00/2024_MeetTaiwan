@@ -138,7 +138,7 @@
         height: 2px;
         top: 50%;
         width: 100%;
-        left: 0;
+        left: 120px;
       }
 
       span {
@@ -929,13 +929,8 @@
       width: 100%;
       margin: 0 auto 2em;
       @extend %clearfix;
-      // padding: 1em;
-      //背景填色 start
-      // background: #f3f3f3;
-      // box-shadow: rgb(255 255 255 / 16%) 0px 1px 9px, #f3f3f3 0px 0px 0px 16px;
-      //背景填色 end
-      // box-shadow: rgb(255 255 255 / 16%) 0px 1px 1px, #ddd 0px 0px 0px 1px;
-      background: #fff;
+      background: #ffffff55;
+      padding: 0 1em;
       ul {
         list-style-type: none;
         padding: 0;
