@@ -3119,7 +3119,7 @@ p.error {
       .mt-content {
         > div {
           // padding-top: 2em;
-            padding-top: 0em;
+          padding-top: 0em;
         }
       }
     }
@@ -7024,6 +7024,7 @@ p.error {
         h3 {
           text-align: center;
           font-size: 2em;
+          line-height: 1.25em;
         }
         p {
           line-height: 2.5em;
@@ -7884,67 +7885,67 @@ p.error {
   h3 {
     line-height: 2em;
     position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      background: #fff;
-      width: 30px;
-      height: 3px;
-      left: 35%;
-      top: 30px;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      background: #fff;
-      width: 30px;
-      height: 3px;
-      right: 35%;
-      top: 30px;
-    }
-    @include screen('tablet') {
-      span {
-        display: block;
-      }
-      &::before {
-        left: 30%;
-      }
-      &::after {
-        right: 30%;
-      }
-    }
-    @include screen('mobile') {
-      &::before {
-        left: 25%;
-      }
-      &::after {
-        right: 25%;
-      }
-    }
-    @include screen('xs_mobile') {
-      &::before {
-        left: 15%;
-      }
-      &::after {
-        right: 15%;
-      }
-    }
-    @media (max-width: 574px) {
-      &::before {
-        left: 5%;
-      }
-      &::after {
-        right: 5%;
-      }
-    }
-    @media (max-width: 376px) {
-      &::before {
-        left: 0%;
-      }
-      &::after {
-        right: 0%;
-      }
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   background: #fff;
+    //   width: 30px;
+    //   height: 3px;
+    //   left: 35%;
+    //   top: 30px;
+    // }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   background: #fff;
+    //   width: 30px;
+    //   height: 3px;
+    //   right: 35%;
+    //   top: 30px;
+    // }
+    // @include screen('tablet') {
+    //   span {
+    //     display: block;
+    //   }
+    //   &::before {
+    //     left: 30%;
+    //   }
+    //   &::after {
+    //     right: 30%;
+    //   }
+    // }
+    // @include screen('mobile') {
+    //   &::before {
+    //     left: 25%;
+    //   }
+    //   &::after {
+    //     right: 25%;
+    //   }
+    // }
+    // @include screen('xs_mobile') {
+    //   &::before {
+    //     left: 15%;
+    //   }
+    //   &::after {
+    //     right: 15%;
+    //   }
+    // }
+    // @media (max-width: 574px) {
+    //   &::before {
+    //     left: 5%;
+    //   }
+    //   &::after {
+    //     right: 5%;
+    //   }
+    // }
+    // @media (max-width: 376px) {
+    //   &::before {
+    //     left: 0%;
+    //   }
+    //   &::after {
+    //     right: 0%;
+    //   }
+    // }
   }
 }
 .mt-main-db-content {
