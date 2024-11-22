@@ -7951,58 +7951,58 @@ p.error {
 .mt-main-db-content {
   h3 {
     line-height: 1.25em;
-    &::before {
-      content: '';
-      position: absolute;
-      background: #fff;
-      width: 30px;
-      height: 3px;
-      left: 23%;
-      top: 20px;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      background: #fff;
-      width: 30px;
-      height: 3px;
-      right: 23%;
-      top: 20px;
-    }
-    @include screen('tablet') {
-      &::before {
-        top: 30px;
-        left: 30%;
-      }
-      &::after {
-        top: 30px;
-        right: 30%;
-      }
-    }
-    @include screen('mobile') {
-      &::before {
-        left: 25%;
-      }
-      &::after {
-        right: 25%;
-      }
-    }
-    @media (max-width: 574px) {
-      &::before {
-        left: 5%;
-      }
-      &::after {
-        right: 5%;
-      }
-    }
-    @media (max-width: 375px) {
-      &::before {
-        left: 0%;
-      }
-      &::after {
-        right: 0%;
-      }
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   background: #fff;
+    //   width: 30px;
+    //   height: 3px;
+    //   left: 23%;
+    //   top: 20px;
+    // }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   background: #fff;
+    //   width: 30px;
+    //   height: 3px;
+    //   right: 23%;
+    //   top: 20px;
+    // }
+    // @include screen('tablet') {
+    //   &::before {
+    //     top: 30px;
+    //     left: 30%;
+    //   }
+    //   &::after {
+    //     top: 30px;
+    //     right: 30%;
+    //   }
+    // }
+    // @include screen('mobile') {
+    //   &::before {
+    //     left: 25%;
+    //   }
+    //   &::after {
+    //     right: 25%;
+    //   }
+    // }
+    // @media (max-width: 574px) {
+    //   &::before {
+    //     left: 5%;
+    //   }
+    //   &::after {
+    //     right: 5%;
+    //   }
+    // }
+    // @media (max-width: 375px) {
+    //   &::before {
+    //     left: 0%;
+    //   }
+    //   &::after {
+    //     right: 0%;
+    //   }
+    // }
   }
 }
 
