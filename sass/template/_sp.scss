@@ -11603,9 +11603,10 @@ p.error {
         transition: all 0.5s;
       }
       h2 {
-        margin-top: 5em;
+        margin-top: 4.75em;
         color: #fff;
         font-size: 2.8em;
+        line-height: 0.8em;
         width: 100%;
         text-align: center;
         position: absolute;
@@ -11619,7 +11620,7 @@ p.error {
 
         h2 {
           font-size: 2em;
-          margin-top: 6em;
+          margin-top: 5.5em;
         }
         .mask {
           width: 80%;
@@ -11635,11 +11636,10 @@ p.error {
       }
       @include screen('mobile') {
         width: 250px;
-        // height: 300px;
         margin: 0 1em;
         h2 {
           font-size: 1.75em;
-          margin-top: 4em;
+          margin-top: 3.5em;
         }
         .mask {
           width: 80%;
@@ -11647,43 +11647,6 @@ p.error {
           top: 20%;
           left: 10%;
         }
-        // .pic {
-        //   scale: 0.55;
-        // }
-        ////////////////////
-        // width: 200px;
-        // height: 300px;
-        // margin: 0 1em;
-        // h2 {
-        //   font-size: 1.75em;
-        //   margin-top: 4em;
-        // }
-        // .mask {
-        //   width: 80%;
-        //   height: 300px;
-        //   top: 1.15%;
-        //   left: 10%;
-        // }
-        // .pic {
-        //   scale: 0.55;
-        // }
-      }
-      @include screen('xs_mobile') {
-        //   width: 160px;
-        //   margin: 0 0.75em;
-        //   h2 {
-        //     font-size: 1.5em;
-        //     margin-top: 5em;
-        //   }
-        //   .mask {
-        //     height: 300px;
-        //     width: 80%;
-        //     top: 1.6%;
-        //     left: 10%;
-        //   }
-        //   .pic {
-        //     scale: 0.5;
-        //   }
       }
     }
 
