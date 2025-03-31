@@ -850,9 +850,7 @@
       .pic {
         margin: 1em 0em 1em 1.5em;
       }
-      // p {
-      //   padding: 0 2em 0 0;
-      // }
+
       @include screen('tablet') {
         p {
           padding: 0;
@@ -890,9 +888,7 @@
           height: 20em;
         }
       }
-      // p {
-      //   margin-top: 2em;
-      // }
+
       @include screen('tablet') {
         .pic {
           img {
@@ -1472,7 +1468,6 @@
               color: #888;
               text-align: start;
               @include text-line(7, 1.5em);
-              // @include text-line(3, 1.5em);
             }
           }
 
@@ -1519,7 +1514,6 @@
 
 .mt-main-company-content {
   padding-top: 0;
-  // background: left 10% top 340px url(../images/logo_gray.png) no-repeat;
   background-color: #fff;
   background-size: 900px;
   @include screen('tablet') {
@@ -1537,13 +1531,8 @@
   }
 
   .cp_content {
-    // width: 90%;
-    // max-width: 1400px;
-    // height: 23%;
-    // margin-top: 2%;
     padding: 0;
     margin-top: 1em;
-    // padding-bottom: 1.5%;
 
     .slider-cp-pics {
       padding: 0 2.5em;
@@ -1564,7 +1553,6 @@
       .hotel_room {
         ul > li {
           align-items: center;
-
           .icon {
             border: 1px solid #555;
             padding: 0.5em;
@@ -1754,12 +1742,6 @@
     width: 100%;
     position: relative;
     margin-top: 2em;
-    // display: flex;
-    // flex-flow: row wrap;
-    // align-items: flex-start;
-    // justify-content: flex-start;
-    // padding: 1em;
-    // box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     .pic {
       width: 100%;
       float: none;
@@ -1770,14 +1752,6 @@
       max-width: unset;
       max-height: 360px;
       position: relative;
-
-      // flex-grow: 0;
-      // flex-shrink: 1;
-      // flex-basis: 250px;
-      // margin: 0px 2em 0 0;
-      // width: 35%;
-      // min-width: 200px;
-      // max-width: 250px;
       img {
         width: 100%;
       }
@@ -1793,7 +1767,6 @@
         right: 0;
       }
 
-      // padding: 0.5em 0.5em 0.2em;
       @include screen('mobile') {
         flex-basis: 100%;
         width: 100%;
@@ -1819,7 +1792,6 @@
 
       h3 {
         margin: 0.5em 0 0.5em;
-        // font-size: 1.75em;
         font-size: 2.2em;
         color: #fff;
         width: 50%;
@@ -1923,14 +1895,6 @@
         min-height: 560px;
       }
       position: relative;
-      // &::before {
-      //   position: absolute;
-      //   content: '';
-      //   width: 100%;
-      //   height: 30%;
-      //   background: linear-gradient(180deg, transparent, #000000);
-      //   bottom: 0;
-      // }
     }
     .bgPic {
       width: 100%;
@@ -1986,7 +1950,6 @@
         width: 50%;
         margin-right: 25%;
         height: auto;
-        // height: 35%;
       }
       width: 100%;
       width: 30%;
@@ -2010,22 +1973,9 @@
 
       .hotel_name {
         display: flex;
-        // padding-bottom: 1em;
-        // margin-bottom: 1em;
         justify-content: center;
         align-items: center;
         position: relative;
-
-        // &::after {
-        //   position: absolute;
-        //   content: '';
-        //   width: 20%;
-        //   bottom: 0;
-        //   left: 0;
-        //   background: $secondaryColor;
-        //   height: 3px;
-        // }
-
         img {
           max-width: 60px;
           margin-right: 1em;
@@ -2037,17 +1987,7 @@
         margin: 0;
         font-size: 1.5em;
         font-weight: 500;
-        // font-size: 2.2em;
         line-height: 1.2em;
-        // @include screen('xs_mobile') {
-        //   font-size: 1.8em;
-        //   line-height: 1.1em;
-        //   width: 70%;
-        // }
-
-        // @media screen and (max-width: 480px) {
-        //   color: #fff;
-        // }
       }
 
       p {
@@ -2156,11 +2096,23 @@
         }
       }
       .hotel_sns {
-        margin-top: 0.5em;
+        margin-top: 1.5em;
+        display: flex;
+        justify-content: center;
         .sns_info {
           display: flex;
           li {
             border: 0px;
+            .icon-x {
+              width: 18px;
+              margin-top: 0.15rem;
+              height: 18px;
+              background: url(../images/icon/icon_x_logo_dark.svg) center center no-repeat;
+              background-size: contain;
+              &:hover {
+                background: url(../images/icon/icon_x_logo_primary.svg) center center no-repeat;
+              }
+            }
             a {
               margin-right: 0.5em;
               font-size: 1.2em;
@@ -2168,12 +2120,6 @@
               &:hover {
                 cursor: pointer;
                 color: $primaryColor;
-              }
-              @media screen and (max-width: 480px) {
-                color: #fff;
-                &:hover {
-                  color: lighten($primaryColor, 20%);
-                }
               }
             }
           }
@@ -2242,6 +2188,10 @@
         }
         .mt-tag {
           margin-left: 1em;
+          justify-content: flex-start;
+        }
+        .hotel_sns {
+          margin: 1em 0;
           justify-content: flex-start;
         }
       }
