@@ -114,7 +114,6 @@
     width: 100%;
 
     &:hover {
-
       .slick-prev,
       .slick-next {
         opacity: 1;
@@ -130,6 +129,9 @@
 
       @include screen('tablet') {
         @include aspect-ratio(3, 2);
+        &::before {
+          padding-top: 0;
+        }
       }
 
       .pic {
