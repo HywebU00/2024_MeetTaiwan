@@ -1938,11 +1938,13 @@
         width: 70%;
         display: flex;
         justify-content: center;
+        max-height: 200px;
         img {
           object-fit: contain;
         }
         + div {
           width: 70%;
+          min-width: 200px;
         }
       }
       .tag {
@@ -2098,7 +2100,8 @@
         }
       }
       .hotel_sns {
-        margin-top: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 2em;
         display: flex;
         justify-content: center;
         .sns_info {
@@ -2115,10 +2118,16 @@
                 background: url(../images/icon/icon_x_logo_primary.svg) center center no-repeat;
               }
             }
+            &:last-child {
+              a {
+                margin-right: 0;
+              }
+            }
             a {
               margin-right: 0.5em;
               font-size: 1.2em;
               color: #666;
+
               &:hover {
                 cursor: pointer;
                 color: $primaryColor;
